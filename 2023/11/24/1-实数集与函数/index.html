@@ -378,8 +378,8 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2023年11月24日</a>
-			<a><i class="kirafont icon-edit-fill"></i>1.1k 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 5 分钟</a>
+			<a><i class="kirafont icon-edit-fill"></i>1.7k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 7 分钟</a>
 		</div>
 		<h2><span id="11-实数">1.1 实数</span></h2><h3><span id="111-实数及其性质">1.1.1 实数及其性质</span></h3><ul>
 <li>封闭性</li>
@@ -410,18 +410,18 @@
 <p>$ \ \ $<strong>定义2</strong>：设$\ S\ $为$\ \mathrm {R}\ $中的一个数集.若数$\ \eta\ $满足：<br>$(i)$ 对一切$\ x\in S\ $,有$\ x\le \eta\ $, 即$\ \eta\ $是$\ S\ $的上界;<br>$(ii)$ 对任何$\ \alpha  \in S\ $,存在$\ x_0 \in S\ $,使得$\ x_0&gt;\alpha\ $,即$\ \eta\ $又是$\ S\ $的最小上界,则称数$\ \eta\ $为数集$\ S\ $的<strong>上确界</strong>,记作<br>$$\eta &#x3D;sup\ S$$<br><em>注：sup是拉丁文supremumm(上确界)一词的缩写.</em></p>
 </blockquote>
 <p><strong>翻译：</strong>  </p>
-<ul>
-<li>$1.\ \eta\ $是上界</li>
-<li>$2.\ \eta\ $是最小上界 $\Leftrightarrow$ 比$\eta$小的不是上界 $\Leftrightarrow$ 对任意比$\ \eta\ $小的数，数集中存在数比这个数大</li>
-</ul>
+<ol>
+<li>$\eta\ $是上界.</li>
+<li>$\eta\ $是最小上界 $\Leftrightarrow$ 比$\eta$小的不是上界 $\Leftrightarrow$ 对任意比$\ \eta\ $小的数，数集中存在数比这个数大.</li>
+</ol>
 <blockquote>
 <p>$ \ \ $<strong>定义3</strong>：设$\ S\ $为$\ \mathrm {R}\ $中的一个数集.若数$\ \xi \ $满足：<br>$(i)$ 对一切$x\in S,有x\ge \xi , 即\xi   是S的下界;$<br>$(ii)$ 对任何$\beta\in S$,存在$x_0 \in S$,使得$\ x_0&lt;\beta\ $,即$\ \xi\ $又是$\ S\ $的最大下界,则称数$\ \xi\ $为数集$\ S\ $的<strong>下确界</strong>,记作<br>$$\xi &#x3D;inf\ S$$<br><em>注：inf是拉丁文infimum(下确界)一词的缩写.</em></p>
 </blockquote>
 <p><strong>翻译：</strong> </p>
-<ul>
-<li>$1.\ \xi\ $是下界</li>
-<li>$2.\ \xi\ $是最大下界 $\Leftrightarrow$ 比$\ \xi\ $大的不是下界 $\Leftrightarrow$ 对任意比$\ \xi\ $大的数，数集中存在数比这个数小</li>
-</ul>
+<ol>
+<li>$\xi\ $是下界.</li>
+<li>$\xi\ $是最大下界 $\Leftrightarrow$ 比$\ \xi\ $大的不是下界 $\Leftrightarrow$ 对任意比$\ \xi\ $大的数，数集中存在数比这个数小.</li>
+</ol>
 <p><strong>上确界与下确界统称为确界</strong>.</p>
 <ul>
 <li>注 1. 数集的确界是唯一的.</li>
@@ -431,21 +431,51 @@
 <p>$ \ \ $<strong>定理1.1</strong>(确界原理)  设$\ S\ $为非空数集,若$\ S\ $有上界,则$\ S\ $必有上确界;若$\ S\ $有下界,则$\ S\ $必有下确界.<br>$\ $<br><em>注：确界原理是极限理论的基础</em>.</p>
 </blockquote>
 <p><strong>翻译：</strong> </p>
-<ul>
+<ol>
 <li>上界中总有最小的;下界中总有最大的.</li>
-</ul>
+</ol>
 <h3><span id="推广的确界原理">推广的确界原理</span></h3><p><strong>规定：在$\bar{\mathrm {R}}$下,任一实数$a$与$+\infty$,$-\infty$的大小关系为:$a&lt;+\infty$,$a&gt;-\infty$,$-\infty&lt;+\infty$</strong><br>定义：$+\infty$为$\ S\ $的<strong>非正常上确界</strong>,记作$sup\ S&#x3D;+\infty$;$-\infty$为$\ S\ $的<strong>非正常下确界</strong>,记作$inf\ S&#x3D;-\infty$.</p>
 <blockquote>
 <p>$ \ \ $<strong>推广的确界原理</strong>：任一非空数集必有上、下确界(正常的或非正常的).</p>
 </blockquote>
 <h2><span id="13-函数概念">1.3 函数概念</span></h2><h3><span id="131-函数的定义">1.3.1 函数的定义</span></h3><blockquote>
-<p>$ \ \ $<strong>定义1</strong>： 给定两个实数集$\ D\ $和$\ M\ $,若有对应法则$\ f\ $,使对$\ D\ $内每一个数$\ x\ $,都有唯一的一个数$\ y\in M\ $与它相对应,则称$\ f\ $是定义在数集$\ D\ $上的<strong>函数</strong>,记作：<br>$$<br>\begin{array}<br> \ f:D\to M,\\<br> \ \ \ x \mapsto y.<br>\end{array}<br>$$<br>数集$\ D\ $称为函数$\ f\ $的<strong>定义域</strong>,$\ x\ $所对应的数$\ y\ $称为$\ f\ $在点$\ x\ $的<strong>函数值</strong>,常记为$\ f(x)\ $.全体函数值的集合<br>$$f(D)&#x3D;\lbrace y|y&#x3D;f(x),x\in D \rbrace (\subset M)$$<br>称为函数$\ f\ $的<strong>值域</strong>.<br>$$\ $$<br><em>注1：实数集$\ M\ $常以$\ \mathrm {R}\ $代替，故常用</em>$$y &#x3D;f(x),x\in D$$<em>表示一个函数.所以两个函数相同是指定义域和对应法则都相同</em></p>
+<p>$ \ \ $<strong>定义1</strong>： 给定两个实数集$\ D\ $和$\ M\ $,若有对应法则$\ f\ $,使对$\ D\ $内每一个数$\ x\ $,都有唯一的一个数$\ y\in M\ $与它相对应,则称$\ f\ $是定义在数集$\ D\ $上的<strong>函数</strong>,记作：<br>$$<br>\begin{array}<br> \ f:D\to M,\\<br> \ \ \ x \mapsto y.<br>\end{array}<br>$$<br>数集$\ D\ $称为函数$\ f\ $的<strong>定义域</strong>,$\ x\ $所对应的数$\ y\ $称为$\ f\ $在点$\ x\ $的<strong>函数值</strong>,常记为$\ f(x)\ $.全体函数值的集合<br>$$f(D)&#x3D;\lbrace y|y&#x3D;f(x),x\in D \rbrace (\subset M)$$<br>称为函数$\ f\ $的<strong>值域</strong>.<br>$\ $<br>存在域：使函数运算式有意义的自变量的全体称为<strong>存在域</strong>(自然定义域)<br>$\ $<br>函数$\ f\ $给出看$\ x\ $轴上点集$\ M\ $之间的<strong>单值对应</strong>,也称为<strong>映射</strong>.对于$\ a\in D\ $,$\ f(a)\ $称为映射$\ f\ $下$\ a\ $的<strong>像</strong>,$\ a\ $则称为$\ f(a) $的<strong>原像</strong><br>$$\ $$<br><em>注1：实数集$\ M\ $常以$\ \mathrm {R}\ $代替，故常用</em>$$y &#x3D;f(x),x\in D$$<em>表示一个函数.所以两个函数相同是指定义域和对应法则都相同</em></p>
 </blockquote>
 <p><strong>翻译：</strong></p>
-<ul>
+<ol>
 <li>定义1中的$\ M(R) $<strong>并非值域</strong>,而是映射到的范围.个人认为例如用来区分实分析与分析.</li>
+</ol>
+<h3><span id="单值函数">单值函数</span></h3><ul>
+<li>在函数的定义中,对每一个$\ x\in D\ $,只能有唯一的一个$\ y\ $值与它对应,这样定义的函数被称为<strong>单值函数</strong>.若同一个$\ x\ $值可以对应多于一个的$\ y\ $值,则称这种函数为<strong>多值函数</strong>.</li>
+<li><strong>在本书范围内,只讨论单值函数</strong>.</li>
 </ul>
-<h3><span id="132-函数的表示法">1.3.2 函数的表示法</span></h3><h3><span id="133-函数的四则运算">1.3.3 函数的四则运算</span></h3><h3><span id="134-复合函数">1.3.4 复合函数</span></h3><h3><span id="135-反函数">1.3.5 反函数</span></h3><h3><span id="136-初等函数">1.3.6 初等函数</span></h3><h2><span id="14-具有某些特性的函数">1.4 具有某些特性的函数</span></h2><h3><span id="141-有界函数">1.4.1 有界函数</span></h3><h3><span id="142-单调函数">1.4.2 单调函数</span></h3><h3><span id="143-奇函数和偶函数">1.4.3 奇函数和偶函数</span></h3><h3><span id="144-周期函数">1.4.4 周期函数</span></h3>
+<h3><span id="132-函数的表示法">1.3.2 函数的表示法</span></h3><h3><span id="函数的表示法主要有三种">函数的表示法主要有三种</span></h3><ul>
+<li>解析法(公式法)</li>
+<li>列表法</li>
+<li>图像法</li>
+</ul>
+<p><strong>符号函数</strong><br>$$<br>f(x) &#x3D;<br>\begin{cases}<br> 1,\quad x&gt;0\ ,\\<br> 0,\quad x&#x3D;0\ ,\\<br>-1,\  x&lt;0<br>\end{cases}<br>$$</p>
+<p>例如：<br>$$\ f(x)&#x3D;|x|\ $$<br>分段函数形式：<br>$$<br>f(x) &#x3D;<br>\begin{cases}<br> x,\quad x\ge 0\ ,\\<br> -x,\quad x&lt;0.\<br>\end{cases}<br>$$<br>使用符号函数：<br>$$<br>f(x) &#x3D; xsgn\ x<br>$$</p>
+<p><strong>集合</strong><br>函数 $\ y&#x3D;f(x),x\in D\ $又可用如下有序数对的集合：<br>$$<br>G&#x3D;{(x,y)|y&#x3D;f(x),x\in D}<br>$$<br>来表示.</p>
+<p><strong>语言描述</strong><br>有些函数只能用语言来描述.</p>
+<ol>
+<li><p>定义在$\ \mathrm {R}\ $上的<strong>狄利克雷(Dirichlet)函数</strong><br>$$<br>D(x) &#x3D;<br>\begin{cases}<br>1,\quad  当x&#x3D;为有理数,\\<br>0,\quad  当x&#x3D;为无理数.<br>\end{cases}<br>$$</p>
+</li>
+<li><p>定义在$[0,1]$上的<strong>黎曼(Riemann)函数</strong><br>$$<br>R(x) &#x3D;<br>\begin{cases}<br> \frac{1}{q},\quad  当x&#x3D;\frac{p}{q} (p,q\in \mathrm {N_+},\frac{p}{q}为既约真分数),\\<br> 0,\quad \ 当x&#x3D;0,1和(0,1)内的无理数.<br>\end{cases}<br>$$</p>
+</li>
+</ol>
+<h3><span id="133-函数的四则运算">1.3.3 函数的四则运算</span></h3><p>和差积商</p>
+<ul>
+<li>函数$\ f\ $和函数$\ g\ $的运算记法：<ul>
+<li>和：$f+g$</li>
+<li>差：$f-g$</li>
+<li>积：$fg$</li>
+<li>商：$\frac{f}{g}$</li>
+</ul>
+</li>
+</ul>
+<h3><span id="134-复合函数">1.3.4 复合函数</span></h3><p>设有两函数<br>$$<br>\begin{array}<br>\ y&#x3D;f(u),u\in D,\\<br>u&#x3D;g(x),x\in E.<br>\end{array}<br>$$<br>记$\ E^* &#x3D;\lbrace x|g(x)\in D\rbrace \cap E.\ $ 若 $\ E^* \ne \emptyset \ $,可通过函数$\ g\ $对应$\ D\ $内唯一的一个值$\ u\ $,而$\ u\ $又通过函数$\ f\ $对应唯一的一个值$\ y.\ $这就确定了一个定义在$\ E^* \ $上的函数,它以$\ x\ $为自变量,$\ y\ $为因变量,记作<br>$$y&#x3D;f[g(x)],x\in E^* \quad 或 \quad y&#x3D;f\circ g(x),x\in E^*, $$<br>称为函数$\ f\ $和$\ g\ $的<strong>复合函数</strong>.并称$\ f\ $为<strong>外函数</strong>,$\ g\ $为<strong>内函数</strong>,$\ u\ $为<strong>中间变量</strong>.</p>
+<h3><span id="135-反函数">1.3.5 反函数</span></h3><h3><span id="136-初等函数">1.3.6 初等函数</span></h3><h2><span id="14-具有某些特性的函数">1.4 具有某些特性的函数</span></h2><h3><span id="141-有界函数">1.4.1 有界函数</span></h3><h3><span id="142-单调函数">1.4.2 单调函数</span></h3><h3><span id="143-奇函数和偶函数">1.4.3 奇函数和偶函数</span></h3><h3><span id="144-周期函数">1.4.4 周期函数</span></h3>
 	</article>
 
 	 
