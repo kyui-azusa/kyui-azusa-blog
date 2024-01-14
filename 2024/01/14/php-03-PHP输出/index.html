@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> 6.微分中值定理及其应用 -  zzy</title>
+		<title> 03-PHP输出 -  zzy</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -384,47 +384,82 @@
 			<img
 				data-src="/image/blog-bg.jpeg"
 				data-sizes="auto"
-				alt="6.微分中值定理及其应用"
+				alt="03-PHP输出"
 				class="lazyload kira-post-cover-image disabled-kira-image"
 			/>
-			<h1>6.微分中值定理及其应用</h1>
+			<h1>03-PHP输出</h1>
 		</div>
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
-			<a><i class="kirafont icon-calendar-fill"></i>2023年12月07日</a>
-			<a><i class="kirafont icon-edit-fill"></i>172 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 1 分钟</a>
+			<a><i class="kirafont icon-calendar-fill"></i>2024年01月14日</a>
+			<a><i class="kirafont icon-edit-fill"></i>987 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 4 分钟</a>
 		</div>
-		<meting-js server="netease" type="song" id="1871672883" mode="circulation" autoplay="true" mutex="true" listmaxheight="340px" preload="auto" theme="#ad7a86">
+		<meting-js server="netease" type="song" id="1357839856" mode="circulation" autoplay="true" mutex="true" listmaxheight="340px" preload="auto" theme="#ad7a86">
 </meting-js>
-<h2><span id="61-拉格朗日定理和函数的单调性">6.1 拉格朗日定理和函数的单调性</span></h2><h3><span id="611-罗尔定理与拉格朗日定理">6.1.1 罗尔定理与拉格朗日定理</span></h3><blockquote>
-<p><strong>定理6.1</strong>（罗尔(Rolle)中值定理）：<br>若函数$\ f\ $满足如下条件：<br>(i)$\ f\ $在闭区间$[a,b]$上连续;<br>(ii)$\ f\ $在开区间$(a,b)$上可导;<br>(iii)$\ f(a)&#x3D;f(b)\ $,<br>则在$\ (a,b)\ $内至少存在一点$\ xi\ $,使得<br>$${f}’(\xi)&#x3D;0.$$</p>
+<h2><span id="输出函数">输出函数</span></h2><ol>
+<li><p><code>echo</code>语句 - 可以输出一个或多个字符串</p>
+</li>
+<li><p><code>print</code>语句 - 只允许输出一个字符串，返回值总为 1</p>
+</li>
+</ol>
+<p><strong>注：</strong>echo 输出的速度比 print 快， echo 没有返回值，print有返回值1</p>
+<h2><span id="echo">echo</span></h2><ol>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">echo <br>echo()<br></code></pre></td></tr></table></figure>
+<p> 例：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">// 输出字符串</span><br>&lt;head&gt;<br>    &lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;<br>&lt;/head&gt;<br><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;h2&gt;PHP hhw!&lt;/h2&gt;&quot;</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello world!&lt;br&gt;&quot;</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;我要学 PHP!&lt;br&gt;&quot;</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;这是一个&quot;</span>.<span class="hljs-string">&quot;字符串，&quot;</span>.<span class="hljs-string">&quot;使用了&quot;</span>, <span class="hljs-string">&quot;多个&quot;</span>, <span class="hljs-string">&quot;参数。&quot;</span>; <span class="hljs-comment">// 在PHP中.和,都代表拼接.</span><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>输出变量</p>
+ <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs php">&lt;head&gt;<br>&lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;<br>&lt;/head&gt;<br><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$txt1</span>=<span class="hljs-string">&quot;学习 PHP&quot;</span>;<br><span class="hljs-variable">$txt2</span>=<span class="hljs-string">&quot;https://xn--zsr428b1mg.com/&quot;</span>;<br><span class="hljs-variable">$cars</span>=<span class="hljs-keyword">array</span>(<span class="hljs-string">&quot;1&quot;</span>,<span class="hljs-string">&quot;2&quot;</span>,<span class="hljs-string">&quot;3&quot;</span>);<br><br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$txt1</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;在 <span class="hljs-subst">$txt2</span> 学习 PHP &quot;</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;索引的位置是 <span class="hljs-subst">&#123;$cars[0]&#125;</span>&quot;</span>;<span class="hljs-comment">// 大括号的使用可以使得复杂的表达式更清晰，并确保 PHP 解释器能够正确地识别变量的边界.此处可以不加.</span><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2><span id="print">print</span></h2><ol>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">print<br>print()<br></code></pre></td></tr></table></figure>
+<p>例：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">// 输出字符串</span><br>&lt;head&gt;<br>    &lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;<br>&lt;/head&gt;<br><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&lt;h2&gt;PHP hhw!&lt;/h2&gt;&quot;</span>;<br><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Hello world!&lt;br&gt;&quot;</span>;<br><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;我要学习 PHP!&quot;</span>;<br><span class="hljs-comment">//或者</span><br><span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;PHP是全世界最好的语言&quot;</span>);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>输出变量</p>
+<p>完全同 <code>echo</code> 略.</p>
+</li>
+</ol>
+<h2><span id="eofheredoc">EOF(heredoc)</span></h2><blockquote>
+<p> PHP EOF(heredoc)是一种在命令行shell（如sh、csh、ksh、bash、PowerShell和zsh）和程序语言（像Perl、PHP、Python和Ruby）里定义一个字符串的方法.</p>
+<p>类似python的三引号.</p>
 </blockquote>
-<!--<iframe src="https://player.bilibili.com/player.html?aid=33053034&page=11&as_wide=1&high_quality=1&danmaku=1"
-style="width: 62em; height: 35em;"
-allowfullscreen="allowfullscreen" width="100%" height="100%" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>-->
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs php">&lt;head&gt;<br>    &lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;<br>&lt;/head&gt;<br><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">echo</span> <span class="hljs-string">&lt;&lt;&lt;EOF</span><br><span class="hljs-string">        &lt;h1&gt;我的第一个标题&lt;/h1&gt;</span><br><span class="hljs-string">        &lt;p&gt;我的第一个段落。&lt;/p&gt;</span><br><span class="hljs-string">EOF</span>;<br><span class="hljs-comment">// 结束需要独立一行且前后不能空格</span><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
-<!--<meting-js
-  server="netease"
-  type="song"
-  id="22714146"
-  mode="circulation"
-  autoplay="true"
-  mutex="true"
-  listmaxheight="340px"
-  preload="auto"
-  theme="#ad7a86">
-</meting-js>-->
-<h2><span id="62-柯西中值定理和不定式极限">6.2 柯西中值定理和不定式极限</span></h2><h2><span id="63-泰勒公式">6.3 泰勒公式</span></h2><h3><span id="631-带有佩亚诺余项的泰勒公式">6.3.1 带有佩亚诺余项的泰勒公式</span></h3><blockquote>
-<p><strong>定理6.9</strong> 若函数$\ f\ $在点$\ x_0\ $存在直至$\ n\ $阶导数，则有$\ f(x)&#x3D;T_n(x)+o((x-x_0)^n)\ $，即<br>$$ f(x)&#x3D;f(x_0) + {f}’(x_0)(x-x_0) + \frac </p>
-</blockquote>
+<p>使用概述：</p>
+<ul>
+<li>必须后接分号，否则编译通不过.</li>
+<li>EOF可以用任意其它字符代替，只需保证结束标识与开始标识一致.</li>
+<li>结束标识必须顶格独自占一行(即必须从行首开始，前后不能衔接任何空白和字符).</li>
+<li>开始标识可以不带引号或带单双引号，不带引号与带双引号效果一致，解释内嵌的变量和转义符号，带单引号则不解释内嵌的变量和转义符号.</li>
+<li>当内容需要内嵌引号（单引号或双引号）时，不需要加转义符，本身对单双引号转义，此处相当与q和qq的用法.</li>
+</ul>
+<p> <strong>注：</strong></p>
+<p>1.以 &lt;&lt;&lt;EOF 开始标记开始，以 EOF 结束标记结束，结束标记必须顶头写，不能有缩进和空格，且在结束标记末尾要有分号 .</p>
+<p>2.开始标记和结束标记相同，比如常用大写的 EOT、EOD、EOF 来表示，但是不只限于那几个(也可以用：JSON、HTML等)，只要保证开始标记和结束标记不在正文中出现即可.</p>
+<p>3.位于开始标记和结束标记之间的变量可以被正常解析，但是函数则不可以。在 heredoc 中，变量不需要用连接符 . 或 , 来拼接.</p>
+<h2><span id="常用输出函数">常用输出函数</span></h2><ol>
+<li><p>echo<br> 输出一个或者多个字符串.</p>
+</li>
+<li><p>print<br> 和 echo 最主要的区别： print 仅支持一个参数，并总是返回 1。</p>
+</li>
+<li><p>print_r<br> 打印关于变量的易于理解的信息,如果给出的是 string、integer 或 float，将打印变量值本身。如果给出的是 array，将会按照一定格式显示键和元素。</p>
+</li>
+<li><p>var_dump<br> 此函数显示关于一个或多个表达式的结构信息，包括表达式的类型与值。数组将递归展开值，通过缩进显示其结构。</p>
+</li>
+<li><p>var_dump 和 print_r 的区别<br> var_dump 返回表达式的类型与值而 print_r 仅返回结果，相比调试代码使用 var_dump 更便于阅读.</p>
+</li>
+</ol>
 
 	</article>
 
 	 
     <div class="kira-post-copyright">
         <strong>Author：</strong>zzy<br>
-        <strong>Link：</strong><a href="http://周梓煜.com/2023/12/07/6-%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/" title="http:&#x2F;&#x2F;周梓煜.com&#x2F;2023&#x2F;12&#x2F;07&#x2F;6-微分中值定理及其应用&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;周梓煜.com&#x2F;2023&#x2F;12&#x2F;07&#x2F;6-微分中值定理及其应用&#x2F;</a><br>
+        <strong>Link：</strong><a href="http://周梓煜.com/2024/01/14/php-03-PHP%E8%BE%93%E5%87%BA/" title="http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;01&#x2F;14&#x2F;php-03-PHP输出&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;01&#x2F;14&#x2F;php-03-PHP输出&#x2F;</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
         
@@ -433,32 +468,26 @@ allowfullscreen="allowfullscreen" width="100%" height="100%" scrolling="no" fram
   
 	<div class="kira-post-nav">
 		<nav class="post-nav">
-			  
+			          
 			<!-- 先找到与当前文字相同的目录 -->
-			               
+			            
 			<!-- 在找到当前文章所在的 index -->
-			                
+			            
 			<!-- 上一篇文章 -->
 			<div class="old">
 				<span>上一章</span>
-				<a href="/2023/12/07/3-%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90/"> 3.函数极限</a>
+				<a href="/2024/01/13/php-02-PHP%E5%8F%98%E9%87%8F/"> 02-PHP变量</a>
 			</div>
-			       
-			<!-- 下一篇文章 -->
-			<div class="new">
-				<span>下一章</span>
-				<a href="/2023/12/19/8-%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/"> 8.不定积分</a>
-			</div>
-			                         
+			          
 		</nav>
 	</div>
 	
 	<div class="kira-post-meta kira-rainbow">
 		
-			<a class="kirafont icon-container-fill -link" href="/categories/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/">数学分析</a>
+			<a class="kirafont icon-container-fill -link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
 		
 		
-			<a class="kirafont icon-tag-fill -none-link" href="/tags/Math/" rel="tag">Math</a>
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/PHP/" rel="tag">PHP</a>
 		
 	</div>
 	
