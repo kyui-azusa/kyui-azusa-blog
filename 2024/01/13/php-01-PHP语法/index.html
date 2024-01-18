@@ -107,8 +107,8 @@
 		</a>
 	</div>
 	<div class="kira-count">
-		<div><span>文章</span>16</div>
-		<div><span>标签</span>2</div>
+		<div><span>文章</span>18</div>
+		<div><span>标签</span>3</div>
 		<div><span>分类</span>3</div>
 	</div>
 	<div class="kira-list">
@@ -274,7 +274,7 @@
             <a class="category-list-link" href="/categories/编程/">
               编程
             </a>
-            <span class="category-list-count">5</span>
+            <span class="category-list-count">7</span>
           </li>
         
       </ul>
@@ -285,7 +285,7 @@
 			
 	<div class="kira-widget-wrap">
 		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
-			<a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
+			<a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
 		</div>
 		
 	</div>
@@ -402,16 +402,16 @@
 <p>php文件一般以<code>.php</code>为后缀保存.</p>
 </blockquote>
 <h2><span id="php框架">php框架</span></h2><p>php框架为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php<br>// 代码内容<br>?&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-comment">// 代码内容</span><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 <p>可简写为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?<br>// 代码内容<br>?&gt;<br>// 或<br>&lt;?<br>// 代码内容<br></code></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?</span><br><span class="hljs-comment">// 代码内容</span><br><span class="hljs-meta">?&gt;</span><br><span class="hljs-comment">// 或</span><br><span class="hljs-meta">&lt;?</span><br><span class="hljs-comment">// 代码内容</span><br></code></pre></td></tr></table></figure>
 <h2><span id="php语法">php语法</span></h2><ol>
 <li><p>注释</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">// 单行注释<br><br>/*<br>多行注释<br>多行注释<br>多行注释<br>*/<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">// 单行注释</span><br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">多行注释</span><br><span class="hljs-comment">多行注释</span><br><span class="hljs-comment">多行注释</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure></li>
 <li><p>语句应当以<code>;</code>结束.</p>
 </li>
 <li><p>Hello World</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php<br>echo &#x27;Hello World&#x27;;// echo为输出函数<br>?&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;Hello World&#x27;</span>;<span class="hljs-comment">// echo为输出函数</span><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 <p>将文件以<code>.php</code>为拓展名（后缀）保存，放入<code>phpstudy_pro</code>下对应目录，通过$\S 00 $的知识打开，便可得到输出<code>Hello World</code>的页面.</p>
 </li>
 </ol>
@@ -446,7 +446,7 @@
 				<span>下一章</span>
 				<a href="/2024/01/13/php-02-PHP%E5%8F%98%E9%87%8F/"> 02-PHP变量</a>
 			</div>
-			                        
+			                                      
 		</nav>
 	</div>
 	

@@ -107,8 +107,8 @@
 		</a>
 	</div>
 	<div class="kira-count">
-		<div><span>文章</span>16</div>
-		<div><span>标签</span>2</div>
+		<div><span>文章</span>18</div>
+		<div><span>标签</span>3</div>
 		<div><span>分类</span>3</div>
 	</div>
 	<div class="kira-list">
@@ -274,7 +274,7 @@
             <a class="category-list-link" href="/categories/编程/">
               编程
             </a>
-            <span class="category-list-count">5</span>
+            <span class="category-list-count">7</span>
           </li>
         
       </ul>
@@ -285,7 +285,7 @@
 			
 	<div class="kira-widget-wrap">
 		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
-			<a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
+			<a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
 		</div>
 		
 	</div>
@@ -418,7 +418,7 @@
 <li>整数可以是正数或负数</li>
 <li>整型可以用三种格式来指定：十进制， 十六进制（ 以 0x 为前缀）或八进制（前缀为 0）</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php<br>$x = 123123123;<br>var_dump($x);<br>?&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$x</span> = <span class="hljs-number">123123123</span>;<br><span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$x</span>);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
 <h3><span id="不同数字">不同数字</span></h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <br><span class="hljs-variable">$x</span> = <span class="hljs-number">5985</span>;<br><span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$x</span>);<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>; <br><span class="hljs-variable">$x</span> = -<span class="hljs-number">345</span>; <span class="hljs-comment">// 负数 </span><br><span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$x</span>);<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>; <br><span class="hljs-variable">$x</span> = <span class="hljs-number">0x8C</span>; <span class="hljs-comment">// 十六进制数</span><br><span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$x</span>);<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br><span class="hljs-variable">$x</span> = <span class="hljs-number">047</span>; <span class="hljs-comment">// 八进制数</span><br><span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$x</span>);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
@@ -446,7 +446,7 @@
 <p>常见资源数据类型有打开文件、数据库连接、图形画布区域等。</p>
 <p>由于资源类型变量保存有为打开文件、数据库连接、图形画布区域等的特殊句柄，因此将其它类型的值转换为资源没有意义。</p>
 <p>使用 <strong>get_resource_type()</strong> 函数可以返回资源（resource）类型：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-title function_ invoke__">get_resource_type</span>(resource <span class="hljs-variable">$handle</span>): <span class="hljs-keyword">string</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-title function_ invoke__">get_resource_type</span>(resource <span class="hljs-variable">$handle</span>): <span class="hljs-keyword">string</span><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>此函数返回一个字符串，用于表示传递给它的 resource 的类型。如果参数不是合法的 resource，将产生错误。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$c</span> = <span class="hljs-title function_ invoke__">mysql_connect</span>();<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_resource_type</span>(<span class="hljs-variable">$c</span>).<span class="hljs-string">&quot;\n&quot;</span>;<br><span class="hljs-comment">// 打印：mysql link</span><br><br><span class="hljs-variable">$fp</span> = <span class="hljs-title function_ invoke__">fopen</span>(<span class="hljs-string">&quot;foo&quot;</span>,<span class="hljs-string">&quot;w&quot;</span>);<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_resource_type</span>(<span class="hljs-variable">$fp</span>).<span class="hljs-string">&quot;\n&quot;</span>;<br><span class="hljs-comment">// 打印：file</span><br><br><span class="hljs-variable">$doc</span> = <span class="hljs-title function_ invoke__">new_xmldoc</span>(<span class="hljs-string">&quot;1.0&quot;</span>);<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_resource_type</span>(<span class="hljs-variable">$doc</span>-&gt;doc).<span class="hljs-string">&quot;\n&quot;</span>;<br><span class="hljs-comment">// 打印：doent</span><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
@@ -489,7 +489,13 @@
 				<span>上一章</span>
 				<a href="/2024/01/14/php-03-PHP%E8%BE%93%E5%87%BA/"> 03-PHP输出</a>
 			</div>
-			          
+			       
+			<!-- 下一篇文章 -->
+			<div class="new">
+				<span>下一章</span>
+				<a href="/2024/01/16/python-01-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%8F%98%E9%87%8F/"> 01-数据类型与变量</a>
+			</div>
+			                 
 		</nav>
 	</div>
 	

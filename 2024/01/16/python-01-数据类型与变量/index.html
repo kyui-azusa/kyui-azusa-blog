@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html 
+	lang="zh">
+	<head>
+		<script>
+			MathJax = {
+			  tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			  },
+			  svg: {
+				fontCache: 'global'
+			  }
+			};
+		</script>
+		<script type="text/javascript" id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+		</script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 01-数据类型与变量 -  zzy</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/image/favicon.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+				
+<link rel="stylesheet" href="/custom.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 7.0.0"></head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('/image/blog-bg.jpeg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="zzy">
+        <img
+			src="/image/blog-avatar.jpg"
+			alt="zzy"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a href="/image/blog-avatar.jpg" title="zzy">
+			<img
+				src="/image/blog-avatar.jpg"
+				alt="zzy"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>18</div>
+		<div><span>标签</span>3</div>
+		<div><span>分类</span>3</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://space.bilibili.com/141779701"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1817054005&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/457014708"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/kyui-azusa/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="/null"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+  <div class="kira-widget-wrap">
+    <h3 class="kira-widget-title">分类</h3>
+    <div class="kira-widget">
+      <ul class="category-list">
+        
+        
+
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学分析/">
+              数学分析
+            </a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学词典/">
+              数学词典
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/编程/">
+              编程
+            </a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+		</div>
+		
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2024
+		<a href="/">zzy</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+			<a
+				href="https://beian.miit.gov.cn/"
+				target="_blank"
+			>
+				沪ICP备******号
+			</a>
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div
+			class="kira-post-cover"
+			style="padding-bottom: '56.25%'"
+		>
+			<img
+				data-src="/image/blog-bg.jpeg"
+				data-sizes="auto"
+				alt="01-数据类型与变量"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>01-数据类型与变量</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2024年01月16日</a>
+			<a><i class="kirafont icon-edit-fill"></i>900 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 3 分钟</a>
+		</div>
+		<meting-js server="netease" type="song" id="1357839856" mode="circulation" autoplay="true" mutex="true" listmaxheight="340px" preload="auto" theme="#ad7a86">
+</meting-js>
+<h2><span id="初识变量">初识变量</span></h2><h3><span id="变量是什么">变量是什么</span></h3><ul>
+<li>可以改变的数据</li>
+<li>程序里的变量：<br>  编程中有很多的数据是会反复使用的.所以把它存起来,取个有意义的名字. 使用时直接调用即可</li>
+</ul>
+<h3><span id="变量的组成">变量的组成：</span></h3><ol>
+<li>变量名 (name)</li>
+<li>数据类型 (type)</li>
+<li>内存地址(id)</li>
+<li>值(value)</li>
+</ol>
+<blockquote>
+<p>把变量想象成一个仓库<br>变量名 –&gt; 仓库名字<br>数据类型 –&gt; 仓库类型(蔬菜&#x2F;海鲜&#x2F;油)<br>内存地址 –&gt; 仓库地址<br>变量值 –&gt; 仓库里放的东西</p>
+</blockquote>
+<h3><span id="变量名命名规则">变量名命名规则</span></h3><ol>
+<li>一般由数字,字母,下划线组成 (中文是可以的,但不推荐)</li>
+<li>不能以数字开头</li>
+<li>符号只能用下划线</li>
+<li>变量名区分大小写 Name 和 name</li>
+<li>不要用关键字&#x2F;有特别功能的名字作为变量名<br>(不要给变量取名为 print input int float)</li>
+<li>见名知意</li>
+</ol>
+<h3><span id="比较好用的命名方式">比较好用的命名方式</span></h3><ul>
+<li>驼峰命名法 –&gt; 单词首字母大写<ul>
+<li>大驼峰 –&gt; 所有单词首字母都大写 –&gt; UserName UserAge</li>
+<li>小驼峰 –&gt; 第一个单词不变,后面的大写 –&gt; userName userAge</li>
+</ul>
+</li>
+<li>下划线 –&gt; 单词之间用下划线进行链接 –&gt; user_name  user_age</li>
+<li>下划线 –&gt; 单词之间用下划线进行链接 –&gt; user_name  user_age</li>
+</ul>
+<h2><span id="变量的基本使用">变量的基本使用</span></h2><h3><span id="1-声明变量">1. 声明变量:</span></h3><ul>
+<li><p>把等号右边的数据赋值给左边的变量名.以后这个名字就是这段数据</p>
+<ul>
+<li><p>语法格式:<br>  变量名 &#x3D; 变量值</p>
+</li>
+<li><p>案例:</p>
+</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">name = &#x27;zzy&#x27; <br></code></pre></td></tr></table></figure>
+</li>
+<li><p>声明多个变量,用逗号隔开</p>
+<ul>
+<li>语法格式:<br>  变量名,变量名 &#x3D; 变量值,变量值</li>
+<li>案例:<br>  name,age &#x3D; ‘zzy’,1919810</li>
+</ul>
+</li>
+</ul>
+<h3><span id="2-使用变量">2. 使用变量</span></h3><ul>
+<li><p>直接输出变量名</p>
+<ul>
+<li><p>语法格式:<br>  print(变量名) #  这里直接打变量名就行,不用加引号</p>
+</li>
+<li><p>案例:</p>
+</li>
+</ul>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(name)<br><span class="hljs-built_in">print</span>(age)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>输出多个变量,用逗号隔开</p>
+<ul>
+<li><p>语法格式:<br>print(变量名,变量名)</p>
+</li>
+<li><p>案例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">print(name,age)<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3><span id="3-用input给变量赋值">3. 用input给变量赋值</span></h3><ul>
+<li><p>把输入的数据,赋值给变量</p>
+<ul>
+<li><p>语法格式:<br>变量名 &#x3D; input()</p>
+</li>
+<li><p>案例:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">name = <span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;请输入你的名字&#x27;</span>)<br><span class="hljs-comment"># 用input输入得到的数据默认为str类型</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>在声明一个变量后 –&gt; python会在内存里开辟一个空间,把变量存入  </p>
+</li>
+<li><p>声明变量:  在内存里开辟一个空间.存放变量值.并连接给变量名 </p>
+</li>
+<li><p>变量名 和 变量值不是放在一起的.它们是连接起来的</p>
+</li>
+</ul>
+<h2><span id="顺序执行">顺序执行</span></h2><p>程序是由上往下依次按照顺序执行的<br>name &#x3D; ‘zzy1’<br>print(name) # zzy1<br>name &#x3D; ‘zzy2’<br>print(name) # zzy2</p>
+<p>print(age) # 没有age这个变量.报错<br>age &#x3D; 1919810</p>
+<h2><span id="基本数据类型">基本数据类型</span></h2><h3><span id="type">type()</span></h3><p>内置功能函数，得到数据类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">type(变量)<br>type(数据)<br>print(type(name))<br>print(type(114514))<br></code></pre></td></tr></table></figure>
+
+<h3><span id="int-整型x2f整数">int-整型&#x2F;整数</span></h3><ul>
+<li><p>int 整数,没有小数点的数据</p>
+</li>
+<li><p>声明方式:<br>  变量名 &#x3D; 整数值</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">age = 27<br>print(age)<br>print(type(age))<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3><span id="float-浮点型x2f小数">float-浮点型&#x2F;小数</span></h3><ul>
+<li>float 浮点数&#x2F;带小数的数字</li>
+<li>声明方式:<br>  变量名 &#x3D; 浮点值  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">money = 88.88<br>print(money)<br>print(type(money))<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3><span id="bool布尔类型-判断型">bool布尔类型 判断型</span></h3><ul>
+<li>bool 判断型.只有两个值.   True&#x2F;真&#x2F;1    False&#x2F;假&#x2F;0</li>
+<li>布尔类型主要是用来做判断的. 用True真 用False表示假  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1 + 1 &gt; 2  # False<br>666 &gt; 520  # True<br></code></pre></td></tr></table></figure></li>
+<li>声明方式:<br>  变量名 &#x3D; True<br>  变量名 &#x3D; False  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">is_login = True<br>is_VIP = False<br></code></pre></td></tr></table></figure>
+<strong>注</strong>:</li>
+</ul>
+<ol>
+<li>布尔值可以作为数值来使用.它也算数值类型的一种 True为1 False为0. </li>
+<li>单词首字母要大写.</li>
+</ol>
+<h2><span id="python的基本数学运算符">python的基本数学运算符</span></h2><p>python可以进行算数运算</p>
+<ul>
+<li>+（加）</li>
+<li>-（减）</li>
+<li>*（乘）</li>
+<li>&#x2F;（除）</li>
+<li>%（取余&#x2F;模）</li>
+<li>&#x2F;&#x2F;（整除）</li>
+<li>**（取幂）</li>
+</ul>
+
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>zzy<br>
+        <strong>本文链接：</strong><a href="http://周梓煜.com/2024/01/16/python-01-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%8F%98%E9%87%8F/" title="http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;01&#x2F;16&#x2F;python-01-数据类型与变量&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;01&#x2F;16&#x2F;python-01-数据类型与变量&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			          
+			<!-- 先找到与当前文字相同的目录 -->
+			                  
+			<!-- 在找到当前文章所在的 index -->
+			                    
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2024/01/16/php-04-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"> 04-PHP数据类型</a>
+			</div>
+			       
+			<!-- 下一篇文章 -->
+			<div class="new">
+				<span>下一章</span>
+				<a href="/2024/01/17/python-02-%E5%BA%8F%E5%88%97%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/"> 02-序列类型与转义字符</a>
+			</div>
+			          
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/Python/" rel="tag">Python</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	<div class="giscus"></div>
+  
+    <script src="https://giscus.app/client.js"
+      data-repo="ch1ny/ch1ny.github.io"
+      data-repo-id="R_kgDOHGgizw"
+      data-category="General"
+      data-category-id="DIC_kwDOHGgiz84CU88t"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async  
+    ></script>
+  
+
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>

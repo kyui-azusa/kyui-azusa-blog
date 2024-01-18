@@ -107,8 +107,8 @@
 		</a>
 	</div>
 	<div class="kira-count">
-		<div><span>文章</span>16</div>
-		<div><span>标签</span>2</div>
+		<div><span>文章</span>18</div>
+		<div><span>标签</span>3</div>
 		<div><span>分类</span>3</div>
 	</div>
 	<div class="kira-list">
@@ -274,7 +274,7 @@
             <a class="category-list-link" href="/categories/编程/">
               编程
             </a>
-            <span class="category-list-count">5</span>
+            <span class="category-list-count">7</span>
           </li>
         
       </ul>
@@ -285,7 +285,7 @@
 			
 	<div class="kira-widget-wrap">
 		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
-			<a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
+			<a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
 		</div>
 		
 	</div>
@@ -401,10 +401,10 @@
 <p>php变量以<code>$</code>开头，类似<code>var</code>申明变量，区别是<code>$</code>作为变量名的开头，是变量名的一部分，而非申明关键字.</p>
 <p>输出指网页显示的内容，目前并无CSS信息.</p>
 </blockquote>
-<h2><span id="变量">变量</span></h2><h3><span id="1-变量的申明与赋值">1. 变量的申明与赋值</span></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php<br>$a = &#x27;Hello World&#x27;;<br>echo $a;<br>?&gt;<br>//输出：Hello World<br></code></pre></td></tr></table></figure>
-<h3><span id="2-变量的替换">2. 变量的替换</span></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php<br>$a = &#x27;111111&#x27;;<br>$a = &#x27;222222&#x27;;<br>echo $a;<br>?&gt;<br>//输出：222222<br></code></pre></td></tr></table></figure>
+<h2><span id="变量">变量</span></h2><h3><span id="1-变量的申明与赋值">1. 变量的申明与赋值</span></h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$a</span> = <span class="hljs-string">&#x27;Hello World&#x27;</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$a</span>;<br><span class="hljs-meta">?&gt;</span><br><span class="hljs-comment">//输出：Hello World</span><br></code></pre></td></tr></table></figure>
+<h3><span id="2-变量的替换">2. 变量的替换</span></h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$a</span> = <span class="hljs-string">&#x27;111111&#x27;</span>;<br><span class="hljs-variable">$a</span> = <span class="hljs-string">&#x27;222222&#x27;</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$a</span>;<br><span class="hljs-meta">?&gt;</span><br><span class="hljs-comment">//输出：222222</span><br></code></pre></td></tr></table></figure>
 <p>后续赋值会将原始赋值替换</p>
-<h3><span id="3-多变量">3. 多变量</span></h3>   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php<br>$x = 5;<br>$y = 6;<br>$z= $x + $y<br>echo $z<br>//输出：11<br></code></pre></td></tr></table></figure>
+<h3><span id="3-多变量">3. 多变量</span></h3>   <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$x</span> = <span class="hljs-number">5</span>;<br><span class="hljs-variable">$y</span> = <span class="hljs-number">6</span>;<br><span class="hljs-variable">$z</span>= <span class="hljs-variable">$x</span> + <span class="hljs-variable">$y</span><br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$z</span><br><span class="hljs-comment">//输出：11</span><br></code></pre></td></tr></table></figure>
 
 <h3><span id="4-php-变量规则">4. PHP 变量规则：</span></h3><ul>
 <li>变量以 <code>$</code> 符号开始，后面跟着变量的名称</li>
@@ -413,7 +413,7 @@
 <li>变量名不能包含空格</li>
 <li>变量名是区分大小写的（y 和 Y 是两个不同的变量）</li>
 </ul>
-<h3><span id="5-php是弱类型语言">5. PHP是弱类型语言</span></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php<br>$txt=&quot;Hello world!&quot;;<br>$x=5;<br>$y=10.5;<br>?&gt;<br>// 不必向 PHP 声明该变量的数据类型，PHP 会根据变量的值，自动把变量转换为正确的数据类型.<br>// 在强类型的编程语言中，我们必须在使用变量前先声明（定义）变量的类型和名称.<br></code></pre></td></tr></table></figure>
+<h3><span id="5-php是弱类型语言">5. PHP是弱类型语言</span></h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$txt</span>=<span class="hljs-string">&quot;Hello world!&quot;</span>;<br><span class="hljs-variable">$x</span>=<span class="hljs-number">5</span>;<br><span class="hljs-variable">$y</span>=<span class="hljs-number">10.5</span>;<br><span class="hljs-meta">?&gt;</span><br><span class="hljs-comment">// 不必向 PHP 声明该变量的数据类型，PHP 会根据变量的值，自动把变量转换为正确的数据类型.</span><br><span class="hljs-comment">// 在强类型的编程语言中，我们必须在使用变量前先声明（定义）变量的类型和名称.</span><br></code></pre></td></tr></table></figure>
 
 
 
@@ -495,7 +495,7 @@
 				<span>下一章</span>
 				<a href="/2024/01/14/php-03-PHP%E8%BE%93%E5%87%BA/"> 03-PHP输出</a>
 			</div>
-			                 
+			                               
 		</nav>
 	</div>
 	
