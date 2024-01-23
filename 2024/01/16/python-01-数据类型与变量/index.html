@@ -74,7 +74,9 @@
 <script src="/deps/js/APlayer.min.js"></script>
 <script src="/deps/js/Meting.min.js"></script>
 
-	<meta name="generator" content="Hexo 7.0.0"></head>
+	<meta name="generator" content="Hexo 7.0.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
 
 	<body>
 		<div
@@ -392,11 +394,30 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2024年01月16日</a>
-			<a><i class="kirafont icon-edit-fill"></i>881 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 3 分钟</a>
+			<a><i class="kirafont icon-edit-fill"></i>926 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 4 分钟</a>
 		</div>
-		<meting-js server="netease" type="song" id="1357839856" mode="circulation" autoplay="true" mutex="true" listmaxheight="340px" preload="auto" theme="#ad7a86">
-</meting-js>
+		
+        <div id="aplayer-nfNIxWhi" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-nfNIxWhi"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "序列类型与转义字符",
+              author: "Python",
+              url: "/music/BGM-001.mp3",
+              pic: "/image/favicon.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
 <h2><span id="初识变量">初识变量</span></h2><h3><span id="变量是什么">变量是什么</span></h3><ul>
 <li>可以改变的数据</li>
 <li>程序里的变量：<br>  编程中有很多的数据是会反复使用的.所以把它存起来,取个有意义的名字. 使用时直接调用即可</li>
@@ -456,11 +477,13 @@
 <ul>
 <li>语法格式:</li>
 <li><pre><code class="python">print(变量名,变量名)
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">  ```<br>- 案例:<br>  <br>    ```python<br>    print(name,age)<br></code></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">```<br><br></code></pre></td></tr></table></figure>
 </code></pre>
 </li>
 </ul>
 </li>
+<li><p>案例:</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(name,age)<br></code></pre></td></tr></table></figure></li>
 </ul>
 <h3><span id="3-用input给变量赋值">3. 用input给变量赋值</span></h3><ul>
 <li><p>把输入的数据,赋值给变量</p>

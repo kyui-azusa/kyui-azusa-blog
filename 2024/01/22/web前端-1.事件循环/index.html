@@ -74,7 +74,9 @@
 <script src="/deps/js/APlayer.min.js"></script>
 <script src="/deps/js/Meting.min.js"></script>
 
-	<meta name="generator" content="Hexo 7.0.0"></head>
+	<meta name="generator" content="Hexo 7.0.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
 
 	<body>
 		<div
@@ -396,6 +398,29 @@
 			<a><i class="kirafont icon-time-circle-fill"></i>大概 8 分钟</a>
 		</div>
 		<!--记自渡一教育-->
+
+
+        <div id="aplayer-gLuziuwa" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-gLuziuwa"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "序列类型与转义字符",
+              author: "Python",
+              url: "/music/BGM-001.mp3",
+              pic: "/image/favicon.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
 <h2><span id="浏览器的进程模型">浏览器的进程模型</span></h2><h3><span id="进程">进程</span></h3><p>程序运行需要专属的内存空间，可简单理解为<strong>进程</strong></p>
 <p>每个应用至少有一个<strong>进程</strong>，<strong>进程</strong>之间互相独立，即使通信，也要双方通信</p>
 <h3><span id="线程">线程</span></h3><p>有了进程，就可以运行程序的代码了</p>
