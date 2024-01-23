@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="/css/layout.css">
 
 		
-		<title> 01-Python数据类型与变量 -  zzy</title>
+		<title> web前端-1-事件循环 -  zzy</title>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
 		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
 		
@@ -384,143 +384,144 @@
 			<img
 				data-src="/image/blog-bg.jpeg"
 				data-sizes="auto"
-				alt="01-Python数据类型与变量"
+				alt="web前端-1-事件循环"
 				class="lazyload kira-post-cover-image disabled-kira-image"
 			/>
-			<h1>01-Python数据类型与变量</h1>
+			<h1>web前端-1-事件循环</h1>
 		</div>
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
-			<a><i class="kirafont icon-calendar-fill"></i>2024年01月16日</a>
-			<a><i class="kirafont icon-edit-fill"></i>881 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 3 分钟</a>
+			<a><i class="kirafont icon-calendar-fill"></i>2024年01月22日</a>
+			<a><i class="kirafont icon-edit-fill"></i>2k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 8 分钟</a>
 		</div>
-		<meting-js server="netease" type="song" id="1357839856" mode="circulation" autoplay="true" mutex="true" listmaxheight="340px" preload="auto" theme="#ad7a86">
-</meting-js>
-<h2><span id="初识变量">初识变量</span></h2><h3><span id="变量是什么">变量是什么</span></h3><ul>
-<li>可以改变的数据</li>
-<li>程序里的变量：<br>  编程中有很多的数据是会反复使用的.所以把它存起来,取个有意义的名字. 使用时直接调用即可</li>
+		<!--记自渡一教育-->
+<h2><span id="浏览器的进程模型">浏览器的进程模型</span></h2><h3><span id="进程">进程</span></h3><p>程序运行需要专属的内存空间，可简单理解为<strong>进程</strong></p>
+<p>每个应用至少有一个<strong>进程</strong>，<strong>进程</strong>之间互相独立，即使通信，也要双方通信</p>
+<h3><span id="线程">线程</span></h3><p>有了进程，就可以运行程序的代码了</p>
+<p>运行的“人”称为“<strong>线程</strong>”</p>
+<p>一个进程至少有一个<strong>线程</strong>，所以进程开启后会自动创建一个<strong>线程</strong>程来运行代码，该线程称之为<strong>主线程</strong></p>
+<p>如果程序需要同时执行多块代码，主线程就会启动更多的<strong>线程</strong>来执行代码，所以一个进程可以包含多个<strong>线程</strong></p>
+<h3><span id="浏览器的进程和线程">浏览器的进程和线程</span></h3><p><strong>浏览器是一个多进程多线程的应用程序</strong>，为避免互相影响，浏览器启动后会自动启动多个进程。</p>
+<ul>
+<li><p><strong>浏览器进程</strong></p>
+<p>  主要负责界面显示、用户交互、子进程管理等。浏览器进程内部会启动多个线程处理不同的任务</p>
+</li>
+<li><p><strong>网络进程</strong></p>
+<p>  负责加载网络资源。网络进程内部会启动多个线程来处理不同的网络任务。</p>
+</li>
+<li><p><strong>渲染进程</strong>（每个标签页有一个）</p>
+<p>  渲染进程启动后，会开启一个渲染主线程，主线程负责执行HTML、CSS、JS 代码。</p>
+<p>  默认情况下，浏览器会为每个标签页开启一个新的渲染进程，以保证不同的标签页之间不相互影响。</p>
+<p>  可在更多工具 -&gt; 任务管理器（浏览器的）中查看</p>
+</li>
 </ul>
-<h3><span id="变量的组成">变量的组成：</span></h3><ol>
-<li>变量名 (name)</li>
-<li>数据类型 (type)</li>
-<li>内存地址(id)</li>
-<li>值(value)</li>
+<h2><span id="渲染主线程的工作">渲染主线程的工作</span></h2><ol>
+<li>渲染主线程是浏览器中最繁忙的线程，处理的任务包含</li>
 </ol>
+<ul>
+<li>解析HTML</li>
+<li>解析CSS</li>
+<li>计算样式</li>
+<li>布局（几何信息）</li>
+<li>处理图层</li>
+<li>每秒绘制画面60次（FPS 帧率）</li>
+<li>执行全局JS代码</li>
+<li>执行时间处理函数</li>
+<li>执行计时器的回调函数</li>
+<li>······</li>
+</ul>
 <blockquote>
-<p>把变量想象成一个仓库<br>变量名 –&gt; 仓库名字<br>数据类型 –&gt; 仓库类型(蔬菜&#x2F;海鲜&#x2F;油)<br>内存地址 –&gt; 仓库地址<br>变量值 –&gt; 仓库里放的东西</p>
+<p>渲染进程为什么不是用多个线程</p>
 </blockquote>
-<h3><span id="变量名命名规则">变量名命名规则</span></h3><ol>
-<li>一般由数字,字母,下划线组成 (中文是可以的,但不推荐)</li>
-<li>不能以数字开头</li>
-<li>符号只能用下划线</li>
-<li>变量名区分大小写 Name 和 name</li>
-<li>不要用关键字&#x2F;有特别功能的名字作为变量名<br>(不要给变量取名为 print input int float)</li>
-<li>见名知意</li>
-</ol>
-<h3><span id="比较好用的命名方式">比较好用的命名方式</span></h3><ol>
-<li>驼峰命名法 –&gt; 单词首字母大写<ul>
-<li>大驼峰 –&gt; 所有单词首字母都大写 –&gt; UserName UserAge</li>
-<li>小驼峰 –&gt; 第一个单词不变,后面的大写 –&gt; userName userAge</li>
-</ul>
-</li>
-<li>下划线 –&gt; 单词之间用下划线进行链接 –&gt; user_name  user_age</li>
-</ol>
-<h2><span id="变量的基本使用">变量的基本使用</span></h2><h3><span id="1-声明变量">1. 声明变量:</span></h3><ol>
-<li><p>把等号右边的数据赋值给左边的变量名.以后个名字就是这段数据</p>
+<ol start="2">
+<li><p>调度任务</p>
+<p> 问题：</p>
 <ul>
-<li><p>语法格式:<br>  <code>变量名 = 变量值</code></p>
-</li>
-<li><p>案例:</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">name = <span class="hljs-string">&#x27;zzy&#x27;</span> <br></code></pre></td></tr></table></figure></li>
+<li>执行JS函数中，执行到一半的时候用户点击了按钮</li>
+<li>执行JS函数中，执行到一半的时候计时器到达率时间</li>
+<li>用户点击了按钮，同时某个计时器到达了时间</li>
 </ul>
-</li>
-<li><p>声明多个变量,用逗号隔开</p>
-<ul>
-<li>语法格式:<br>  <code>变量名,变量名 = 变量值,变量值</code></li>
-<li>案例:  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">name,age = <span class="hljs-string">&#x27;zzy&#x27;</span>,<span class="hljs-number">1919810</span><br></code></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h3><span id="2-使用变量">2. 使用变量</span></h3><ul>
-<li><p>直接输出变量名</p>
-<ul>
-<li><p>语法格式:</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(变量名) <span class="hljs-comment">#  这里直接打变量名就行,不用加引号</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>案例:</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(name)<br><span class="hljs-built_in">print</span>(age)<br></code></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>输出多个变量,用逗号隔开</p>
-<ul>
-<li>语法格式:</li>
-<li><pre><code class="python">print(变量名,变量名)
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">  ```<br>- 案例:<br>  <br>    ```python<br>    print(name,age)<br></code></pre></td></tr></table></figure>
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h3><span id="3-用input给变量赋值">3. 用input给变量赋值</span></h3><ul>
-<li><p>把输入的数据,赋值给变量</p>
-<ul>
-<li><p>语法格式:<br>变量名 &#x3D; input()</p>
-</li>
-<li><p>案例:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">name = <span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;请输入你的名字&#x27;</span>)<br><span class="hljs-comment"># 用input输入得到的数据默认为str类型</span><br></code></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>在声明一个变量后 –&gt; python会在内存里开辟一个空间,把变量存入  </p>
-</li>
-<li><p>声明变量:  在内存里开辟一个空间.存放变量值.并连接给变量名 </p>
-</li>
-<li><p>变量名 和 变量值不是放在一起的.它们是连接起来的</p>
-</li>
-</ul>
-<h2><span id="顺序执行">顺序执行</span></h2><p>程序是由上往下依次按照顺序执行的</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">name = <span class="hljs-string">&#x27;zzy1&#x27;</span><br><span class="hljs-built_in">print</span>(name) <span class="hljs-comment"># zzy1</span><br>name = <span class="hljs-string">&#x27;zzy2&#x27;</span><br><span class="hljs-built_in">print</span>(name) <span class="hljs-comment"># zzy2</span><br><br><span class="hljs-built_in">print</span>(age) <span class="hljs-comment"># 没有age这个变量.报错</span><br>age = <span class="hljs-number">1919810</span><br></code></pre></td></tr></table></figure>
-
-<h2><span id="基本数据类型">基本数据类型</span></h2><h3><span id="type">type()</span></h3><p>内置功能函数，得到数据类型</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">type</span>(变量)<br><span class="hljs-built_in">type</span>(数据)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(name))<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(<span class="hljs-number">114514</span>))<br></code></pre></td></tr></table></figure>
-
-<h3><span id="int-整型x2f整数">int-整型&#x2F;整数</span></h3><ul>
-<li><p>int 整数,没有小数点的数据</p>
-</li>
-<li><p>声明方式:<br>  变量名 &#x3D; 整数值</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">age = <span class="hljs-number">27</span><br><span class="hljs-built_in">print</span>(age)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(age))<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h3><span id="float-浮点型x2f小数">float-浮点型&#x2F;小数</span></h3><ul>
-<li>float 浮点数&#x2F;带小数的数字</li>
-<li>声明方式:<br>  变量名 &#x3D; 浮点值  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">money = <span class="hljs-number">88.88</span><br><span class="hljs-built_in">print</span>(money)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(money))<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h3><span id="bool布尔类型-判断型">bool布尔类型 判断型</span></h3><ul>
-<li>bool 判断型.只有两个值.   True&#x2F;真&#x2F;1    False&#x2F;假&#x2F;0</li>
-<li>布尔类型主要是用来做判断的. 用True真 用False表示假  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1 + 1 &gt; 2  # False<br>666 &gt; 520  # True<br></code></pre></td></tr></table></figure></li>
-<li>声明方式:<br>  变量名 &#x3D; True<br>  变量名 &#x3D; False  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">is_login = <span class="hljs-literal">True</span><br>is_VIP = <span class="hljs-literal">False</span><br></code></pre></td></tr></table></figure>
-<strong>注</strong>:</li>
-</ul>
+<p> 方案：排队</p>
 <ol>
-<li>布尔值可以作为数值来使用.它也算数值类型的一种 True为1 False为0. </li>
-<li>单词首字母要大写.</li>
+<li>初始，渲染主线程会进入无限循环</li>
+<li>每一次循环会检查消息队列中是否有任务存在。如果有，就去除第一个任务执行，执行完一个后进入下一次循环；如果没有，则进入休眠状态。</li>
+<li>其他所有线程(包括其他进程的线程)可以随时向消息队列添加任务。新任务会加到消息队列的未尾。在添加新任务时，如果主线程是休眠状态，则会将其唤醒以继续循环拿取任务。</li>
 </ol>
-<h2><span id="python的基本数学运算符">python的基本数学运算符</span></h2><p>python可以进行算数运算</p>
+<p> 整个过程，称为<strong>事件循环</strong>（消息循环）</p>
+<p> <strong>个人理解</strong>：</p>
 <ul>
-<li>+（加）</li>
-<li>-（减）</li>
-<li>*（乘）</li>
-<li>&#x2F;（除）</li>
-<li>%（取余&#x2F;模）</li>
-<li>&#x2F;&#x2F;（整除）</li>
-<li>**（取幂）</li>
+<li>主线程：排队的目的地</li>
+<li>消息队列：排队的地方，等待前往主线程。</li>
+<li>其他进程：包括监听等方式，生成任务后，在消息队列排队。</li>
 </ul>
+</li>
+</ol>
+<h2><span id="细节解释">细节解释</span></h2><h3><span id="异步">异步</span></h3><p>代码在执行的过程中，会遇到一些无法立即处理的任务</p>
+<ul>
+<li>计时完成后需要执行的任务 – <code>setTimeout</code>、<code>setInterval</code></li>
+<li>网络通信完成后需要执行的任务 – <code>XHR</code>、<code>Fetch</code></li>
+<li>用户操作后需要执行的任务 – <code>addEventlistener</code></li>
+</ul>
+<p>如果让渲染主线程等待这些任务的时机达到、就会导致<strong>主线程长期处于“阻塞”的状态</strong>，从而导致浏览器“”卡死“		</p>
+<p><strong>渲染主线程承担着极其重要的工作，无论如何都不能阻塞</strong></p>
+<p>因此，浏览器选择<strong>“异步”</strong>	</p>
+<ol>
+<li>setTimeout -&gt; 交给计时线程</li>
+<li>获取下一个任务执行</li>
+<li>计时任务完成后，将回调函数放入消息队列末尾</li>
+</ol>
+<p>使用异步的方法，渲染主线程永不阻塞</p>
+<blockquote>
+<p><strong>如何理解JS的异步</strong>：</p>
+<p>JS是一门单线程的语言，这是因为它运行在浏览器的渲染主线程中，而渲染主线程只有一个。</p>
+<p>而渲染主线程承担着诸多的工作，渲染页面、执行 JS 都在其中运行。</p>
+<p>如果使用同步的方式，就极有可能导致主线程产生阻塞，从而导致消息队列中的很多其他任务无法得到执行。</p>
+<p>这样一来，一方面会导致繁忙的主线程白白的消耗时间，另一方面导致页面无法及时更新，给用户造成卡死现象。<br>所以浏览器采用异步的方式来避免。具体做法是当某些任务发生时，比如计时器、网络、事件监听，主线程将任务交给其他线程去处理，自身立即结束任务的执行，转而执行后续代码。当其他线程完成时，将事先传递的回调函数包装成任务，加入到消息队列的末尾排队，等待主线程调度执行。</p>
+<p>在这种异步模式下，浏览器永不阻塞，从而最大限度的保证了单线程的流畅运行。</p>
+</blockquote>
+<h3><span id="js为何会阻碍渲染">JS为何会阻碍渲染</span></h3><p>监听任务（函数）执行会产生绘制任务（渲染），绘制完毕才能看到页面更新。如果函数中有延时，则要等延时结束后才会绘制结果。</p>
+<h3><span id="任务有优先级吗">任务有优先级吗</span></h3><p>任务没有优先级，在消息队列中先进先出</p>
+<p>消息队列有优先级</p>
+<p>在chrome中，有（并非只有）以下队列</p>
+<ul>
+<li>延时队列：用于存放计时器到达后的回调任务，优先级“中”</li>
+<li>交互队列：用于存放用户操作 后产生的事件处理任务，优先级“高”</li>
+<li>微队列：用户存放需要最快执行的任务，优先级“最高”</li>
+</ul>
+<blockquote>
+<p>添加任务到微队列的主要方式是使用 <code>Promise</code>、<code>MutationObserver</code></p>
+<p>例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 立即把一个函数添加到微队列</span><br><span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>()<span class="hljs-title function_">then</span>(函数)<br></code></pre></td></tr></table></figure>
+</blockquote>
+<p>小示例:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">1</span>);<br>&#125;,<span class="hljs-number">0</span>);<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">2</span>);<br><span class="hljs-comment">//输出：2 1</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>JS事件循环：</strong></p>
+<p>事件循环又叫做消息循环，是浏览器渲染主线程的工作方式。</p>
+<p>在 Chrome 的源码中，它开启一个不会结束的 for 循环，每次循环从消息队列中取出第一个任务执行，而其他线程只需要在合适的时候将任务加入到队列末尾即可。</p>
+<p>过去把消息队列简单分为宏队列和微队列，这种说法目前已无法满足复杂的浏览器环境，取而代之的是一种更加灵活多变的处理方式。</p>
+<p>根据 W3C 官方的解释，每个任务有不同的类型，同类型的任务必须在同一个队列，不同的任务可以属于不同的队列。不同任务队列有不同的优先级，在一次事件循环中，由浏览器自行决定取哪一个队列的任务。但浏览器必须有一个微队列，微队列的任务一定具有最高的优先级，必须优先调度执行。</p>
+</blockquote>
+<blockquote>
+<p><strong>JS中的计时器能做到精确计时吗</strong>：</p>
+<p>不行，因为:</p>
+<ol>
+<li>计算机硬件没有原子钟，无法做到精确计时</li>
+<li>操作系统的计时函数本身就有少量偏差，由于 JS 的计时器最终调用的是操作系统的函数，也就携带了这些偏差</li>
+<li>按照 W3C 的标准，浏览器实现计时器时，如果嵌套层级超过 5 层，则会带有 4毫秒的最少时间，这样在计时时间少于 4 毫秒时又带来了偏差</li>
+<li><strong>受事件循环的影响，计时器的回调函数只能在主线程空闲时运行，因此又带来了偏差</strong></li>
+</ol>
+</blockquote>
+<p><strong>单线程是异步产生的原因</strong><br><strong>事件循环是异步的实现方式</strong></p>
 
 	</article>
 
 	 
     <div class="kira-post-copyright">
         <strong>本文作者：</strong>zzy<br>
-        <strong>本文链接：</strong><a href="http://周梓煜.com/2024/01/16/python-01-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%8F%98%E9%87%8F/" title="http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;01&#x2F;16&#x2F;python-01-数据类型与变量&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;01&#x2F;16&#x2F;python-01-数据类型与变量&#x2F;</a><br>
+        <strong>本文链接：</strong><a href="http://周梓煜.com/2024/01/22/web%E5%89%8D%E7%AB%AF-1.%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" title="http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;01&#x2F;22&#x2F;web前端-1.事件循环&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;01&#x2F;22&#x2F;web前端-1.事件循环&#x2F;</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
         
@@ -531,21 +532,15 @@
 		<nav class="post-nav">
 			          
 			<!-- 先找到与当前文字相同的目录 -->
-			                  
+			                        
 			<!-- 在找到当前文章所在的 index -->
-			                    
+			                            
 			<!-- 上一篇文章 -->
 			<div class="old">
 				<span>上一章</span>
-				<a href="/2024/01/16/php-04-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"> 04-PHP数据类型</a>
-			</div>
-			       
-			<!-- 下一篇文章 -->
-			<div class="new">
-				<span>下一章</span>
 				<a href="/2024/01/17/python-02-%E5%BA%8F%E5%88%97%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/"> 02-Python序列类型与转义字符</a>
 			</div>
-			                 
+			          
 		</nav>
 	</div>
 	
@@ -554,7 +549,7 @@
 			<a class="kirafont icon-container-fill -link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
 		
 		
-			<a class="kirafont icon-tag-fill -none-link" href="/tags/Python/" rel="tag">Python</a>
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a>
 		
 	</div>
 	
