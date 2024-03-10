@@ -74,7 +74,9 @@
 <script src="/deps/js/APlayer.min.js"></script>
 <script src="/deps/js/Meting.min.js"></script>
 
-	<meta name="generator" content="Hexo 7.0.0"></head>
+	<meta name="generator" content="Hexo 7.0.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
 
 	<body>
 		<div
@@ -107,8 +109,8 @@
 		</a>
 	</div>
 	<div class="kira-count">
-		<div><span>文章</span>20</div>
-		<div><span>标签</span>5</div>
+		<div><span>文章</span>25</div>
+		<div><span>标签</span>6</div>
 		<div><span>分类</span>3</div>
 	</div>
 	<div class="kira-list">
@@ -274,7 +276,7 @@
             <a class="category-list-link" href="/categories/编程/">
               编程
             </a>
-            <span class="category-list-count">9</span>
+            <span class="category-list-count">14</span>
           </li>
         
       </ul>
@@ -285,7 +287,7 @@
 			
 	<div class="kira-widget-wrap">
 		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
-			<a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/PHP/" style="font-size: 16.67px;">PHP</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/python%E4%BD%9C%E4%B8%9A/" style="font-size: 10px;">python作业</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a>
+			<a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/PHP/" style="font-size: 17.5px;">PHP</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/python%E4%BD%9C%E4%B8%9A/" style="font-size: 12.5px;">python作业</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/web%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 15px;">web工程化</a>
 		</div>
 		
 	</div>
@@ -392,10 +394,32 @@
 		
 		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
 			<a><i class="kirafont icon-calendar-fill"></i>2024年03月02日</a>
-			<a><i class="kirafont icon-edit-fill"></i>371 字</a>
+			<a><i class="kirafont icon-edit-fill"></i>420 字</a>
 			<a><i class="kirafont icon-time-circle-fill"></i>大概 2 分钟</a>
 		</div>
-		<h2><span id="例1-1">例1-1</span></h2><blockquote>
+		
+        <div id="aplayer-ROVGbBVb" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-ROVGbBVb"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "1-python作业整活",
+              author: "Python作业",
+              url: "/music/百石元 - ピンチ大好き!.mp3",
+              pic: "/image/favicon.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+<h2><span id="例1-1">例1-1</span></h2><blockquote>
 <p> 编写程序，分两行分别打印“Hello World!”和“欢迎使用Python!”。程序保存为example1_1.py。</p>
 </blockquote>
 <ol>
@@ -449,13 +473,19 @@
 		<nav class="post-nav">
 			          
 			<!-- 先找到与当前文字相同的目录 -->
-			                           
+			                                       
 			<!-- 在找到当前文章所在的 index -->
-			                                
+			                                                
 			<!-- 上一篇文章 -->
 			<div class="old">
 				<span>上一章</span>
-				<a href="/2024/01/22/web%E5%89%8D%E7%AB%AF-1.%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/"> web前端-1-事件循环</a>
+				<a href="/2024/02/22/web%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96-3-%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7%E5%92%8C%E8%84%9A%E6%89%8B%E6%9E%B6/"> web前端工程化-3-构建工具和脚手架</a>
+			</div>
+			       
+			<!-- 下一篇文章 -->
+			<div class="new">
+				<span>下一章</span>
+				<a href="/2024/03/05/school-hhw-2-python/"> 2-python作业整活(简洁&amp;小题大做)</a>
 			</div>
 			          
 		</nav>
