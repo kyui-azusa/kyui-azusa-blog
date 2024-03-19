@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html 
+	lang="zh">
+	<head>
+		<script>
+			MathJax = {
+			  tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			  },
+			  svg: {
+				fontCache: 'global'
+			  }
+			};
+		</script>
+		<script type="text/javascript" id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+		</script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 00-Python环境及基本知识 -  zzy</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/image/favicon.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+				
+<link rel="stylesheet" href="/custom.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 7.0.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('/image/blog-bg.jpeg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="zzy">
+        <img
+			src="/image/blog-avatar.jpg"
+			alt="zzy"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a href="/image/blog-avatar.jpg" title="zzy">
+			<img
+				src="/image/blog-avatar.jpg"
+				alt="zzy"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>28</div>
+		<div><span>标签</span>6</div>
+		<div><span>分类</span>3</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://space.bilibili.com/510707180"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1817054005&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/457014708"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/kyui-azusa/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="/null"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+  <div class="kira-widget-wrap">
+    <h3 class="kira-widget-title">分类</h3>
+    <div class="kira-widget">
+      <ul class="category-list">
+        
+        
+
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学分析/">
+              数学分析
+            </a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学词典/">
+              数学词典
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/编程/">
+              编程
+            </a>
+            <span class="category-list-count">17</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/PHP/" style="font-size: 17.5px;">PHP</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/python%E4%BD%9C%E4%B8%9A/" style="font-size: 15px;">python作业</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/web%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 15px;">web工程化</a>
+		</div>
+		
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2024
+		<a href="/">zzy</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+			<a
+				href="https://beian.miit.gov.cn/"
+				target="_blank"
+			>
+				沪ICP备******号
+			</a>
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div
+			class="kira-post-cover"
+			style="padding-bottom: '56.25%'"
+		>
+			<img
+				data-src="/image/blog-bg.jpeg"
+				data-sizes="auto"
+				alt="00-Python环境及基本知识"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>00-Python环境及基本知识</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2024年01月15日</a>
+			<a><i class="kirafont icon-edit-fill"></i>1.6k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 7 分钟</a>
+		</div>
+		
+        <div id="aplayer-ojPMHHtc" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-ojPMHHtc"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "环境及基本知识",
+              author: "Python",
+              url: "/music/BGM-000.mp3",
+              pic: "/image/favicon.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+<blockquote>
+<p> 没想到我会在大一的第二学期学校才要学Python，浅浅做个记录，也希望可以造福一些有缘人。</p>
+</blockquote>
+<h2><span id="python环境">Python环境</span></h2><p>运行python所需的环境,也就是解释器(interpreter),下载后在终端输入<code>python</code>即可进行简单的交互式的运行.</p>
+<p>这里提供<code>3.8.10</code>版本的安装包.</p>
+<h3><span id="download">Download</span></h3><p><a href="/file/py/0/python-3.8.10-amd64.exe" download="python-3.8.10-amd64.exe">Python</a></p>
+<h2><span id="终端cmd窗格">终端（CMD窗格）</span></h2><h3><span id="1-cmd是什么">1. CMD是什么</span></h3><p>cmd是command的缩写，cmd命令是一种命令提示符。</p>
+<h3><span id="2打开方式">2.打开方式</span></h3><ol>
+<li><code>Win</code>+<code>R</code>打开“运行”</li>
+<li>输入<code>CMD</code> （大小写无影响）</li>
+<li><code>ENTER</code>打开或<code>Ctrl</code>+<code>Alt</code>+<code>ENTER</code>以管理员权限打开</li>
+<li>打开的黑框框即为终端（CMD窗格）</li>
+</ol>
+<h3><span id="3终端有什么用怎么用">3.终端有什么用，怎么用</span></h3><ol>
+<li><p><strong>输入命令</strong>，例如：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">shutdown -s -t 300<br></code></pre></td></tr></table></figure>
+<p> 你会发现，定时五分钟的关机就做好了。</p>
+<p> 不想关机也不用怕，继续输入以下代码即可：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">shutdown -a<br></code></pre></td></tr></table></figure>
+<p> 通过这个简单的例子，应该对终端有了初步的认识了</p>
+<p> <code>&lt;命令&gt;</code>+<code>&lt;参数&gt;</code>构成了最基本的命令语句。</p>
+<p> （虽然<code>shutdown</code>在“运行”的界面也可以运行，但是我还解释不清楚，就略过了）</p>
+<p> 然后这些命令，其实是打开了 对应名称的<code>.exe</code>文件。例如<code>shutdown</code>就是打开了<code>shutdown.exe</code>。我最初知道还是我初中拿学校的电脑，十秒关机一万次，给人整崩了——“<code>shutdown.exe</code>无响应”，那时是我最初认识到一些命令的本质。</p>
+<p> 至于这些文件存放在哪里，计算机为什么能找到，答案就在底下的“路径”章节中。</p>
+</li>
+<li><p><strong>执行方法</strong></p>
+<p> 如果常用的指令，例如上述命令，可以创建一个文本文档，写入对应代码，然后保存并关闭，将后缀改为<code>.bat</code>（批处理文件），左键运行即可。</p>
+</li>
+</ol>
+<h2><span id="pip及换源">pip及换源</span></h2><h3><span id="1-pip">1. <code>pip</code></span></h3><p><code>pip</code>是python中可以说是最重要的命令之一了，如果没有<code>pip</code>，使用python的时候就失去了其精髓——导个包先。使用<code>pip</code>可以下载到很多公开的包</p>
+<h3><span id="2-pipexe">2. <code>pip.exe</code></span></h3><p>同上面一致，<code>pip</code>命令其实打开了<code>pip.exe</code>，所以其实也可以说是一个程序。pip是python库的管理工具</p>
+<h3><span id="如何安装">如何安装</span></h3><p>如果安装python时没有取消勾选，一般pip会随python环境的安装附带安装。</p>
+<h3><span id="如何使用">如何使用</span></h3><ol>
+<li><p><strong>安装包：</strong> 通过运行以下命令，你可以使用 <code>pip</code> 安装 Python 包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install package_name<br></code></pre></td></tr></table></figure>
+<p>这将自动下载并安装指定的包。</p>
+</li>
+<li><p><strong>查看已安装的包：</strong> 若要查看已安装的包及其版本，可以运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip list<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>升级包：</strong> 若要升级特定包，可以运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install --upgrade package_name<br></code></pre></td></tr></table></figure>
+<p>或者升级所有已安装的包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip freeze --<span class="hljs-built_in">local</span> | grep -v <span class="hljs-string">&#x27;^\-e&#x27;</span> | <span class="hljs-built_in">cut</span> -d = -f 1  | xargs -n1 pip install -U<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>卸载包：</strong> 若要卸载包，可以运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip uninstall package_name<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>以上内容来自AI，一般只用记住第一条就好了。</p>
+</li>
+</ol>
+<h3><span id="换源">换源</span></h3><ol>
+<li><p>为什么要换源：这其实和用VPN的理由是一样的，但是原理不一样。<code>pip</code>从国外下载包当然速度有时候会很慢，所以需要换源。换源使用了国内的镜像源，速度会大大的提升。</p>
+</li>
+<li><p>临时换源：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install -i &lt;镜像源&gt; &lt;package_name&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>永久换源：（以清华源为例）</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip config <span class="hljs-built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>国内镜像源</strong></p>
+<ol>
+<li><p><strong>清华大学镜像源：</strong><br> 镜像地址：<a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a></p>
+</li>
+<li><p><strong>阿里云镜像源：</strong><br> 镜像地址：<a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a></p>
+</li>
+<li><p><strong>中国科学技术大学镜像源：</strong><br>镜像地址：<a target="_blank" rel="noopener" href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a></p>
+</li>
+<li><p><strong>豆瓣镜像源</strong><br> 镜像地址：<a target="_blank" rel="noopener" href="https://pypi.douban.com/simple/">https://pypi.douban.com/simple/</a></p>
+</li>
+</ol>
+</li>
+</ol>
+<h2><span id="环境变量与系统变量path">环境变量与系统变量（Path）</span></h2><p>程序在搜索相关程序时,会优先搜索同目录下的程序.除了相同目录,程序不可能遍历整个计算机进行查找,此时会额外进行查找的路径就是Path.</p>
+<h2><span id="路径">路径</span></h2><h3><span id="绝对路径">绝对路径</span></h3><ul>
+<li>从根目录描述到文件的路径</li>
+<li>例如:<code>C:\Users\UserName\Downloads\example.exe</code></li>
+</ul>
+<h3><span id="相对路径">相对路径</span></h3><ul>
+<li>从当前目录找到目标文件的路径</li>
+<li>例如:<code>\example.exe</code></li>
+<li><code>..</code> : 表示上一级目录</li>
+<li><code>.</code> : 表示当前目录</li>
+</ul>
+<h3><span id="pip">pip</span></h3><p>例如<code>pip</code>就是在下载时一般会默认添加到<code>PATH</code>中,所以在使用时直接输入<code>pip</code>即可运行相关操作.</p>
+<h3><span id="优先顺序">优先顺序</span></h3><ol>
+<li>当前目录</li>
+<li>PATH</li>
+</ol>
+<blockquote>
+<p> 如果安装了<code>numpy</code>库,同级目录下又有<code>numpy.py</code>文件,在<code>import numpy</code>会造成导入错误,可以自行尝试.</p>
+</blockquote>
+<h2><span id="包-模块和轮子">包、模块和轮子</span></h2><ol>
+<li><strong>包 (Packages)</strong>:<ul>
+<li>包是一个包含模块和子包的目录，它通常包含一个特殊的<code>__init__.py</code>文件，用于标识该目录是一个Python包。</li>
+<li>包允许将相关的模块组织在一起，使代码更加模块化和结构化。</li>
+<li>您可以使用包来组织大型项目或将代码打包成可供其他人使用的库。</li>
+</ul>
+</li>
+<li><strong>模块 (Modules)</strong>:<ul>
+<li>模块是一个包含Python代码的文件，它可以定义函数、类和变量，也可以执行一些操作。</li>
+<li>每个Python脚本文件都可以被视为一个模块，模块名通常是文件名去除.py扩展名。</li>
+<li>您可以通过导入模块来重用其中定义的代码，并将其用于其他Python脚本中。</li>
+</ul>
+</li>
+<li><strong>轮子 (Wheels)</strong>:<ul>
+<li>轮子是Python包的二进制发行版格式，通常具有.wheel文件扩展名。</li>
+<li>它是一种打包格式，用于安装Python软件包和模块，通常比源码分发更容易安装。</li>
+<li>轮子是为了解决Python包依赖性管理和软件包安装问题而引入的，可以快速、高效地安装Python包，同时可以管理依赖关系和版本。</li>
+</ul>
+</li>
+</ol>
+<h2><span id="编辑器vscode">编辑器（vscode）</span></h2><p>我用的是vscode,真的特别特别好用!特别建议.</p>
+<p>安装好python环境后只要下歌扩展就好.</p>
+<h2><span id="快捷键vscode">快捷键（vscode）</span></h2><ul>
+<li><code>F5</code>: 运行</li>
+<li><code>Ctrl</code>+点击: 查找相关内容定义部分.</li>
+<li><code>Ctrl</code>+<code>P</code>: 查找文件 </li>
+<li><code>Ctrl</code>+<code>Shift</code>+<code>P</code>: 命令面板</li>
+</ul>
+<h2><span id="补充">补充</span></h2><p>以上是我能想到的大部分基本内容了，有其他需要补充的可以联系我来添加，以下是想到的零碎与补充。</p>
+<h2><span id="1-个人习惯">1. 个人习惯</span></h2><h3><span id="头文件">头文件</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#-- codeing=utf-8 --</span><br><span class="hljs-comment">#@Time:2024-**-**</span><br><span class="hljs-comment">#@Author:zzy</span><br><span class="hljs-comment">#@File:example.py</span><br><span class="hljs-comment">#@Software:vscode</span><br></code></pre></td></tr></table></figure>
+
+<h3><span id="分区">分区</span></h3><ol>
+<li>import</li>
+<li>config</li>
+<li>def</li>
+<li>main</li>
+</ol>
+<h3><span id="if-name-x3dx3d-main">if name &#x3D;&#x3D; main</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> name == main:<br>   <span class="hljs-keyword">pass</span><br>   <span class="hljs-comment"># 正文代码</span><br></code></pre></td></tr></table></figure>
+
+
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>zzy<br>
+        <strong>本文链接：</strong><a href="http://周梓煜.com/2024/01/15/python-00-Python%E7%8E%AF%E5%A2%83%E5%8F%8A%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" title="http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;01&#x2F;15&#x2F;python-00-Python环境及基本知识&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;01&#x2F;15&#x2F;python-00-Python环境及基本知识&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			          
+			<!-- 先找到与当前文字相同的目录 -->
+			               
+			<!-- 在找到当前文章所在的 index -->
+			                
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2024/01/14/php-03-PHP%E8%BE%93%E5%87%BA/"> 03-PHP输出</a>
+			</div>
+			       
+			<!-- 下一篇文章 -->
+			<div class="new">
+				<span>下一章</span>
+				<a href="/2024/01/16/php-04-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"> 04-PHP数据类型</a>
+			</div>
+			                                                                                       
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/Python/" rel="tag">Python</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	<div class="giscus"></div>
+  
+    <script src="https://giscus.app/client.js"
+      data-repo="ch1ny/ch1ny.github.io"
+      data-repo-id="R_kgDOHGgizw"
+      data-category="General"
+      data-category-id="DIC_kwDOHGgiz84CU88t"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async  
+    ></script>
+  
+
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>
