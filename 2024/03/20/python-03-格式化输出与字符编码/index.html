@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html 
+	lang="zh">
+	<head>
+		<script>
+			MathJax = {
+			  tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			  },
+			  svg: {
+				fontCache: 'global'
+			  }
+			};
+		</script>
+		<script type="text/javascript" id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+		</script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 03-Python格式化输出与字符编码 -  zzy</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/image/favicon.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+				
+<link rel="stylesheet" href="/custom.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 7.0.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('/image/blog-bg.jpeg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="zzy">
+        <img
+			src="/image/blog-avatar.jpg"
+			alt="zzy"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a href="/image/blog-avatar.jpg" title="zzy">
+			<img
+				src="/image/blog-avatar.jpg"
+				alt="zzy"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>29</div>
+		<div><span>标签</span>6</div>
+		<div><span>分类</span>3</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://space.bilibili.com/510707180"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1817054005&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/457014708"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/kyui-azusa/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="/null"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+  <div class="kira-widget-wrap">
+    <h3 class="kira-widget-title">分类</h3>
+    <div class="kira-widget">
+      <ul class="category-list">
+        
+        
+
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学分析/">
+              数学分析
+            </a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学词典/">
+              数学词典
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/编程/">
+              编程
+            </a>
+            <span class="category-list-count">18</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/PHP/" style="font-size: 16.67px;">PHP</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/python%E4%BD%9C%E4%B8%9A/" style="font-size: 13.33px;">python作业</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/web%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 13.33px;">web工程化</a>
+		</div>
+		
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2024
+		<a href="/">zzy</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+			<a
+				href="https://beian.miit.gov.cn/"
+				target="_blank"
+			>
+				沪ICP备******号
+			</a>
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div
+			class="kira-post-cover"
+			style="padding-bottom: '56.25%'"
+		>
+			<img
+				data-src="/image/blog-bg.jpeg"
+				data-sizes="auto"
+				alt="03-Python格式化输出与字符编码"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>03-Python格式化输出与字符编码</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2024年03月20日</a>
+			<a><i class="kirafont icon-edit-fill"></i>1.8k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 8 分钟</a>
+		</div>
+		<!-- <meting-js
+  server="netease"
+  type="song"
+  id="26629683"
+  mode="circulation"
+  autoplay="true"
+  mutex="true"
+  listmaxheight="340px"
+  preload="auto"
+  theme="#ad7a86">
+</meting-js> -->
+
+
+        <div id="aplayer-KpvWRHhy" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-KpvWRHhy"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "格式化输出与字符编码",
+              author: "Python",
+              url: "/music/BGM-003.mp3",
+              pic: "/image/favicon.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+<h2><span id="数据类型转换">数据类型转换</span></h2><blockquote>
+<p> 在程序开发时.会有涉及到数据之间需要类型转换的时候.</p>
+</blockquote>
+<h3><span id="转换函数">转换函数</span></h3><ul>
+<li><code>int(数据)</code> –&gt; 把数据转为整形</li>
+<li><code>float(数据)</code> –&gt; 把数据转为浮点型</li>
+<li><code>bool(数据)</code> –&gt; 把数据转为布尔型</li>
+<li>如果有值就为True.没有值为False</li>
+<li><code>str(数据) </code>–&gt; 把数据转为字符型</li>
+<li><code>list(数据) </code>–&gt; 把数据转为列表型</li>
+<li><code>tuple(数据)</code> –&gt; 把数据转为元组型</li>
+</ul>
+<h3><span id="input的返回值">input的返回值</span></h3><ul>
+<li><p>用input得到的数据默认都是str</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">num = <span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;example&#x27;</span>)  <br><span class="hljs-built_in">print</span>(num,<span class="hljs-built_in">type</span>(num))<br></code></pre></td></tr></table></figure></li>
+<li><p>如果要实现输入得到的数据为int&#x2F;float:</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">	num = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;example&#x27;</span>) <span class="hljs-comment"># 先输入数据.输入完之后把数据转为int类型</span><br><span class="hljs-built_in">print</span>(num,<span class="hljs-built_in">type</span>(num))<br>num = <span class="hljs-built_in">float</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;example&#x27;</span>)  <span class="hljs-comment"># 先输入数据.输入完之后把数据转为float类型</span><br><span class="hljs-built_in">print</span>(num,<span class="hljs-built_in">type</span>(num))<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>所以在python中给变量命名是,不要用<code>list</code>,<code>int</code>,<code>print</code>,<code>input</code>,<code>type</code>作为变量名.否则会覆盖原来的功能</p>
+<ul>
+<li><p>类型转换之后要重新赋值保存</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">age2 = <span class="hljs-string">&#x27;18&#x27;</span><br><span class="hljs-built_in">int</span>(age2)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(age2)) <span class="hljs-comment"># str</span><br>age2 = <span class="hljs-built_in">int</span>(age2)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(age2)) <span class="hljs-comment"># int</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2><span id="字符串进阶格式化输出">字符串进阶(格式化输出)</span></h2><ul>
+<li>变量混合使用  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">name = <span class="hljs-string">&#x27;zzy&#x27;</span><br>age = <span class="hljs-number">114514</span><br><br><span class="hljs-comment"># print(&#x27;你好.我叫&#x27;+name+&#x27;我今年&#x27;+age+&#x27;岁&#x27;) 报错,int和str不能相加</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;你好.我叫&#x27;</span>+name+<span class="hljs-string">&#x27;我今年&#x27;</span>+<span class="hljs-built_in">str</span>(age)+<span class="hljs-string">&#x27;岁&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;你好.我叫&#x27;</span>+name+<span class="hljs-string">&#x27;我今年&#x27;</span>,age,<span class="hljs-string">&#x27;岁&#x27;</span>,sep=<span class="hljs-string">&#x27;&#x27;</span>)<br></code></pre></td></tr></table></figure></li>
+</ul>
+<blockquote>
+<p>在以后的编码过程中.经常会遇到字符串和变量,数值一起使用的情况.<br>但如果变量不是纯字符.而是其他类型的数据.拼接就会报错<br>所以这时候就需要格式化输出</p>
+</blockquote>
+<h3><span id="格式化输出">格式化输出</span></h3><p><strong>用起来更方便更舒服的输出方式</strong></p>
+<ol>
+<li>可以更方便的输出带有变量的数据</li>
+<li>可以更方便的输出固定格式的数据</li>
+</ol>
+<blockquote>
+<p>尊敬的XX您好.您X月的账单已经发送.您使用话费共XXX元,流量共XX元.</p>
+</blockquote>
+<ol>
+<li><p><strong>字符串拼接</strong></p>
+<p> 字符串与字符串直接用<code>+</code>进行拼接<br> <code>str</code>+ <code>str</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;114&#x27;</span>+<span class="hljs-string">&#x27;514&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;我是&#x27;</span>+name)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>f-str</strong></p>
+<ul>
+<li><p>比较简单粗暴好用的输出方式</p>
+</li>
+<li><p>语法: </p>
+<ol>
+<li>在字符串前加f&#x2F;F.</li>
+<li>在字符串里把要输出的变量用大括号{}包裹起来:<code>f&#39;.*?&#123;变量&#125;.*?&#39; </code> *其中<code>.*?</code>指代一切其他字符</li>
+</ol>
+<p>	</p>
+</li>
+<li><p>例:</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;大家好.我是<span class="hljs-subst">&#123;name&#125;</span>我今年<span class="hljs-subst">&#123;age&#125;</span>岁&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;大家好.我是<span class="hljs-subst">&#123;name[<span class="hljs-number">1</span>]&#125;</span>我今年<span class="hljs-subst">&#123;age+<span class="hljs-number">1919810</span>&#125;</span>岁&#x27;</span>)<br></code></pre></td></tr></table></figure></li>
+<li><p>大括号里的数据是可以操作的. 可以进行数值运算.序列类型的索引切片</p>
+</li>
+</ul>
+</li>
+<li><p><strong>占位符</strong></p>
+<ul>
+<li><p>占位符:先占个位置,后续再用具体的数据来顶上</p>
+<ul>
+<li>形参:没有具体的值,只是先占个位置</li>
+<li>实参:有具体的值,运行时会取代形参</li>
+</ul>
+</li>
+<li><p><code>%d</code> &#x3D; 整数形参</p>
+</li>
+<li><p><code>%s</code> &#x3D; 字符串形参</p>
+</li>
+<li><p><code>%f</code> &#x3D; 浮点数形参(默认是带6个小数)</p>
+<ul>
+<li><code>%.xf</code>:小数点后x位</li>
+<li><code>%.2f</code>:小数点后2位</li>
+</ul>
+</li>
+<li><p>语法:</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&#x27;xxx%dxxx&#x27;</span>%数据<br><span class="hljs-string">&#x27;xxx%sxxx%d&#x27;</span>%(数据<span class="hljs-number">1</span>,数据<span class="hljs-number">2</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;我是%s&#x27;</span>%name)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;我是%s 我今年%d岁&#x27;</span>%(name,age))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;我是%s 我今年%d岁 还有几天发工资.我还剩%f元&#x27;</span>%(name,age,<span class="hljs-number">168.5</span>))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;我是%s 我今年%d岁 还有几天发工资.我还剩%.2f元&#x27;</span>%(name,age,<span class="hljs-number">520.25</span>))<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>format</strong></p>
+<ul>
+<li><p>用法是结合了占位符,f-str. 它先用<code>&#123;&#125;</code>大括号作为占位符.在字符串后通过<code>.format</code>传递数据</p>
+</li>
+<li><p>语法:</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&#x27;xxx&#123;&#125;xxx&#x27;</span>.<span class="hljs-built_in">format</span>(数据)<br><span class="hljs-string">&#x27;xxxx&#123;&#125;xxx&#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(数据<span class="hljs-number">1</span>,数据<span class="hljs-number">2</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;你好,我是&#123;&#125;,我今年&#123;&#125;岁&#x27;</span>.<span class="hljs-built_in">format</span>(name,age))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;我是&#123;&#125;.今天是&#123;&#125;我在马路边捡了&#123;&#125;元&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-string">&#x27;name&#x27;</span>,<span class="hljs-string">&#x27;day3&#x27;</span>,<span class="hljs-number">1145</span>))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;我是&#123;&#125;.今天是&#123;&#125;我在马路边捡了&#123;&#125;元&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-number">1145</span>,<span class="hljs-string">&#x27;name&#x27;</span>,<span class="hljs-string">&#x27;day3&#x27;</span>))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;我是&#123;1&#125;.今天是&#123;2&#125;我在马路边捡了&#123;0&#125;元&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-number">1145</span>,<span class="hljs-string">&#x27;name&#x27;</span>,<span class="hljs-string">&#x27;day3&#x27;</span>))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;我是&#123;&#125;[1].今天是&#123;&#125;[2]我在马路边捡了&#123;&#125;[0]元&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-number">1145</span>,<span class="hljs-string">&#x27;name&#x27;</span>,<span class="hljs-string">&#x27;day3&#x27;</span>))<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>要简单粗暴写f-str<br>要极致功能写format</p>
+</blockquote>
+</li>
+<li><p>补充</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">names = [<span class="hljs-string">&#x27;Yui&#x27;</span>,<span class="hljs-string">&#x27;Mio&#x27;</span>,<span class="hljs-string">&#x27;Ritsu&#x27;</span>,<span class="hljs-string">&#x27;Mugi&#x27;</span>,<span class="hljs-string">&#x27;Azusa&#x27;</span>]<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> names:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">        わだし&#123;1&#125;です</span><br><span class="hljs-string">        &#123;0&#125;だいすき!</span><br><span class="hljs-string">        &#x27;&#x27;&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-string">&#x27;kon&#x27;</span>,i))<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">如果format里面一个数据要反复使用.写上对应的下标就可以了.不用反复传数据<br><br><br>## 字符编码<br>	计算机最底层只能识别0和1. 那么这些01是怎么变成我们看的字,图片,视频???<br>	计算机底层有一个用来的翻译的字典(字符集/字符编码).里面就有基本的字. 如果你要显示的字,字典里没有,那就是乱码<br>	<br>	编程语言诞生之后,推行出来的第一套字符编码叫ascii码.里面收纳了一些符号,数字,字母 --&gt; 没有中文,其他语言<br>		1995年 --&gt; 国内推行出GBK编码 --&gt; 有两万多个汉字<br>		中国台湾 --&gt; BIG5, 大五码. 繁体字<br>	<br>	每个国家如果都用自己国家的编码,不利于对外交流<br>	有个组织,专门收集了世界上大部分国家的语言文字.汇总做了一个大的字典并推行使用. 现在大部分国家都是统一用这个字典,避免乱码的情况 --&gt; utf-8<br>	<br>	核心点:<br>		计算机的所有文字,都有一个对应的编号<br>		目前世界上最主流的编码是 utf-8<br>		一个程序用什么编码写的,就用什么编码去读取它.否则出问题<br>	<br>	ord(字符) --&gt; 通过字符,找到序号<br>	chr(序号) --&gt; 通过序号,找到字符<br>	<br>	encode --&gt; 对数据进行转码 --&gt; 爬虫的时候会用到<br><br>## 运算符<br>	运算符指的是在程序运行过程中有特别功能的符号<br>		算术运算加减乘除<br>		赋值运算各种赋值<br><br>![](算术运算符.png)<br>![](比较运算符.png)<br>![](赋值运算符.png)<br>![](逻辑运算符.png)<br><br>	在python中.一个等号是用来赋值的.两个等号才是判断是否相等<br>		==  是否相等<br>		!=   是否不相等<br>	<br>	赋值运算:<br>		age = 18<br>		age + 1 # 这样只是单纯+1,没保存<br>		age += 1  # 等价于 age = age + 1 <br>		print(age)<br>	<br>	逻辑运算符:<br>		and --&gt; &#x27;和&#x27; 当有多个条件时,都满足才为真 --&gt; 有车和有房<br>		or --&gt; &#x27;或&#x27;  当有多个条件时,满足一个就为真 --&gt; 180以上 或 八块腹肌<br>		not --&gt;  非.    杠精.什么东西都和你反着来<br>	<br>	成员运算符:<br>		in:  判断数据,是不是在里面<br>			1 in [1,2,3]   # True 列表里面有这个值<br>			70 in (520,123,66,99) # False 元组里面没有这个值<br>	<br>		not in:   判断数据,是不是不在里面<br>			1 not in [1,2,3] # False 列表里有这个值<br>			70 not in (520,123,66,99) # True 元组里是没有这个值	<br><br><br></code></pre></td></tr></table></figure>
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>zzy<br>
+        <strong>本文链接：</strong><a href="http://周梓煜.com/2024/03/20/python-03-%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA%E4%B8%8E%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/" title="http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;03&#x2F;20&#x2F;python-03-格式化输出与字符编码&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;03&#x2F;20&#x2F;python-03-格式化输出与字符编码&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			          
+			<!-- 先找到与当前文字相同的目录 -->
+			                                                      
+			<!-- 在找到当前文章所在的 index -->
+			                                                                    
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2024/03/19/school-hhw-4-python/"> 4-python作业整活(代码分享)</a>
+			</div>
+			          
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/Python/" rel="tag">Python</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	<div class="giscus"></div>
+  
+    <script src="https://giscus.app/client.js"
+      data-repo="ch1ny/ch1ny.github.io"
+      data-repo-id="R_kgDOHGgizw"
+      data-category="General"
+      data-category-id="DIC_kwDOHGgiz84CU88t"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async  
+    ></script>
+  
+
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>
