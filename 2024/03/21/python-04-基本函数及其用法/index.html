@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html 
+	lang="zh">
+	<head>
+		<script>
+			MathJax = {
+			  tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			  },
+			  svg: {
+				fontCache: 'global'
+			  }
+			};
+		</script>
+		<script type="text/javascript" id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+		</script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 04-Python基本函数及其用法 -  zzy</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/image/favicon.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+				
+<link rel="stylesheet" href="/custom.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 7.0.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('/image/blog-bg.jpeg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="zzy">
+        <img
+			src="/image/blog-avatar.jpg"
+			alt="zzy"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a href="/image/blog-avatar.jpg" title="zzy">
+			<img
+				src="/image/blog-avatar.jpg"
+				alt="zzy"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>31</div>
+		<div><span>标签</span>6</div>
+		<div><span>分类</span>3</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://space.bilibili.com/510707180"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1817054005&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/457014708"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/kyui-azusa/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="/null"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+  <div class="kira-widget-wrap">
+    <h3 class="kira-widget-title">分类</h3>
+    <div class="kira-widget">
+      <ul class="category-list">
+        
+        
+
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学分析/">
+              数学分析
+            </a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学词典/">
+              数学词典
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/编程/">
+              编程
+            </a>
+            <span class="category-list-count">20</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/python%E4%BD%9C%E4%B8%9A/" style="font-size: 12.5px;">python作业</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/web%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 12.5px;">web工程化</a>
+		</div>
+		
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2024
+		<a href="/">zzy</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+			<a
+				href="https://beian.miit.gov.cn/"
+				target="_blank"
+			>
+				沪ICP备******号
+			</a>
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div
+			class="kira-post-cover"
+			style="padding-bottom: '56.25%'"
+		>
+			<img
+				data-src="/image/blog-bg.jpeg"
+				data-sizes="auto"
+				alt="04-Python基本函数及其用法"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>04-Python基本函数及其用法</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2024年03月21日</a>
+			<a><i class="kirafont icon-edit-fill"></i>1k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 5 分钟</a>
+		</div>
+		<!-- <meting-js
+  server="netease"
+  type="song"
+  id="26629683"
+  mode="circulation"
+  autoplay="true"
+  mutex="true"
+  listmaxheight="340px"
+  preload="auto"
+  theme="#ad7a86">
+</meting-js> -->
+
+
+        <div id="aplayer-rYgaDRvb" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-rYgaDRvb"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "基本函数及其用法",
+              author: "Python",
+              url: "/music/BGM-004.mp3",
+              pic: "/image/favicon.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+<h2><span id="print">print</span></h2><blockquote>
+<p>print是输出函数.作用就是输出一段内容.</p>
+</blockquote>
+<h3><span id="1-源码">1. 源码</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@overload</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">print</span>(<span class="hljs-params"></span><br><span class="hljs-params">    *values: <span class="hljs-built_in">object</span>,</span><br><span class="hljs-params">    sep: <span class="hljs-built_in">str</span> | <span class="hljs-literal">None</span> = <span class="hljs-string">&quot; &quot;</span>,</span><br><span class="hljs-params">    end: <span class="hljs-built_in">str</span> | <span class="hljs-literal">None</span> = <span class="hljs-string">&quot;\n&quot;</span>,</span><br><span class="hljs-params">    file: SupportsWrite[<span class="hljs-built_in">str</span>] | <span class="hljs-literal">None</span> = <span class="hljs-literal">None</span>,</span><br><span class="hljs-params">    flush: <span class="hljs-type">Literal</span>[<span class="hljs-literal">False</span>] = <span class="hljs-literal">False</span>,</span><br><span class="hljs-params"></span>) -&gt; <span class="hljs-literal">None</span>: ...<br><span class="hljs-meta">@overload</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">print</span>(<span class="hljs-params"></span><br><span class="hljs-params">    *values: <span class="hljs-built_in">object</span>, sep: <span class="hljs-built_in">str</span> | <span class="hljs-literal">None</span> = <span class="hljs-string">&quot; &quot;</span>, end: <span class="hljs-built_in">str</span> | <span class="hljs-literal">None</span> = <span class="hljs-string">&quot;\n&quot;</span>, file: _SupportsWriteAndFlush[<span class="hljs-built_in">str</span>] | <span class="hljs-literal">None</span> = <span class="hljs-literal">None</span>, flush: <span class="hljs-built_in">bool</span></span><br><span class="hljs-params"></span>) -&gt; <span class="hljs-literal">None</span>: ...<br></code></pre></td></tr></table></figure>
+
+<h3><span id="2-语法">2. 语法</span></h3><ol>
+<li><p><code>print(&lt;参数1&gt;,&lt;参数2&gt;)</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;zzy&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-number">114514</span>)<br><span class="hljs-comment"># output: zzy</span><br><span class="hljs-comment"># output: 114514</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>print(&lt;输出内容&gt;, sep=&#39; &#39;, end = &#39;\n&#39;, file = None)</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-number">123</span>,<span class="hljs-number">456</span>, sep = <span class="hljs-string">&#x27;&#x27;</span>, end = <span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-number">789</span>)<br><span class="hljs-comment"># output: 123456789</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="3-源码解析">3. 源码解析</span></h3><ol>
+<li><p><strong>@overload</strong></p>
+<p> <code>@overload</code>是Python的装饰器,它的作用是声明函数的重载.它可以用来为函数定义不同的签名(即参数列表),从而在不同的情况下调用不同的代码.详见后续装饰器的章节</p>
+</li>
+<li><p><strong>values</strong></p>
+<p> <code>*values: object</code>:</p>
+<ul>
+<li><code>*values</code>: 参数名,可变长度参数,通常以<code>*</code>开头,把收集到的参数打包为一个元组(Tuple),这里是打包为一个名为<code>value</code>的元组.</li>
+<li><code>object</code>: 类型注解,指定了参数的类型.<code>object</code> 表示接受的参数类型是任意的</li>
+</ul>
+</li>
+<li><p><strong>sep</strong></p>
+<p> <code>sep: str | None = &quot; &quot;</code>: </p>
+<ul>
+<li><code>sep</code>: 表示输出时的分隔符.</li>
+<li><code>str | None</code>: 类型注解,表示可以是字符串类型或者 <code>None</code> 类型.</li>
+<li><code>&quot; &quot;</code>: 默认值.一个空格字符串 <code>&quot; &quot;</code>.</li>
+</ul>
+</li>
+<li><p><strong>end</strong></p>
+<p> <code>end: str | None = &quot;\n&quot;</code>:</p>
+<ul>
+<li><code>end</code>: 参数名,表示输出结束时要附加的字符串.</li>
+<li><code>str | None</code>: 类型注解,表示可以是字符串类型或者 <code>None</code> 类型.</li>
+<li><code>&quot;\n&quot;</code>: 默认值.换行符 <code>&quot;\n&quot;</code>.</li>
+</ul>
+</li>
+<li><p><strong>file</strong></p>
+<p> <code>file: SupportsWrite[str] | None = None</code>: </p>
+<ul>
+<li><code>file</code>:参数名,表示输出的目标文件对象.</li>
+<li><code>SupportsWrite[str] | None</code>: 类型注解,表示可以是支持写入操作的文件对象或者 <code>None</code> 类型.</li>
+<li><code>None</code>: 默认值,表示输出到标准输出流.</li>
+</ul>
+</li>
+<li><p><strong>flush</strong></p>
+<p> <code>flush: Literal[False] = False</code>:</p>
+<ul>
+<li><code>flush</code>: 参数名,表示是否立即刷新输出缓冲区.</li>
+<li><code>Literal[False]</code>: 类型注解,表示只能取值为 <code>False</code>, 不能为其他值.</li>
+<li><code>False</code>: 默认值.</li>
+</ul>
+</li>
+<li><p><code> print() -&gt; None: ...</code></p>
+<ul>
+<li>返回值类型注解为 <code>None</code>,表示该函数不返回任何值.</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>对参数的类型注解和默认值,稍加拆解可能会更加清晰些</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun</span>(<span class="hljs-params">param1:<span class="hljs-built_in">str</span>,param2:<span class="hljs-built_in">int</span>|<span class="hljs-built_in">float</span></span>):<br>    <span class="hljs-keyword">pass</span><br><span class="hljs-comment"># 表示参数1要求接收的数据类型为str,参数2要求接收的数据类型为int或是float,其他类型可能会报错</span><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun</span>(<span class="hljs-params">param1=<span class="hljs-number">1</span></span>):<br>    <span class="hljs-keyword">pass</span><br><span class="hljs-comment"># 表示参数的默认值为 1</span><br><br><span class="hljs-comment"># 因此以sep为例</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">print</span>(<span class="hljs-params">sep: <span class="hljs-built_in">str</span> | <span class="hljs-literal">None</span> = <span class="hljs-string">&quot; &quot;</span></span>):<br>    <span class="hljs-keyword">pass</span><br><span class="hljs-comment"># 可以分段拆分理解</span><br><span class="hljs-comment"># sep: str | None</span><br><span class="hljs-comment"># sep = &quot; &quot;</span><br><span class="hljs-comment"># 合并,即,类型注解为str | None,默认值为&quot; &quot;,</span><br><span class="hljs-comment"># 而不是当sep取值为None的时候,sep取默认值&quot; &quot;</span><br><span class="hljs-comment"># 因此</span><br><span class="hljs-comment"># sep: str | None = &quot; &quot; 与 sep: None | str = &quot; &quot; 这两种写法完全等价</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<h3><span id="案例">案例</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">mystr1 = <span class="hljs-string">&#x27;内容1&#x27;</span><br>mystr2 = <span class="hljs-string">&#x27;内容2&#x27;</span><br>sep = <span class="hljs-string">&#x27;分隔&#x27;</span><br>end = <span class="hljs-string">&#x27;结尾&#x27;</span><br>file = <span class="hljs-string">&#x27;.\\example.txt&#x27;</span><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(file, <span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>	<span class="hljs-built_in">print</span>(mystr1,mystr2,sep=sep,end=end,file=f)<br></code></pre></td></tr></table></figure>
+
+<h2><span id="range">range</span></h2><blockquote>
+<p>range() 可以表示一个数值的范围.<br>结合in.可以做一个简单的数值范围判断</p>
+</blockquote>
+<h3><span id="源码">源码</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@final</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">range</span>(<span class="hljs-type">Sequence</span>[<span class="hljs-built_in">int</span>]):<br><span class="hljs-meta">    @property</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">start</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">int</span>: ...<br><span class="hljs-meta">    @property</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">stop</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">int</span>: ...<br><span class="hljs-meta">    @property</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">step</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">int</span>: ...<br><span class="hljs-meta">    @overload</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__new__</span>(<span class="hljs-params">cls, __stop: SupportsIndex</span>) -&gt; Self: ...<br><span class="hljs-meta">    @overload</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__new__</span>(<span class="hljs-params">cls, __start: SupportsIndex, __stop: SupportsIndex, __step: SupportsIndex = ...</span>) -&gt; Self: ...<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">count</span>(<span class="hljs-params">self, __value: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">int</span>: ...<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">index</span>(<span class="hljs-params">self, __value: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">int</span>: ...  <span class="hljs-comment"># type: ignore[override]</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__len__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">int</span>: ...<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__eq__</span>(<span class="hljs-params">self, __value: <span class="hljs-built_in">object</span></span>) -&gt; <span class="hljs-built_in">bool</span>: ...<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__hash__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">int</span>: ...<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__contains__</span>(<span class="hljs-params">self, __key: <span class="hljs-built_in">object</span></span>) -&gt; <span class="hljs-built_in">bool</span>: ...<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__iter__</span>(<span class="hljs-params">self</span>) -&gt; Iterator[<span class="hljs-built_in">int</span>]: ...<br><span class="hljs-meta">    @overload</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__getitem__</span>(<span class="hljs-params">self, __key: SupportsIndex</span>) -&gt; <span class="hljs-built_in">int</span>: ...<br><span class="hljs-meta">    @overload</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__getitem__</span>(<span class="hljs-params">self, __key: <span class="hljs-built_in">slice</span></span>) -&gt; <span class="hljs-built_in">range</span>: ...<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__reversed__</span>(<span class="hljs-params">self</span>) -&gt; Iterator[<span class="hljs-built_in">int</span>]: ...<br></code></pre></td></tr></table></figure>
+
+<h3><span id="源码解析">源码解析:</span></h3><p>看不懂,略()</p>
+<h3><span id="语法">语法</span></h3><p><code>range(start, stop[, step])</code></p>
+<h3><span id="参数说明">参数说明</span></h3><ul>
+<li>**start (可选)**：序列的起始数字。默认值为0。</li>
+<li><strong>stop</strong>：序列的结束数字，但不包括在内。<code>range()</code> 会生成从 <code>start</code> 到 <code>stop-1</code> 的整数序列。</li>
+<li>**step (可选)**：两个数之间的差（步长）。默认值为1。</li>
+</ul>
+<h3><span id="返回值">返回值</span></h3><p><code>range()</code> 函数返回一个 <code>range</code> 对象，该对象是一个迭代器，可以生成一系列整数。</p>
+<h2><span id="input">input</span></h2><h3><span id="源码">源码</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">input</span>(<span class="hljs-params">__prompt: <span class="hljs-built_in">object</span> = <span class="hljs-string">&quot;&quot;</span></span>) -&gt; <span class="hljs-built_in">str</span>: ...<br></code></pre></td></tr></table></figure>
+
+<h3><span id="参数">参数</span></h3><ul>
+<li><code>__prompt</code>: 输入的内容吗</li>
+</ul>
+<h3><span id="返回值">返回值</span></h3><p>字符串</p>
+<h2><span id="import">import</span></h2><h2><span id="open">open</span></h2>
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>zzy<br>
+        <strong>本文链接：</strong><a href="http://周梓煜.com/2024/03/21/python-04-%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E7%94%A8%E6%B3%95/" title="http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;03&#x2F;21&#x2F;python-04-基本函数及其用法&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;03&#x2F;21&#x2F;python-04-基本函数及其用法&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			          
+			<!-- 先找到与当前文字相同的目录 -->
+			                                                         
+			<!-- 在找到当前文章所在的 index -->
+			                                                                        
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2024/03/20/python-03-%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA%E4%B8%8E%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/"> 03-Python格式化输出与字符编码</a>
+			</div>
+			       
+			<!-- 下一篇文章 -->
+			<div class="new">
+				<span>下一章</span>
+				<a href="/2024/03/22/python-05-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/"> 05-Python流程控制语句</a>
+			</div>
+			          
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/Python/" rel="tag">Python</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	<div class="giscus"></div>
+  
+    <script src="https://giscus.app/client.js"
+      data-repo="ch1ny/ch1ny.github.io"
+      data-repo-id="R_kgDOHGgizw"
+      data-category="General"
+      data-category-id="DIC_kwDOHGgiz84CU88t"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async  
+    ></script>
+  
+
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>
