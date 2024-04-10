@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html 
+	lang="zh">
+	<head>
+		<script>
+			MathJax = {
+			  tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			  },
+			  svg: {
+				fontCache: 'global'
+			  }
+			};
+		</script>
+		<script type="text/javascript" id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+		</script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 06-Python序列类型方法 -  zzy</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/image/favicon.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+				
+<link rel="stylesheet" href="/custom.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 7.0.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('/image/blog-bg.jpeg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="zzy">
+        <img
+			src="/image/blog-avatar.jpg"
+			alt="zzy"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a href="/image/blog-avatar.jpg" title="zzy">
+			<img
+				src="/image/blog-avatar.jpg"
+				alt="zzy"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>36</div>
+		<div><span>标签</span>7</div>
+		<div><span>分类</span>3</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://space.bilibili.com/510707180"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1817054005&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/457014708"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/kyui-azusa/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="/null"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+  <div class="kira-widget-wrap">
+    <h3 class="kira-widget-title">分类</h3>
+    <div class="kira-widget">
+      <ul class="category-list">
+        
+        
+
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学分析/">
+              数学分析
+            </a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学词典/">
+              数学词典
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/编程/">
+              编程
+            </a>
+            <span class="category-list-count">25</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/python%E4%BD%9C%E4%B8%9A/" style="font-size: 17.5px;">python作业</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/web%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 12.5px;">web工程化</a> <a href="/tags/%E6%91%A9%E5%B0%94%E5%8B%87%E5%A3%AB/" style="font-size: 10px;">摩尔勇士</a>
+		</div>
+		
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2024
+		<a href="/">zzy</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+			<a
+				href="https://beian.miit.gov.cn/"
+				target="_blank"
+			>
+				沪ICP备******号
+			</a>
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div
+			class="kira-post-cover"
+			style="padding-bottom: '56.25%'"
+		>
+			<img
+				data-src="/image/blog-bg.jpeg"
+				data-sizes="auto"
+				alt="06-Python序列类型方法"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>06-Python序列类型方法</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2024年04月10日</a>
+			<a><i class="kirafont icon-edit-fill"></i>1.7k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 7 分钟</a>
+		</div>
+		<!-- <meting-js
+  server="netease"
+  type="song"
+  id="26629683"
+  mode="circulation"
+  autoplay="true"
+  mutex="true"
+  listmaxheight="340px"
+  preload="auto"
+  theme="#ad7a86">
+</meting-js> -->
+
+
+        <div id="aplayer-DrjGkefA" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-DrjGkefA"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "序列类型方法",
+              author: "Python",
+              url: "/music/BGM-005.mp3",
+              pic: "/image/favicon.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+<h2><span id="初识方法">初识方法</span></h2><h3><span id="crud-gt-增删改查"><code>crud</code> –&gt; 增删改查</span></h3><p>从本质出发.我们对数据的所有行为都可以总结为增删改查四个字:</p>
+<ul>
+<li>增加新的数据</li>
+<li>修改原有数据</li>
+<li>查看原有数据</li>
+<li>删除原有数据</li>
+</ul>
+<p>我们在操作序列类型数据的时候,会经常用到增删改查操作.所以python给我们提供了一些内置的功能函数,可以帮助我们更好的对序列类型数据进行增删改查</p>
+<h2><span id="列表方法">列表方法</span></h2><h3><span id="1-定义列表">1. 定义列表</span></h3><ol>
+<li>语法: <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">names = [<span class="hljs-string">&#x27;Python&#x27;</span>,<span class="hljs-string">&#x27;Java&#x27;</span>,<span class="hljs-string">&#x27;PHP&#x27;</span>,<span class="hljs-string">&#x27;C++&#x27;</span>,<span class="hljs-string">&#x27;JavaScript&#x27;</span>,<span class="hljs-string">&#x27;C#&#x27;</span>]<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="增"><strong>增</strong></span></h3><ol>
+<li><p><code>append</code>:</p>
+<p> 追加一个数据,添加一个数据到列表的最后一位</p>
+<p> <code>列表.append(内容)</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">names.append(<span class="hljs-string">&#x27;VB&#x27;</span>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>insert</code>:</p>
+<p> 插入一个数据,在指定的位置上添加一个数据.原数据会被挤到后面<br> <code>列表.insert(下标,内容)</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">names.insert(<span class="hljs-number">0</span>,<span class="hljs-string">&#x27;Ruby&#x27;</span>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>extend</code>:</p>
+<p> 追加一个序列类型,把数据<strong>打散</strong>后再添加<br> <code>列表.extend(序列类型)</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">names.extend(<span class="hljs-string">&#x27;python&#x27;</span>)<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="删"><strong>删</strong></span></h3><ol>
+<li><p><code>pop</code>:</p>
+<p> 删除一个值,默认从最后一位开始删. 也可以指定下标<br> <code>列表.pop()</code><br> <code>列表.pop(0)</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">names.pop()<br>names.pop(<span class="hljs-number">0</span>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>remove</code>:</p>
+<p> 删除一个指定的值,如果有多个重复的数据,就从第一个开始删<br> <code>列表.remove(内容)</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">names.remove(<span class="hljs-string">&#x27;p&#x27;</span>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>clear</code>:</p>
+<p> 清空列表里的所有数据<br> <code>列表.clear()</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">names.clear()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>del</code> </p>
+<ul>
+<li><p>删除数据.</p>
+<ol>
+<li><p>直接删除变量  </p>
+<p> <code>del 变量名</code></p>
+</li>
+<li><p>删除变量里的值<br> <code>del 列表[下标]</code><br> <code>del 列表[起点:终点]</code></p>
+</li>
+</ol>
+</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">del</span> names<br><span class="hljs-keyword">del</span> names[<span class="hljs-number">3</span>]<br><span class="hljs-keyword">del</span> names[<span class="hljs-number">3</span>:<span class="hljs-number">10</span>]<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="改"><strong>改</strong></span></h3><ol>
+<li><p>修改单个值: </p>
+<p> 通过索引修改<br> <code>列表[下标] = 值</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">names[<span class="hljs-number">0</span>] = <span class="hljs-string">&#x27;zzy&#x27;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>修改多个值:</p>
+<p> 通过切片修改<br> <code>列表[起点:终点] = 数据1,数据2,数据3</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">names[<span class="hljs-number">3</span>:<span class="hljs-number">5</span>] = <span class="hljs-string">&#x27;zzy&#x27;</span>,<span class="hljs-string">&#x27;ZZY&#x27;</span>,<span class="hljs-string">&#x27;Zzy&#x27;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="查"><strong>查</strong></span></h3><blockquote>
+<p>查询方法的目的.就是获取查看指定的数据.所以要结合print使用</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">zzy = [<span class="hljs-number">114</span>,<span class="hljs-number">514</span>,<span class="hljs-number">1919</span>,<span class="hljs-number">810</span>,<span class="hljs-literal">True</span>,<span class="hljs-number">1433</span>,<span class="hljs-number">223</span>]<br></code></pre></td></tr></table></figure>
+<ol>
+<li><p>index:<br> 根据内容,获取指定数据的下标<br> <code>列表.index(数据)</code> 默认从下标0开始搜索</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(zzy.index(<span class="hljs-number">114</span>))<br></code></pre></td></tr></table></figure>
+<p> <code>列表.index(数据,起点下标)</code> 从起点下标开始找数据</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(zzy.index(<span class="hljs-number">514</span>,<span class="hljs-number">1</span>))<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>count:<br> 求和.统计这个数据出现过几次<br> <code>列表.count(数据)</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(zzy.count(<span class="hljs-number">1145</span>))<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="排序"><strong>排序</strong></span></h3><p>num &#x3D; [True,114,514,1145,14,19,19,81,0,False]</p>
+<ol>
+<li><code>sort</code>:<br> 对列表内容进行排序. 如果列表里面有字符串是不可以排序<br> <code>列表.sort()</code> 默认是升序排序,从小到大 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">num.sort()<br></code></pre></td></tr></table></figure>
+ <code>列表.sort(reverse = True)</code> 降序排序.从大到小 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">num.sort(reverse = <span class="hljs-literal">True</span>)<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2><span id="元组方法">元组方法</span></h2><blockquote>
+<p>元组和列表的区别就是不能更改,因此增删改查中只有<code>查</code>方法</p>
+</blockquote>
+<h3><span id="查"><strong>查</strong></span></h3><blockquote>
+<p>查询方法的目的.就是获取查看指定的数据.所以要结合print使用</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">zzy = (<span class="hljs-number">114</span>,<span class="hljs-number">514</span>,<span class="hljs-number">1919</span>,<span class="hljs-number">810</span>,<span class="hljs-literal">True</span>,<span class="hljs-number">1433</span>,<span class="hljs-number">223</span>)<br></code></pre></td></tr></table></figure>
+<ol>
+<li><p>index:<br> 根据内容,获取指定数据的下标<br> <code>列表.index(数据)</code> 默认从下标0开始搜索</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(zzy.index(<span class="hljs-number">114</span>)).<br></code></pre></td></tr></table></figure>
+<p> <code>列表.index(数据,起点下标)</code> 从起点下标开始找数据</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(zzy.index(<span class="hljs-number">514</span>,<span class="hljs-number">1</span>))<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>count:<br> 求和.统计这个数据出现过几次<br> <code>列表.count(数据)</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(zzy.count(<span class="hljs-number">1145</span>))<span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>有没有很熟悉?<br>没错,就是复制的列表的<code>查</code>的部分.</p>
+</blockquote>
+</li>
+</ol>
+<h2><span id="字符串方法">字符串方法</span></h2><blockquote>
+<p>字符串里的数据是不可以修改的,只能将修改的数据重新赋值<br>但是字符串也是有对应的增删改查操作.只不过执行之后不会改变字符串原来的值.<br>相当于展示它如果改变了会怎样,但没有改变变量的内容<br>如果要使用改变的结果,要结合重新赋值&#x2F;输出print使用</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">talk = <span class="hljs-string">&#x27;干什么? 你找我是有什么事情吗?&#x27;</span><br></code></pre></td></tr></table></figure>
+
+
+        <div id="aplayer-pJJfOqQY" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-pJJfOqQY"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "talk",
+              author: "Python",
+              url: "/file/py/6/干什么你找我是有什么事情吗.wav",
+              pic: "/file/py/6/icon.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+<h3><span id="增"><strong>增</strong></span></h3><ol>
+<li>字符串没有专门的增加方法.一般是直接拼接<br> <code>print(字符串+字符串)</code> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(talk+<span class="hljs-string">&#x27;我很忙的哦!&#x27;</span>)<br></code></pre></td></tr></table></figure>
+ 
+        <div id="aplayer-PlZmXyoo" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-PlZmXyoo"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "talk+'我很忙的哦!'",
+              author: "Python",
+              url: "/file/py/6/我靠,干什么 你找我,是有什么事情妈我很忙的哦!.wav",
+              pic: "/file/py/6/icon.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script></li>
+</ol>
+<h3><span id="删"><strong>删</strong></span></h3><ol>
+<li>replace:<br> 替换方法, 能删,能增,也能改<br> <code>字符串.replace(&#39;要删除的值&#39;,&#39;&#39;)</code>  把你要删的字.改为空 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(talk.replace(<span class="hljs-string">&#x27;事情&#x27;</span>,<span class="hljs-string">&#x27;&#x27;</span>))<br></code></pre></td></tr></table></figure>
+ <code>字符串.replace(&#39;要修改的值&#39;,&#39;新的值&#39;)</code> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(talk.replace(<span class="hljs-string">&#x27;事情&#x27;</span>,<span class="hljs-string">&#x27;问题&#x27;</span>))<br></code></pre></td></tr></table></figure>
+ <code>字符串.replace(&#39;要修改的值&#39;,&#39;新的值&#39;,修改次数)</code> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(talk.replace(<span class="hljs-string">&#x27;事情&#x27;</span>,<span class="hljs-number">0</span>))<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="改"><strong>改</strong></span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">talk2 = <span class="hljs-string">&#x27;Hello World&#x27;</span><br></code></pre></td></tr></table></figure>
+<ol>
+<li><p><code>upper</code>:<br> 字符串里的字母全部大写<br> <code>字符串.uppper()</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(talk2.upper())<br></code></pre></td></tr></table></figure></li>
+<li><p><code>lower</code>:<br> 字符串里的字母全部小写<br> <code>字符串.lower()</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(talk2.lower())<br></code></pre></td></tr></table></figure></li>
+<li><p><code>title</code>:<br> 字符串里的单词首字母大写 –&gt; 以空格为标准<br> <code>字符串.title()</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(talk2.title())<br></code></pre></td></tr></table></figure></li>
+<li><p>strip:<br> 去除字符串左右的空格<br> <code>字符串.strip()</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(talk2.strip())<br></code></pre></td></tr></table></figure></li>
+<li><p><code>split</code>:<br> 切分.按照指定的内容. 切分字符串<br> <code>字符串.split(&#39;分割对象&#39;)</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(talk2.split(<span class="hljs-string">&#x27;o&#x27;</span>))<br></code></pre></td></tr></table></figure></li>
+<li><p><code>join</code>:<br> 插入.相当于split反过来.  在序列类型数据之间加上该字符串<br> <code>字符串.join(序列类型数据)</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">name = [<span class="hljs-string">&#x27;小佐和&#x27;</span>,<span class="hljs-string">&#x27;和和&#x27;</span>,<span class="hljs-string">&#x27;和和的朋友&#x27;</span>]<br>a = <span class="hljs-string">&#x27;和&#x27;</span>.join(name)<br><span class="hljs-built_in">print</span>(a)<br></code></pre></td></tr></table></figure>
+<p> 相当于用字符串替代</p>
+</li>
+</ol>
+<h3><span id="查"><strong>查</strong></span></h3><ol>
+<li><p><code>find</code></p>
+<p> 通过内容获取数据的下标<br> <code>字符串.find(&#39;数据&#39;)</code> 默认从下标0开始搜索</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(talk2.find(<span class="hljs-string">&#x27;l&#x27;</span>))<br></code></pre></td></tr></table></figure>
+<p> <code>字符串.find(&#39;数据&#39;,起点下标)</code> 从起点下标开始找数据</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(talk2.find(l,<span class="hljs-number">1</span>)) <span class="hljs-comment"># 从下标1开始,找l</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>index</code></p>
+<p> <code>字符串.index(&#39;数据&#39;,起点下标)</code> 从起点下标开始找数据</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(talk2.index(l,<span class="hljs-number">1</span>)) <span class="hljs-comment"># 从下标1开始,找l</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>find()</code> 没有找到返回-1 <code>index()</code>没有找到哦啊报错</p>
+</blockquote>
+</li>
+<li><p><code>count</code>: </p>
+<p> 求和. 统计这个数据出现过几次</p>
+</li>
+</ol>
+<p><code>字符串.count(&#39;数据&#39;)</code></p>
+<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(talk2.count(<span class="hljs-string">&#x27;l&#x27;</span>))<br></code></pre></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li><p><code>isdigit</code>: 判断字符串是否为纯数字. 结果为bool<br> <code>字符串.isdigit()</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">a = <span class="hljs-string">&#x27;1145&#x27;</span><br><span class="hljs-built_in">print</span>(a.isdigit())<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>isalpha</code>: </p>
+<p> 判断字符串是否为纯字符&#x2F;字母. 结果为bool<br> <code>字符串.alpha()</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">b = <span class="hljs-string">&#x27;zzy&#x27;</span><br><span class="hljs-built_in">print</span>(b.isalpha())<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>endswith</code>: </p>
+<p> 判断字符串的后缀,是否为指定字符.结果为bool<br> <code>字符串.endswith(&#39;数据&#39;)</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">c = <span class="hljs-string">&#x27;我下载了一个zip.zip&#x27;</span><br><span class="hljs-built_in">print</span>(c.endswith(<span class="hljs-string">&#x27;rar&#x27;</span>))<br></code></pre></td></tr></table></figure></li>
+</ol>
+
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>zzy<br>
+        <strong>本文链接：</strong><a href="http://周梓煜.com/2024/04/10/python-06-%E5%BA%8F%E5%88%97%E7%B1%BB%E5%9E%8B%E6%96%B9%E6%B3%95/" title="http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;04&#x2F;10&#x2F;python-06-序列类型方法&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;04&#x2F;10&#x2F;python-06-序列类型方法&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			          
+			<!-- 先找到与当前文字相同的目录 -->
+			                                                                           
+			<!-- 在找到当前文章所在的 index -->
+			                                                                                                
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2024/04/09/school-hhw-7-python/"> 7-python作业--极简主义</a>
+			</div>
+			          
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/Python/" rel="tag">Python</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	<div class="giscus"></div>
+  
+    <script src="https://giscus.app/client.js"
+      data-repo="ch1ny/ch1ny.github.io"
+      data-repo-id="R_kgDOHGgizw"
+      data-category="General"
+      data-category-id="DIC_kwDOHGgiz84CU88t"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async  
+    ></script>
+  
+
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>
