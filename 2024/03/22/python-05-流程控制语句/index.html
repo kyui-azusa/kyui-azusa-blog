@@ -109,9 +109,9 @@
 		</a>
 	</div>
 	<div class="kira-count">
-		<div><span>文章</span>39</div>
+		<div><span>文章</span>45</div>
 		<div><span>标签</span>8</div>
-		<div><span>分类</span>3</div>
+		<div><span>分类</span>4</div>
 	</div>
 	<div class="kira-list">
 		
@@ -273,10 +273,17 @@
           </li>
         
           <li class="category-list-item">
+            <a class="category-list-link" href="/categories/概率论/">
+              概率论
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
             <a class="category-list-link" href="/categories/编程/">
               编程
             </a>
-            <span class="category-list-count">28</span>
+            <span class="category-list-count">33</span>
           </li>
         
       </ul>
@@ -410,19 +417,19 @@
 </meting-js> -->
 
 
-        <div id="aplayer-ZlzAjnBa" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-IBRvsfGx" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-ZlzAjnBa"),
+            element: document.getElementById("aplayer-IBRvsfGx"),
             narrow: false,
             autoplay: true,
             showlrc: false,
             music: {
               title: "流程控制语句",
               author: "Python",
-              url: "/music/BGM-004.mp3",
+              url: "/music/BGM-005.mp3",
               pic: "/image/favicon.jpg",
               lrc: ""
             }
@@ -533,11 +540,10 @@
 </ol>
 <p>			</p>
 <h2><span id="break与continue"><code>break</code>与<code>continue</code></span></h2><ul>
-<li><p><code>break</code>:  终止,结束本轮循环</p>
-</li>
-<li><p><code>continue</code>: 跳过.跳过本次循环</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># break 做累了,眠</span><br>num = <span class="hljs-number">1</span><br><span class="hljs-keyword">while</span> num &lt;= <span class="hljs-number">1145</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;这是我做的第<span class="hljs-subst">&#123;num&#125;</span>份作业&#x27;</span>)<br>    num += <span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> num == <span class="hljs-number">114</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;不做了,眠&#x27;</span>)<br>        <span class="hljs-keyword">break</span><br><br><span class="hljs-comment"># continue 偷偷漏做几页作业</span><br>num = <span class="hljs-number">1</span><br><span class="hljs-keyword">while</span> num &lt; <span class="hljs-number">114</span>:<br>    num += <span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> num == <span class="hljs-number">11</span> <span class="hljs-keyword">or</span> num == <span class="hljs-number">45</span> <span class="hljs-keyword">or</span> num == <span class="hljs-number">19</span> <span class="hljs-keyword">or</span> num == <span class="hljs-number">81</span> <span class="hljs-keyword">or</span> num == <span class="hljs-number">114</span>:<br>        <span class="hljs-keyword">continue</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;这是我的第<span class="hljs-subst">&#123;num&#125;</span>页作业&#x27;</span>)<br></code></pre></td></tr></table></figure></li>
+<li><code>break</code>:  终止,结束本轮循环</li>
+<li><code>continue</code>: 跳过.跳过本次循环</li>
 </ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># break 做累了,眠</span><br>num = <span class="hljs-number">1</span><br><span class="hljs-keyword">while</span> num &lt;= <span class="hljs-number">1145</span>:<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;这是我做的第<span class="hljs-subst">&#123;num&#125;</span>份作业&#x27;</span>)<br>num += <span class="hljs-number">1</span><br><span class="hljs-keyword">if</span> num == <span class="hljs-number">114</span>:<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;不做了,眠&#x27;</span>)<br><span class="hljs-keyword">break</span><br><br><span class="hljs-comment"># continue 偷偷漏做几页作业</span><br>num = <span class="hljs-number">1</span><br><span class="hljs-keyword">while</span> num &lt; <span class="hljs-number">114</span>:<br>num += <span class="hljs-number">1</span><br><span class="hljs-keyword">if</span> num == <span class="hljs-number">11</span> <span class="hljs-keyword">or</span> num == <span class="hljs-number">45</span> <span class="hljs-keyword">or</span> num == <span class="hljs-number">19</span> <span class="hljs-keyword">or</span> num == <span class="hljs-number">81</span> <span class="hljs-keyword">or</span> num == <span class="hljs-number">114</span>:<br><span class="hljs-keyword">continue</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;这是我的第<span class="hljs-subst">&#123;num&#125;</span>页作业&#x27;</span>)<br></code></pre></td></tr></table></figure>
 <h3><span id="补充思考">补充思考</span></h3><p><code>break</code>按例子看似没有用,因为如果在第十次循环<code>break</code>,那完全可以直接循环只写十次.</p>
 <p>但实际操作中满足的条件可以是动态的,配合循环的条件更新语句,就有实际意义了.</p>
 <h2><span id="占位符pass">占位符<code>pass</code></span></h2><ul>
@@ -607,7 +613,7 @@
 				<span>下一章</span>
 				<a href="/2024/03/30/school-hhw-5-python/"> 5-python作业(史山分享)</a>
 			</div>
-			                                                               
+			                                                                                                      
 		</nav>
 	</div>
 	
