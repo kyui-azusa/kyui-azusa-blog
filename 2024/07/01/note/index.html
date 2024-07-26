@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html 
+	lang="zh">
+	<head>
+		<script>
+			MathJax = {
+			  tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			  },
+			  svg: {
+				fontCache: 'global'
+			  }
+			};
+		</script>
+		<script type="text/javascript" id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+		</script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 实习Day 1 记录 - SQLAlchemy -  zzy</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/image/favicon.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+				
+<link rel="stylesheet" href="/custom.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+	<meta name="generator" content="Hexo 7.0.0"></head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('/image/blog-bg.jpeg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="zzy">
+        <img
+			src="/image/blog-avatar.jpg"
+			alt="zzy"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a href="/image/blog-avatar.jpg" title="zzy">
+			<img
+				src="/image/blog-avatar.jpg"
+				alt="zzy"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>47</div>
+		<div><span>标签</span>10</div>
+		<div><span>分类</span>4</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://space.bilibili.com/510707180"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1817054005&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/457014708"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/kyui-azusa/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="/null"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+  <div class="kira-widget-wrap">
+    <h3 class="kira-widget-title">分类</h3>
+    <div class="kira-widget">
+      <ul class="category-list">
+        
+        
+
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学分析/">
+              数学分析
+            </a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学词典/">
+              数学词典
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/概率论/">
+              概率论
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/编程/">
+              编程
+            </a>
+            <span class="category-list-count">35</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/ABOUT/" style="font-size: 10px;">ABOUT</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Math/" style="font-size: 18px;">Math</a> <a href="/tags/PHP/" style="font-size: 16px;">PHP</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/python%E4%BD%9C%E4%B8%9A/" style="font-size: 20px;">python作业</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 12px;">web前端</a> <a href="/tags/web%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 14px;">web工程化</a> <a href="/tags/%E6%91%A9%E5%B0%94%E5%8B%87%E5%A3%AB/" style="font-size: 10px;">摩尔勇士</a>
+		</div>
+		
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2024
+		<a href="/">zzy</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+			<a
+				href="https://beian.miit.gov.cn/"
+				target="_blank"
+			>
+				沪ICP备******号
+			</a>
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div
+			class="kira-post-cover"
+			style="padding-bottom: '56.25%'"
+		>
+			<img
+				data-src="/image/blog-bg.jpeg"
+				data-sizes="auto"
+				alt="实习Day 1 记录 - SQLAlchemy"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>实习Day 1 记录 - SQLAlchemy</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2024年07月01日</a>
+			<a><i class="kirafont icon-edit-fill"></i>895 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 4 分钟</a>
+		</div>
+		<h1><span id="sqlalchemy">SQLAlchemy</span></h1><blockquote>
+<p>author: zzy<br>date: 2024-7-1</p>
+</blockquote>
+<h2><span id="数据库结构">数据库结构</span></h2><h3><span id="结构树">结构树</span></h3><ul>
+<li>MetaData(元数据:可看做Table对象目录)<ul>
+<li>Table<ul>
+<li>column</li>
+<li>key</li>
+<li>constraint</li>
+<li>index</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><span id="metadata">MetaData</span></h3><p>保存数据库结构, 把数据库结构结合在一起</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> MetaData<br>metadata = MetaData()<br></code></pre></td></tr></table></figure>
+
+<h3><span id="table">Table</span></h3><p>通过调用Table<strong>构造函数</strong>来初始化<code>Table</code>对象.</p>
+<p>在<strong>构造函数</strong>中提供<code>MetaData</code>对象和<code>表名</code>, 任何其他参数都被认为是列对象, 列对象通过调用<code>Column</code>函数创建.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Table, Column, Integer, Numeric, String, ForeignKey<br><br>cookies = Table(<span class="hljs-string">&#x27;cookies&#x27;</span>, metadata,<br>    Column(<span class="hljs-string">&#x27;cookie_id&#x27;</span>, Interger(), primary_key=<span class="hljs-literal">True</span>),<br>    Column(<span class="hljs-string">&#x27;cookie_name&#x27;</span>, String(<span class="hljs-number">50</span>), index=<span class="hljs-literal">True</span>),<br>    Column(<span class="hljs-string">&#x27;cookie_recipe_url&#x27;</span>, String(<span class="hljs-number">255</span>)),<br>    Column(<span class="hljs-string">&#x27;cookie_sku&#x27;</span>, String(<span class="hljs-number">55</span>)),<br>    Column(<span class="hljs-string">&#x27;quantity&#x27;</span>, Integer()),<br>    Column(<span class="hljs-string">&#x27;unit_cost&#x27;</span>, Numeric(<span class="hljs-number">12</span>, <span class="hljs-number">2</span>)),<br>)<br></code></pre></td></tr></table></figure>
+
+<h3><span id="column">Column</span></h3><p><code>Column(&lt;键名&gt;, &lt;数据类型&gt;, &lt;约束&gt;)</code></p>
+<h3><span id="key-and-constraint">key and constraint</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> PrimaryKeyConsteraint, UniqueConstraint, CheckConstraint<br><br>PrimaryKeyConstraint(<span class="hljs-string">&#x27;user_id&#x27;</span>, name=<span class="hljs-string">&#x27;user_pk&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h2><span id="连接到数据库">连接到数据库</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine, text<br><br>engine = create_engine(<span class="hljs-string">&quot;sqlite://&quot;</span>)<span class="hljs-comment"># 建立连接, 具体URL留空则连接python内存, 并不会真的连接内容.</span><br>connection = engine.connect()<span class="hljs-comment"># 实例化连接对象</span><br><br><span class="hljs-comment"># execute</span><br>wd = text(<span class="hljs-string">&quot;select &#x27;word&#x27; as greeting&quot;</span>)<br>result = connection.execute(wd)<span class="hljs-comment"># 执行命令 返回值为对应数据库返回值</span><br><br><span class="hljs-comment"># row(记录)</span><br><span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> result:<br>    <span class="hljs-built_in">print</span>(row)<br></code></pre></td></tr></table></figure>
+
+<h2><span id="engine使用">engine使用</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 从engine中获取一个连接</span><br><span class="hljs-keyword">with</span> engine.connect() <span class="hljs-keyword">as</span> connection:<br>    <span class="hljs-comment"># 开启一个事务块</span><br>    <span class="hljs-keyword">with</span> connect.begin():<br>        connection.execute(<br>        	insert_stmt,<br>            &#123;<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;fullname&quot;</span>: <span class="hljs-string">&quot;&quot;</span>&#125;<br>        )<br>    <span class="hljs-comment"># end of inner block: commits transaction, or rollback if exception</span><br><span class="hljs-comment"># end of outer block: releases connection to th connection pool</span><br></code></pre></td></tr></table></figure>
+
+<p>代码和注释摘自视频<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Uym2DHnUEno%E7%9A%8420:00%E5%A4%84">https://www.youtube.com/watch?v=Uym2DHnUEno的20:00处</a></p>
+<h2><span id="处理数据">处理数据</span></h2><h3><span id="增-insert">增 <code>insert</code></span></h3><ol>
+<li><p>作为<code>Table</code>对象的实例方法:</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">ins = cookies.insert().values(<br>    cookie_name=<span class="hljs-string">&quot;chocolate chip&quot;</span>,<br>    cookie_recipe_url=<span class="hljs-string">&quot;example.com&quot;</span>,<br>    cooki_sku=<span class="hljs-string">&quot;CC01&quot;</span>,<br>    quantity=<span class="hljs-string">&quot;12&quot;</span>,<br>    unit_cost=<span class="hljs-string">&quot;0.50&quot;</span> <br>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>(ins))<span class="hljs-comment"># 实际要执行的SQL语句</span><br>ins.<span class="hljs-built_in">compile</span>().params<span class="hljs-comment"># 编译语句, 但不执行, 得到执行后的结果</span><br>result = connection.execute(ins)<span class="hljs-comment"># 执行插入语句</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>作为独立的函数:</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> insert<br>ins = insert(cookies).values(<br>	cookie_name=<span class="hljs-string">&quot;chocolate chip&quot;</span>,<br>    cookie_recipe_url=<span class="hljs-string">&quot;example.com&quot;</span>,<br>	cookie_sku=<span class="hljs-string">&quot;CC01&quot;</span>,<br>    quantity=<span class="hljs-string">&quot;12&quot;</span>,<br>	unit_cost=<span class="hljs-string">&quot;0.50&quot;</span><br>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>使用关键字参数</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python">ins = cookies.insert()<br>result = connection.executte(<br>	ins,<br>    cookie_name=<span class="hljs-string">&#x27;dark chocolate chip&#x27;</span>,<br>    cookie_recipe_url=<span class="hljs-string">&#x27;example.com&#x27;</span>,<br>    cookie_sku=<span class="hljs-string">&#x27;CC01&#x27;</span>,<br>    quantity=<span class="hljs-string">&#x27;12&#x27;</span>,<br>	unit_cost=<span class="hljs-string">&#x27;0.50&#x27;</span><br>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>插入多条记录</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python">inventory_list = [<br>    &#123;<br>        <span class="hljs-string">&#x27;key1&#x27;</span>: <span class="hljs-string">&#x27;value1&#x27;</span>,<br>        <span class="hljs-string">&#x27;key2&#x27;</span>: <span class="hljs-string">&#x27;value2&#x27;</span>,<br>    &#125;,<br>	&#123;<br>        <span class="hljs-string">&#x27;key3&#x27;</span>: <span class="hljs-string">&#x27;value3&#x27;</span>,<br>        <span class="hljs-string">&#x27;key4&#x27;</span>: <span class="hljs-string">&#x27;value4&#x27;</span>,<br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&#x27;key5&#x27;</span>: <span class="hljs-string">&#x27;value5&#x27;</span>,<br>        <span class="hljs-string">&#x27;key6&#x27;</span>: <span class="hljs-string">&#x27;value6&#x27;</span>,<br>    &#125;,<br>]<br>result = connection.execute(ins, inventory_list)<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="删-delete">删 <code>delete</code></span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> delete<br><br>u = delete(cookies).where(cookies.c.cookie_name == <span class="hljs-string">&quot;dark chocolate chip&quot;</span>)<br>result = connection.execute(u)<br><span class="hljs-built_in">print</span>(result.rowcount)<br><br>s = select([cookies]),where(cookies.c.cookie_name == <span class="hljs-string">&quot;dark chocolate chip&quot;</span>)<br>result = connection.execute(s).fetchall()<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(result))<br></code></pre></td></tr></table></figure>
+
+<h3><span id="改-update">改 <code>update</code></span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> update<br><br>u = update(cookie).where(cookies.c.cpploe_name == <span class="hljs-string">&quot;chocolate chip&quot;</span>)<br>u = u.values(quantity=(cookie.c.quantity+<span class="hljs-number">120</span>))<br>result = connection.execute(u)<br><span class="hljs-built_in">print</span>(result.rowcount)<br>s = select([cookies]).where(cookies.c.cpploe_name == <span class="hljs-string">&quot;chocolate chip&quot;</span>)<br>result =  connection.execute(s).first()<br><span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> result.keys():<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&#123;:&gt;20&#125;&#x27;</span>:&#123;&#125;<span class="hljs-string">&#x27;.format(key,result[key]))</span><br></code></pre></td></tr></table></figure>
+
+<h3><span id="查-select">查 <code>select</code></span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> select<br>s = select([cookies])<br>rp = connection.execute(s)<br>result = rp.fetchall()<br></code></pre></td></tr></table></figure>
+
+<h1><span id="orm">ORM</span></h1><blockquote>
+<p>Object-Relational Mapping, ORM）</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine, Column, Integer, String, MetaData, Table  <br><span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> mapper, sessionmaker  <br><span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base  <br>  <br><span class="hljs-comment"># 基类 </span><br>Base = declarative_base()  <br>  <br><span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span>(<span class="hljs-title class_ inherited__">Base</span>):  <br>    __tablename__ = <span class="hljs-string">&#x27;users&#x27;</span>  <span class="hljs-comment"># 指定这个类映射到的数据库表名  </span><br>    <span class="hljs-built_in">id</span> = Column(Integer, primary_key=<span class="hljs-literal">True</span>)  <span class="hljs-comment"># 主键  </span><br>    name = Column(String)  <span class="hljs-comment"># 定义键名 数据类型 </span><br>    fullname = Column(String)  <span class="hljs-comment"># 定义键名 数据类型</span><br>  <br>engine = create_engine(<span class="hljs-string">&#x27;sqlite:///example.db&#x27;</span>)<span class="hljs-comment"># 建立连接</span><br>Base.metadata.create_all(engine)<span class="hljs-comment"># 建表</span><br><br><span class="hljs-comment"># 实例化会话类</span><br>Session = sessionmaker(bind=engine)  <br>session = Session()<br><br><span class="hljs-comment"># 创建 User 对象, 相当于SQL的一条记录</span><br>new_user = User(name=<span class="hljs-string">&#x27;newuser&#x27;</span>, fullname=<span class="hljs-string">&#x27;New User&#x27;</span>)  <br>session.add(new_user)  <br>  <br><span class="hljs-comment"># 提交</span><br>session.commit()  <br>  <br><span class="hljs-comment"># 查询 User 对象  </span><br>users = session.query(User).<span class="hljs-built_in">all</span>()  <br><span class="hljs-keyword">for</span> user <span class="hljs-keyword">in</span> users:  <br>    <span class="hljs-built_in">print</span>(user.name, user.fullname)  <br>  <br><span class="hljs-comment"># 关闭会话  </span><br>session.close()<br></code></pre></td></tr></table></figure>
+
+<p>在视频中提到, 不建议使用close()方法</p>
+<p>同样地优化框架为:</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">with</span> Session() <span class="hljs-keyword">as</span> session:  <br>    <span class="hljs-comment"># 数据库操作  </span><br>    <span class="hljs-keyword">pass</span>  <br><span class="hljs-comment"># 会话关闭</span><br></code></pre></td></tr></table></figure>
+
+
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>zzy<br>
+        <strong>本文链接：</strong><a href="http://周梓煜.com/2024/07/01/note/" title="http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;07&#x2F;01&#x2F;note&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;07&#x2F;01&#x2F;note&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			      
+			<!-- 先找到与当前文字相同的目录 -->
+			                                                                                                      
+			<!-- 在找到当前文章所在的 index -->
+			                                                                                                                                    
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2024/05/31/school-hhw-13-python/"> 13-python作业</a>
+			</div>
+			       
+			<!-- 下一篇文章 -->
+			<div class="new">
+				<span>下一章</span>
+				<a href="/2024/07/26/css/"> CSS练习</a>
+			</div>
+			                  
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/Python/" rel="tag">Python</a> <a class="kirafont icon-tag-fill -none-link" href="/tags/SQL/" rel="tag">SQL</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	<div class="giscus"></div>
+  
+    <script src="https://giscus.app/client.js"
+      data-repo="ch1ny/ch1ny.github.io"
+      data-repo-id="R_kgDOHGgizw"
+      data-category="General"
+      data-category-id="DIC_kwDOHGgiz84CU88t"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async  
+    ></script>
+  
+
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>

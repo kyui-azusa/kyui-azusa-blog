@@ -1,0 +1,39 @@
+body {
+  align-items: center;
+}
+.card {
+  width: 200px;
+  height: 300px;
+  margin: 0 200px;
+  transform: translateX(-50%) translateY(0%);
+  position: relative;
+}
+.card img {
+  width: 100%;
+  position: absolute;
+  transition: 0.5s;
+}
+.card .cover {
+  z-index: 1;
+}
+.card:hover .cover {
+  box-shadow: 0 35px 35px -8px rgba(0, 0, 0, 0.75);
+  transform: perspective(500px) rotateX(25deg);
+  opacity: 0.7;
+}
+.card .yui {
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20%);
+}
+.card:hover .yui {
+  opacity: 1;
+  transform: perspective(500px) translate3d(0, -10px, 50px);
+}
+.card .title {
+  z-index: 3;
+  bottom: 0;
+}
+.card:hover .title {
+  transform: perspective(500px) translate3d(0, -25px, 50px);
+}
