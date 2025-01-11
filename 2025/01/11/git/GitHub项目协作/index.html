@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html 
+	lang="zh">
+	<head>
+		<script>
+			MathJax = {
+			  tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			  },
+			  svg: {
+				fontCache: 'global'
+			  }
+			};
+		</script>
+		<script type="text/javascript" id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+		</script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> GitHub项目协作 -  zzy</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/image/favicon.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+				
+<link rel="stylesheet" href="/custom.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+		
+	<meta name="generator" content="Hexo 7.0.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('/image/blog-bg.jpeg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="zzy">
+        <img
+			src="/image/blog-avatar.jpg"
+			alt="zzy"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a href="/image/blog-avatar.jpg" title="zzy">
+			<img
+				src="/image/blog-avatar.jpg"
+				alt="zzy"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>52</div>
+		<div><span>标签</span>12</div>
+		<div><span>分类</span>4</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://space.bilibili.com/510707180"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1817054005&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/457014708"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/kyui-azusa/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="/null"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+  <div class="kira-widget-wrap">
+    <h3 class="kira-widget-title">分类</h3>
+    <div class="kira-widget">
+      <ul class="category-list">
+        
+        
+
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学分析/">
+              数学分析
+            </a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学词典/">
+              数学词典
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/概率论/">
+              概率论
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/编程/">
+              编程
+            </a>
+            <span class="category-list-count">40</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/ABOUT/" style="font-size: 10px;">ABOUT</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Math/" style="font-size: 18px;">Math</a> <a href="/tags/PHP/" style="font-size: 16px;">PHP</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/js/" style="font-size: 14px;">js</a> <a href="/tags/python%E4%BD%9C%E4%B8%9A/" style="font-size: 20px;">python作业</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 12px;">web前端</a> <a href="/tags/web%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 14px;">web工程化</a> <a href="/tags/%E6%91%A9%E5%B0%94%E5%8B%87%E5%A3%AB/" style="font-size: 10px;">摩尔勇士</a>
+		</div>
+		
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2025
+		<a href="/">zzy</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+			<a
+				href="https://beian.miit.gov.cn/"
+				target="_blank"
+			>
+				沪ICP备******号
+			</a>
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div
+			class="kira-post-cover"
+			style="padding-bottom: '56.25%'"
+		>
+			<img
+				data-src="/image/blog-bg.jpeg"
+				data-sizes="auto"
+				alt="GitHub项目协作"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>GitHub项目协作</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2025年01月11日</a>
+			<a><i class="kirafont icon-edit-fill"></i>1.1k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 5 分钟</a>
+		</div>
+		<!--
+        <div id="aplayer-qtNEfDis" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-qtNEfDis"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "4-python作业整活",
+              author: "Python作业",
+              url: "/music/百石元 - ピンチ大好き!.mp3",
+              pic: "/image/favicon.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>-->
+
+<h1><span id="目录">目录</span></h1><!-- toc -->
+
+<ul>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E6%89%80%E6%9C%89%E8%80%85">项目所有者</a><ul>
+<li><a href="#%E9%85%8D%E7%BD%AE">配置</a><ul>
+<li><a href="#1-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">1. 远程仓库</a></li>
+<li><a href="#2-%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93">2. 本地仓库</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8">使用</a><ul>
+<li><a href="#1-%E6%8F%90%E4%BA%A4%E7%89%88%E6%9C%AC%E6%9C%AC%E5%9C%B0">1. 提交版本(本地)</a></li>
+<li><a href="#2-%E6%8F%90%E4%BA%A4%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E5%88%B0-github">2. 提交本地代码到 <code>GitHub</code></a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%90%E6%A7%BD">吐槽</a></li>
+</ul>
+</li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E5%8F%82%E4%B8%8E%E8%80%85">项目参与者</a><ul>
+<li><a href="#%E6%B5%81%E7%A8%8B">流程</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE-1">配置</a><ul>
+<li><a href="#1-%E8%BF%9E%E6%8E%A5-github">1. 连接 <code>GITHUB</code></a></li>
+<li><a href="#2-%E5%A4%8D%E5%88%B6%E4%BB%93%E5%BA%93">2. 复制仓库</a></li>
+<li><a href="#3-%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93">3. 本地仓库</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8-1">使用</a><ul>
+<li><a href="#1-%E6%8F%90%E4%BA%A4%E7%89%88%E6%9C%AC%E6%9C%AC%E5%9C%B0-1">1. 提交版本(本地)</a></li>
+<li><a href="#2-%E6%8F%90%E4%BA%A4%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E5%88%B0-github-1">2. 提交本地代码到 <code>GitHub</code></a></li>
+<li><a href="#3-%E6%8F%90%E4%BA%A4%E6%9B%B4%E6%94%B9-pull-request">3. 提交更改 <code>Pull Request</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="项目所有者">项目所有者</span></h1><h2><span id="配置">配置</span></h2><h3><span id="1-远程仓库">1. 远程仓库</span></h3><ol>
+<li><p><strong>创建SSH Key：</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;youremail@example.com&quot;</span><br></code></pre></td></tr></table></figure>
+<p> 一路回车即可</p>
+<ul>
+<li><code>id_rsa</code>是私钥, 不能泄露.</li>
+<li><code>id_rsa.pub</code>是公钥, 可以告知他人.</li>
+</ul>
+</li>
+<li><p><strong>查看<code>SSH Key</code></strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh<br><span class="hljs-built_in">cat</span> id_rsa.pub<br></code></pre></td></tr></table></figure>
+
+<p> 也可在用户主文件夹下<code>./.ssh</code>目录查看</p>
+</li>
+<li><p><strong>配置<code>SSH Key</code></strong></p>
+<p> 在<code>Github</code>的用户<code>Setting</code>选择<code>New SSH Key</code>, 起任意<code>Title</code>, 粘贴公钥.</p>
+</li>
+</ol>
+<h3><span id="2-本地仓库">2. 本地仓库</span></h3><ol>
+<li><p><strong>初始化仓库</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git init<br></code></pre></td></tr></table></figure>
+
+<p> 目录下会生成名为的<code>.git</code>文件夹</p>
+</li>
+<li><p><strong>将本地仓库和GitHub仓库关联</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote add origin &lt;仓库URL&gt;<br></code></pre></td></tr></table></figure>
+
+<p> origin为设置的别名</p>
+<p> 项目url为: <code>git@github.com:kyui-azusa/GITTEST.git</code></p>
+<ul>
+<li>修改<code>origin</code>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote set-url origin &lt;新的URL&gt;<br></code></pre></td></tr></table></figure></li>
+<li>删除<code>origin</code>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote remove origin<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2><span id="使用">使用</span></h2><h3><span id="1-提交版本本地">1. 提交版本(本地)</span></h3><ol>
+<li><p><strong>把待提交文件添加到操作区</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add &lt;文件名/路径&gt;<br></code></pre></td></tr></table></figure>
+<p> 可用 <code>.</code> 代表所有文件, 多个文件可用空格分割</p>
+</li>
+<li><p><strong>提交修改</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit -m &lt;message&gt;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-m</code> 后的参数为本次提交的说明</li>
+<li>一次<code>commit</code>可多次<code>add</code>不同的文件</li>
+</ul>
+</li>
+</ol>
+<h3><span id="2-提交本地代码到-github">2. 提交本地代码到 <code>GitHub</code></span></h3><ol>
+<li><p><strong>首次推送</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git push -u origin master<br></code></pre></td></tr></table></figure>
+
+<p> 首次推送，需要使用”-u”参数来设置默认的上游分支为<code>master</code></p>
+<p> 我们第一次推送<code>master</code>分支时，加上了<code>-u</code>参数，Git不但会把本地的<code>master</code>分支内容推送的远程新的<code>master</code>分支，还会把本地的<code>master</code>分支和远程的<code>master</code>分支关联起来，在以后的推送或者拉取时就可以简化命令</p>
+</li>
+<li><p><strong>简化</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git push origin master<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2><span id="吐槽">吐槽</span></h2><p>狗屎 一直fatal 研究了好久发现就两个问题</p>
+<ol>
+<li><p>url输错了</p>
+</li>
+<li><p>origin输成origin 又不稳定错</p>
+<p> 气死我了气死我了气死我了气死我了气死我了气死我了气死我了气死我了气死我了气死我了气死我了气死我了气死我了气死我了气死我了气死我了气死我了气死我了气死我了气死我了</p>
+</li>
+</ol>
+<h1><span id="项目参与者">项目参与者</span></h1><h2><span id="流程">流程</span></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs mermaid">graph LR<br>    subgraph GitHub<br>        A1[&quot;owner/repo&quot;]<br>        A2[&quot;my/repo&quot;]<br>        A1 --&gt; A2<br>    end<br>    A2 --&gt; B[&quot;local/repo&quot;]<br>    B --&gt; A2<br></code></pre></td></tr></table></figure>
+
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="/image/git/github.png" alt="GitHub" class="lazyload"></p>
+<h2><span id="配置">配置</span></h2><h3><span id="1-连接-github">1. 连接 <code>GITHUB</code></span></h3><ol>
+<li><p><strong>创建SSH Key：</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;youremail@example.com&quot;</span><br></code></pre></td></tr></table></figure>
+<p> 一路回车即可</p>
+<ul>
+<li><code>id_rsa</code>是私钥, 不能泄露.</li>
+<li><code>id_rsa.pub</code>是公钥, 可以告知他人.</li>
+</ul>
+</li>
+<li><p><strong>查看<code>SSH Key</code></strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh<br><span class="hljs-built_in">cat</span> id_rsa.pub<br></code></pre></td></tr></table></figure>
+
+<p> 也可在用户主文件夹下<code>./.ssh</code>目录查看</p>
+</li>
+<li><p><strong>配置<code>SSH Key</code></strong></p>
+<p> 在<code>Github</code>的用户<code>Setting</code>选择<code>New SSH Key</code>, 起任意<code>Title</code>, 粘贴公钥.</p>
+</li>
+</ol>
+<h3><span id="2-复制仓库">2. 复制仓库</span></h3><blockquote>
+<p><strong>使用 <code>Fork</code>复制仓库</strong></p>
+</blockquote>
+<ol>
+<li><p>访问目标仓库 例如我的<a target="_blank" rel="noopener" href="https://github.com/kyui-azusa/GITTEST">测试仓库</a></p>
+</li>
+<li><p>依次点击:</p>
+<ol>
+<li><p> <svg height="16" width="16">
+     <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
+    </svg>Fork</p>
+ </li>
+<li><p><span data-component="text" style="font-size: 16px; background-color: #1f883d; border-color: #1f232826; color: #ffffff; border-radius: .375rem; display: inline-flex; justify-content: center; align-items: center; height: 2rem; padding: 0 .75rem; border-style: solid; border-width: 1px;">Create fork</span></p>
+</li>
+</ol>
+<p> 即可将仓库复制的你的仓库下 即 <code>my/repo</code></p>
+</li>
+</ol>
+<h3><span id="3-本地仓库">3. 本地仓库</span></h3><ol>
+<li><p><strong>克隆 Fork 仓库到本地</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> &lt;仓库URL&gt;<br></code></pre></td></tr></table></figure>
+
+<p> 注意: 在要创建本地仓库的目录下运行</p>
+</li>
+<li><p><strong>将本地仓库和GitHub仓库关联(设置上游原始仓库)</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote add origin &lt;仓库URL&gt;<br></code></pre></td></tr></table></figure>
+
+<p> origin为设置的别名</p>
+<p> 项目url为: <code>git@github.com:kyui-azusa/GITTEST.git</code></p>
+<ul>
+<li><strong>修改<code>origin</code></strong>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote set-url origin &lt;新的URL&gt;<br></code></pre></td></tr></table></figure></li>
+<li><strong>删除<code>origin</code></strong>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote remove origin<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2><span id="使用">使用</span></h2><h3><span id="1-提交版本本地">1. 提交版本(本地)</span></h3><ol>
+<li><p><strong>把待提交文件添加到操作区</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add &lt;文件名/路径&gt;<br></code></pre></td></tr></table></figure>
+
+<p> 可用 <code>.</code> 代表所有文件, 多个文件可用空格分割</p>
+</li>
+<li><p><strong>提交修改</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit -m &lt;message&gt;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-m</code> 后的参数为本次提交的说明</li>
+<li>一次<code>commit</code>可多次<code>add</code>不同的文件</li>
+</ul>
+</li>
+</ol>
+<h3><span id="2-提交本地代码到-github">2. 提交本地代码到 <code>GitHub</code></span></h3><ol>
+<li><p><strong>首次推送</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git push -u origin master<br></code></pre></td></tr></table></figure>
+
+<p> 首次推送，需要使用”-u”参数来设置默认的上游分支为<code>master</code></p>
+<p> 我们第一次推送<code>master</code>分支时，加上了<code>-u</code>参数，Git不但会把本地的<code>master</code>分支内容推送的远程新的<code>master</code>分支，还会把本地的<code>master</code>分支和远程的<code>master</code>分支关联起来，在以后的推送或者拉取时就可以简化命令</p>
+</li>
+<li><p><strong>简化</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git push origin master<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="3-提交更改-pull-request">3. 提交更改 <code>Pull Request</code></span></h3><p><strong>将个人更改合并到原始仓库</strong></p>
+<ol>
+<li><p><strong>访问自己同步后的仓库</strong></p>
+</li>
+<li><p><strong>提交更改</strong>(在 <code>GitHub</code> 上操作)</p>
+</li>
+</ol>
+<p><strong>依次点击:</strong></p>
+<div style="position: relative; left: 64px; padding:8px"><span style="border-radius: .375rem; border: 1px solid #d1d9e0;">
+          <!-- 前置图标部分 -->
+          <span data-component="leadingVisual" class="prc-Button-Visual-2epfX prc-Button-VisualWrap-Db-eB" style="display: inline-flex; justify-content: center; align-items: center;">
+            <svg aria-hidden="true" focusable="false" class="octicon octicon-git-pull-request" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;">
+<path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"/>
+            </svg>
+          </span>
+          <!-- 按钮文本 -->
+          <span data-component="text" class="prc-Button-Label-pTQ3x">Contribute</span>
+          <!-- 后置图标部分 -->
+          <span data-component="trailingVisual" class="prc-Button-Visual-2epfX prc-Button-VisualWrap-Db-eB" style="display: inline-flex; justify-content: center; align-items: center;">
+          <svg aria-hidden="true" focusable="false" class="octicon octicon-triangle-down" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;">
+              <path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/>
+   </svg>
+   </span>
+</span>
+</div>
+<div style="position: relative; left: 64px; padding:8px"><span><span data-component="text" style="font-size: 16px; background-color: #1f883d; border-color: #1f232826; color: #ffffff; border-radius: .375rem; display: inline-flex; justify-content: center; align-items: center; height: 2rem; padding: 0 .75rem; border-style: solid; border-width: 1px;">Open pull request</span></span></div> 
+**或是**
+
+<p><strong>从菜单栏:</strong></p>
+<div style="position: relative; left: 64px; padding:8px"><svg aria-hidden="true" height="16" viewbox="0 0 16 16" version="1.1" width="16" class="octicon octicon-git-pull-request">  <path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"/></svg><span>Pull requests</span><span class="counter" title="0" hidden="hidden">0</span></div>
+<div style="position: relative; left: 64px; padding:8px"><span data-component="text" style="font-size: 16px; background-color: #1f883d; border-color: #1f232826; color: #ffffff; border-radius: .375rem; display: inline-flex; justify-content: center; align-items: center; height: 2rem; padding: 0 .75rem; border-style: solid; border-width: 1px;">New pull request</span></div>
+   最后 <span data-component="text" style="font-size: 16px; background-color: #1f883d; border-color: #1f232826; color: #ffffff; border-radius: .375rem; display: inline-flex; justify-content: center; align-items: center; height: 2rem; padding: 0 .75rem; border-style: solid; border-width: 1px;">Create pull request</span> 即可
+
+
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>zzy<br>
+        <strong>本文链接：</strong><a href="http://周梓煜.com/2025/01/11/git/GitHub%E9%A1%B9%E7%9B%AE%E5%8D%8F%E4%BD%9C/" title="http:&#x2F;&#x2F;周梓煜.com&#x2F;2025&#x2F;01&#x2F;11&#x2F;git&#x2F;GitHub项目协作&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;周梓煜.com&#x2F;2025&#x2F;01&#x2F;11&#x2F;git&#x2F;GitHub项目协作&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			      
+			<!-- 先找到与当前文字相同的目录 -->
+			                                                                                                                  
+			<!-- 在找到当前文章所在的 index -->
+			                                                                                                                                                    
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2024/12/18/js/2-%E8%BE%93%E5%85%A5/"> 2-输入</a>
+			</div>
+			       
+			<!-- 下一篇文章 -->
+			<div class="new">
+				<span>下一章</span>
+				<a href="/2025/01/11/js/3-html%E4%B8%8Ejs%E5%85%B3%E8%81%94/"> 3-html与js关联</a>
+			</div>
+			                         
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/git/" rel="tag">git</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>
