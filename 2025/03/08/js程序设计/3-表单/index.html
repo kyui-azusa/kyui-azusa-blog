@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html 
+	lang="zh">
+	<head>
+		<script>
+			MathJax = {
+			  tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			  },
+			  svg: {
+				fontCache: 'global'
+			  }
+			};
+		</script>
+		<script type="text/javascript" id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+		</script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 3-表单 -  zzy</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/image/favicon.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+				
+<link rel="stylesheet" href="/custom.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+		
+	<meta name="generator" content="Hexo 7.0.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('/image/blog-bg.jpeg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="zzy">
+        <img
+			src="/image/blog-avatar.jpg"
+			alt="zzy"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a href="/image/blog-avatar.jpg" title="zzy">
+			<img
+				src="/image/blog-avatar.jpg"
+				alt="zzy"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>66</div>
+		<div><span>标签</span>15</div>
+		<div><span>分类</span>10</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://space.bilibili.com/510707180"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1817054005&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/457014708"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/kyui-azusa/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="/null"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+  <div class="kira-widget-wrap">
+    <h3 class="kira-widget-title">分类</h3>
+    <div class="kira-widget">
+      <ul class="category-list">
+        
+        
+
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/HTML-Js作业-大二/">
+              HTML+Js作业-大二
+            </a>
+            <span class="category-list-count">4</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/Python作业-大一/">
+              Python作业-大一
+            </a>
+            <span class="category-list-count">13</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/Python入门/">
+              Python入门
+            </a>
+            <span class="category-list-count">8</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/Re-从零开始的md/">
+              Re:从零开始的md
+            </a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/js入门/">
+              js入门
+            </a>
+            <span class="category-list-count">4</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/工具记录/">
+              工具记录
+            </a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/开发技巧/">
+              开发技巧
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学分析/">
+              数学分析
+            </a>
+            <span class="category-list-count">8</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/练手成果/">
+              练手成果
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/编程/">
+              编程
+            </a>
+            <span class="category-list-count">15</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/ABOUT/" style="font-size: 10px;">ABOUT</a> <a href="/tags/Js/" style="font-size: 13.33px;">Js</a> <a href="/tags/Math/" style="font-size: 18.33px;">Math</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html-css/" style="font-size: 11.67px;">html+css</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/web%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 13.33px;">web工程化</a> <a href="/tags/%E6%91%A9%E5%B0%94%E5%8B%87%E5%A3%AB/" style="font-size: 10px;">摩尔勇士</a> <a href="/tags/%E7%A0%94%E7%A9%B6/" style="font-size: 13.33px;">研究</a>
+		</div>
+		
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2025
+		<a href="/">zzy</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+			<a
+				href="https://beian.miit.gov.cn/"
+				target="_blank"
+			>
+				沪ICP备******号
+			</a>
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="/image/bg-2.png"
+				data-sizes="auto"
+				alt="3-表单"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>3-表单</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2025年03月08日</a>
+			<a><i class="kirafont icon-edit-fill"></i>2.7k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 15 分钟</a>
+		</div>
+		
+        <div id="aplayer-IyJQOpUp" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-IyJQOpUp"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "3-表单",
+              author: "Js作业",
+              url: "/music/百石元 - ピンチ大好き!.mp3",
+              pic: "/image/favicon.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+<h2><span id="release">Release</span></h2><ul>
+<li>本节代码下载: <a href="/file/school-js/3/form" download="form.html">Setup</a></li>
+</ul>
+<h2><span id="项目展示">项目展示</span></h2><h3><span id="效果">效果</span></h3><form action style="outline: 1px solid; display: block; padding: 10px; width: 320px;">
+<div class="item">
+​    <span>昵称:</span>
+​    <input type="text">
+</div>
+<div class="item">
+​    <span>密码:</span>
+​    <input type="password">
+</div>
+<div class="item">
+​    <span>邮箱:</span>
+​    <input type="text">
+​    <select name id>
+​     <option value>@qq.com</option>
+​     <option value>@163.com</option>
+      <option value>@126.com</option>
+​    </select>
+</div>
+<div class="item">
+​    <span>性别:</span>
+​    <input type="radio" name="gender" id="male" checked>
+​    <label for="male"><span>男</span></label>
+​    <input type="radio" name="gender" id="female">
+​    <label for="female"><span>女</span></label>
+</div>
+<div class="item">
+​    <span>爱好:</span>
+​    <!-- input:checkbox[name="hobby"]#hobby$^label[for="hobby$"] -->
+​    <input type="checkbox" name="hobby" id="hobby1">
+​    <label for="hobby1">旅游</label>
+​    <input type="checkbox" name="hobby" id="hobby2">
+​    <label for="hobby2">摄影</label>
+​    <input type="checkbox" name="hobby" id="hobby3">
+​    <label for="hobby3">运动</label>
+</div>
+<div class="item">
+<div>
+​      <span>个人简介:</span>
+​    </div>
+​    <textarea name id style="width: 100%; height: 150px; margin-top: 5px;"></textarea>
+</div>
+<div class="item">
+​    <span>上传个人照片:</span>
+​    <input type="file" name id>
+</div>
+<hr>
+<button type="submit" style="display: block; margin: 0 auto">
+​    立即注册
+</button>
+</form>
+
+
+
+<h3><span id="项目结构">项目结构</span></h3><ul>
+<li><p>index.html</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>表单<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">      <span class="hljs-selector-class">.item</span> &#123;</span><br><span class="language-css">        <span class="hljs-attribute">margin</span>: <span class="hljs-number">5px</span>;</span><br><span class="language-css">      &#125;</span><br><span class="language-css">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">form</span></span><br><span class="hljs-tag">      <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;outline: 1px solid; display: block; padding: 10px; width: 320px;&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>昵称:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>密码:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>邮箱:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>@qq.com<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>@163.com<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>@126.com<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>性别:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;male&quot;</span> <span class="hljs-attr">checked</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;male&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>男<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;female&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;female&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>爱好:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- input:checkbox[name=&quot;hobby&quot;]#hobby$^label[for=&quot;hobby$&quot;] --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hobby1&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hobby1&quot;</span>&gt;</span>旅游<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hobby2&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hobby2&quot;</span>&gt;</span>摄影<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hobby3&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hobby3&quot;</span>&gt;</span>运动<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>个人简介:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 100%; height: 150px; margin-top: 5px;&quot;</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>上传个人照片:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: block; margin: 0 auto&quot;</span>&gt;</span><br>        立即注册<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2><span id="项目实现">项目实现</span></h2><h3><span id="架构">架构</span></h3><ol>
+<li><p>html骨架</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <code>title</code></p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>表单<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>创建表单</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html">...<br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- 表单内容 --&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br>...<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="表单内容">表单内容</span></h3><ol>
+<li><p>为了方便查看效果, 给表单添加一个样式, 暂时不用理解, 后续在 <code>CSS</code> 的学习时就会了解</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;outline: 1px solid; width:320px;&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 表单内容 --&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>内容</p>
+<p> 根据需求, 我们有七个用户输入项, 分别是: 昵称, 密码, 邮箱, 性别, 爱好, 个人简介以及个人照片还有一个按钮</p>
+<p> 这里暂且认为是以使得结构更加清晰为目的, 分别用 <code>div</code> 标签包裹, 更具体的作用将在对 <code>盒模型</code> 的学习后理解</p>
+<p> <code>Emmet</code> 语法生成结构:</p>
+<blockquote>
+<p>.item 用于指定标签的 class, 这里暂时用不到, div*7也是可以的, 只是作为个人开发习惯预留, 方便后续样式选择器和Js的开发</p>
+</blockquote>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html">div.item*7<br>button:submit<br></code></pre></td></tr></table></figure>
+
+<p> 补全(手动添加了分割线 <code>hr</code> 标签): </p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p> 输入内容:</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span>昵称:<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span>密码:<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span>邮箱:<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span>性别<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span>爱好<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span>个人简介<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span>个人照片<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>立即注册<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="文本输入">文本输入</span></h3><ol>
+<li><p>文本输入</p>
+<p> 使用 <code>input</code>, 并为密码添加 <code>type=&quot;password&quot;</code> 使得密码输入以密文的形式显示.</p>
+<blockquote>
+<p> 添加了 <code>span</code> 标签包裹文本, 目前仅起到使得结构更清晰的作用, 可以不加.</p>
+</blockquote>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>昵称:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>密码:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>邮箱:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="选择框">选择框</span></h3><ol>
+<li><p>下拉选择框</p>
+<p> 使用 <code>select</code> + <code>option</code> 实现邮箱的下拉选择框</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>邮箱:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>@qq.com<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>@163.com<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>@126.com<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>单选框</p>
+<p> 使用 <code>type=&quot;radio&quot;</code> 的<code>input</code> 标签实现单选框, 通过 <code>name</code> 属性组合单选框(使得 <code>单选</code> 约束作用于目标单选框组), 为其中一个选项添加 <code>checked</code> 以实现默认选中.</p>
+<blockquote>
+<p>同样的, 目前所有 <code>span</code> 标签都可以忽略或不写, 仅为笔者的个人代码习惯</p>
+</blockquote>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>性别:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">checked</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>男<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p> 优化:  </p>
+<p> 为 <code>input</code> 添加 <code>id</code> 属性</p>
+<p> 使用 <code>label</code> 标签通过 <code>id</code> 绑定到对应选项</p>
+<p> 在使用时点击文字也可选中选项, 优化使用体验</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>性别:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;male&quot;</span> <span class="hljs-attr">checked</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;male&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>男<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;female&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;female&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>多选框</p>
+<p> 使用  <code>type=&quot;checkbox&quot;</code> 的<code>input</code> 标签实现多选框</p>
+<p> <code>Emmet</code> 语法生成结构:</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">div.class&gt;span&#123;爱好&#125;+(input:checkbox[name=&quot;hobby&quot;]#hobby$^label[for=&quot;hobby$&quot;])*3<br></code></pre></td></tr></table></figure>
+
+<p> 结果如下:</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>爱好:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hobby1&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hobby1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hobby2&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hobby2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hobby3&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hobby3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p> 手动添加文字:</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>爱好:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hobby1&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hobby1&quot;</span>&gt;</span>旅游<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hobby2&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hobby2&quot;</span>&gt;</span>摄影<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hobby3&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hobby3&quot;</span>&gt;</span>运动<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="多行文本">多行文本</span></h3><ol>
+<li><p>富文本框</p>
+<p> 使用  <code>textarea</code> 标签实现富文本框</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p> 添加样式美化(可选):</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 100%; height: 150px; margin-top: 5px;&quot;</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="文件提交">文件提交</span></h3><ol>
+<li><p>提交按钮</p>
+<p> 使用  <code>type=&quot;file&quot;</code> 的<code>input</code> 标签实现文件提交功能</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>上传个人照片:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="分割线">分割线</span></h3><ol>
+<li><p>分割标签</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="提交表单">提交表单</span></h3><ol>
+<li><p>提交按钮</p>
+<p> 使用  <code>type=&quot;submit&quot;</code> 的<code>button</code> 标签实现表单提交:</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span><br>    立即注册<br><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p> 设置样式使其居中:</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: block; margin: 0 auto&quot;</span>&gt;</span><br>    立即注册<br><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p> 具体含义学到 <code>css</code> 的 <code>盒模型</code> 后非常好理解</p>
+<p> 简单解释:</p>
+<ul>
+<li><p><code>display: block;</code>: <code>button</code> 元素默认是 行内元素 (<code>inline</code>), <code>margin</code> 属性设置为 <code>auto</code> 将无效, 为了使得以下属性有效, 将按钮设置为 <code>块盒</code></p>
+</li>
+<li><p><code>margin: 0 auto;</code>: 元素上下外边距为 <code>0</code> 左右外边距将自动占满父元素</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3><span id="整合">整合</span></h3><ol>
+<li><p>完整表单</p>
+<p> 最后将各部分简单堆砌即可得到完整表单</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>表单<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">      <span class="hljs-selector-class">.item</span> &#123;</span><br><span class="language-css">        <span class="hljs-attribute">margin</span>: <span class="hljs-number">5px</span>;</span><br><span class="language-css">      &#125;</span><br><span class="language-css">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">form</span></span><br><span class="hljs-tag">      <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;outline: 1px solid; display: block; padding: 10px; width: 320px;&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>昵称:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>密码:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> /&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>邮箱:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>@qq.com<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>@163.com<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>@126.com<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>性别:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;male&quot;</span> <span class="hljs-attr">checked</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;male&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>男<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;female&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;female&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>爱好:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- input:checkbox[name=&quot;hobby&quot;]#hobby$^label[for=&quot;hobby$&quot;] --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hobby1&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hobby1&quot;</span>&gt;</span>旅游<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hobby2&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hobby2&quot;</span>&gt;</span>摄影<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hobby3&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;hobby3&quot;</span>&gt;</span>运动<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>个人简介:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 100%; height: 150px; margin-top: 5px;&quot;</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>上传个人照片:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: block; margin: 0 auto&quot;</span>&gt;</span><br>        立即注册<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>zzy<br>
+        <strong>本文链接：</strong><a href="http://周梓煜.com/2025/03/08/js%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/3-%E8%A1%A8%E5%8D%95/" title="http:&#x2F;&#x2F;周梓煜.com&#x2F;2025&#x2F;03&#x2F;08&#x2F;js程序设计&#x2F;3-表单&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;周梓煜.com&#x2F;2025&#x2F;03&#x2F;08&#x2F;js程序设计&#x2F;3-表单&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			                  
+			<!-- 先找到与当前文字相同的目录 -->
+			            
+			<!-- 在找到当前文章所在的 index -->
+			            
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2025/03/08/js%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/2-%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"> 2-个人简介</a>
+			</div>
+			                              
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/HTML-Js%E4%BD%9C%E4%B8%9A-%E5%A4%A7%E4%BA%8C/">HTML+Js作业-大二</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/Js/" rel="tag">Js</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>

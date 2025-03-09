@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简历</title>
+</head>
+
+<body>
+    <h1>name</h1>
+    <img src="self.jpg" alt="/image/blog-avatar.jpg" width="200px">
+    <h4><a href="form.html">表单</a></h4>
+    <hr>
+    <ul>
+        <li>
+            <b>性别：</b>
+        </li>
+        <li>
+            <b>电话：</b>
+        </li>
+        <li>
+            <b>邮箱：</b>
+        </li>
+        <li>
+            <b>生日：</b>
+        </li>
+        <li>
+            <b>兴趣：</b>
+        </li>
+    </ul>
+    <hr>
+    <h3>教育背景</h3>
+    <table style="width:100%" border=1 cellspacing=0>
+        <tr>
+            <td>时间</td>
+            <td>学校</td>
+            <td>职务</td>
+        </tr>
+        <tr>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+        <tr>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+    </table>
+    <h3>工作经验...</h3>
+    <ol>
+        <li>工作1</li>
+        <li>工作2</li>
+        <li>工作3</li>
+        <li>工作4</li>
+    </ol>
+    <h3>自我介绍</h3>
+    <p>word</p>
+</body>
+
+</html>
