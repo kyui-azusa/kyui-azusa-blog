@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html 
+	lang="zh">
+	<head>
+		<script>
+			MathJax = {
+			  tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			  },
+			  svg: {
+				fontCache: 'global'
+			  }
+			};
+		</script>
+		<script type="text/javascript" id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+		</script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 9-python作业--完美主义(面向对象) -  zzy</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/image/favicon.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+				
+<link rel="stylesheet" href="/custom.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+		
+	<meta name="generator" content="Hexo 7.0.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('/image/blog-bg.jpeg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="zzy">
+        <img
+			src="/image/blog-avatar.jpg"
+			alt="zzy"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a href="/image/blog-avatar.jpg" title="zzy">
+			<img
+				src="/image/blog-avatar.jpg"
+				alt="zzy"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>66</div>
+		<div><span>标签</span>15</div>
+		<div><span>分类</span>10</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://space.bilibili.com/510707180"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1817054005&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/457014708"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/kyui-azusa/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="/null"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+  <div class="kira-widget-wrap">
+    <h3 class="kira-widget-title">分类</h3>
+    <div class="kira-widget">
+      <ul class="category-list">
+        
+        
+
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/HTML-Js作业-大二/">
+              HTML+Js作业-大二
+            </a>
+            <span class="category-list-count">4</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/Python作业-大一/">
+              Python作业-大一
+            </a>
+            <span class="category-list-count">13</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/Python入门/">
+              Python入门
+            </a>
+            <span class="category-list-count">8</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/Re-从零开始的md/">
+              Re:从零开始的md
+            </a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/js入门/">
+              js入门
+            </a>
+            <span class="category-list-count">4</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/工具记录/">
+              工具记录
+            </a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/开发技巧/">
+              开发技巧
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学分析/">
+              数学分析
+            </a>
+            <span class="category-list-count">8</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/练手成果/">
+              练手成果
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/编程/">
+              编程
+            </a>
+            <span class="category-list-count">15</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/ABOUT/" style="font-size: 10px;">ABOUT</a> <a href="/tags/Js/" style="font-size: 13.33px;">Js</a> <a href="/tags/Math/" style="font-size: 18.33px;">Math</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html-css/" style="font-size: 11.67px;">html+css</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/web%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 13.33px;">web工程化</a> <a href="/tags/%E6%91%A9%E5%B0%94%E5%8B%87%E5%A3%AB/" style="font-size: 10px;">摩尔勇士</a> <a href="/tags/%E7%A0%94%E7%A9%B6/" style="font-size: 13.33px;">研究</a>
+		</div>
+		
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2025
+		<a href="/">zzy</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+			<a
+				href="https://beian.miit.gov.cn/"
+				target="_blank"
+			>
+				沪ICP备******号
+			</a>
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div
+			class="kira-post-cover"
+			style="padding-bottom: '56.25%'"
+		>
+			<img
+				data-src="/image/blog-bg.jpeg"
+				data-sizes="auto"
+				alt="9-python作业--完美主义(面向对象)"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>9-python作业--完美主义(面向对象)</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2024年05月01日</a>
+			<a><i class="kirafont icon-edit-fill"></i>2.3k 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 12 分钟</a>
+		</div>
+		
+        <div id="aplayer-ySAqYtpQ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-ySAqYtpQ"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "9-python作业架构",
+              author: "Python作业",
+              url: "/music/百石元 - ピンチ大好き!.mp3",
+              pic: "/image/favicon.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+<blockquote>
+<p>简单的没意思,而且实现的参考价值越来越低了.</p>
+<p>现在开始架构搭建.</p>
+<p>采用面向对象编程,虽然这里并没有任何的必要.</p>
+<p>但是既然已经这么无聊了,练习一下格式也好嘛.</p>
+</blockquote>
+<h2><span id="release">Release</span></h2><ul>
+<li><a href="/file/school-py/9/python-homework-9-by-zzy.exe" download="python-homework-9-by-zzy.exe">Setup</a></li>
+<li>安装包下载的文件默认在桌面上.</li>
+</ul>
+
+        <div id="aplayer-logOSfNA" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-logOSfNA"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "学习宣言",
+              author: "唯学日益",
+              url: "/file/school-py/6/学习宣言.wav",
+              pic: "/image/favicon.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+<h1><span id="例题">例题</span></h1><h2><span id="例-4-6">例 4-6</span></h2><blockquote>
+<p>某人买了4只股票，编号为1~4，股票代码、股票名称和买入价分别是：601398、工商银行、5.51；000001、平安银行、8.94；601939、建设银行、6.89；601328、交通银行、5.61。请用字典实现根据编号查询购买的股票信息。要求在输入编号后，可以一直查询购买的股票信息，直到输入编号以外的任意数字时显示“无查询结果”，并结束程序。程序保存为example4_6.py</p>
+</blockquote>
+<ol>
+<li><p>正常作业:</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#example4_6.py</span><br><span class="hljs-comment">#coding=utf-8</span><br><br>info = &#123;  <br>    <span class="hljs-string">&#x27;601398&#x27;</span>: [<span class="hljs-string">&#x27;工商银行&#x27;</span>, <span class="hljs-number">5.51</span>],<br>    <span class="hljs-string">&#x27;000001&#x27;</span>: [<span class="hljs-string">&#x27;平安银行&#x27;</span>, <span class="hljs-number">8.94</span>],<br>    <span class="hljs-string">&#x27;601939&#x27;</span>: [<span class="hljs-string">&#x27;建设银行&#x27;</span>, <span class="hljs-number">6.89</span>],<br>    <span class="hljs-string">&#x27;601328&#x27;</span>: [<span class="hljs-string">&#x27;交通银行&#x27;</span>, <span class="hljs-number">5.61</span>],<br>&#125;<br><br>no = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入编号:&quot;</span>)<br><span class="hljs-keyword">while</span> no <span class="hljs-keyword">in</span> info:<br>    <span class="hljs-built_in">print</span>(info[no])<br>    no = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入编号:&quot;</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;无查询结果!&quot;</span>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>我的:</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 4-6</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Securities</span>():<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,typein=<span class="hljs-number">0</span></span>) -&gt; <span class="hljs-literal">None</span>:<br>        self.typein = typein<br>        self.info = &#123;  <br>            <span class="hljs-string">&#x27;601398&#x27;</span>: [<span class="hljs-string">&#x27;工商银行&#x27;</span>, <span class="hljs-number">5.51</span>],<br>            <span class="hljs-string">&#x27;000001&#x27;</span>: [<span class="hljs-string">&#x27;平安银行&#x27;</span>, <span class="hljs-number">8.94</span>],<br>            <span class="hljs-string">&#x27;601939&#x27;</span>: [<span class="hljs-string">&#x27;建设银行&#x27;</span>, <span class="hljs-number">6.89</span>],<br>            <span class="hljs-string">&#x27;601328&#x27;</span>: [<span class="hljs-string">&#x27;交通银行&#x27;</span>, <span class="hljs-number">5.61</span>],<br>        &#125;<br>        self.outputdict = &#123;<br>            <span class="hljs-number">0</span>:<span class="hljs-string">&quot;&#x27;查询结束&#x27;&quot;</span>,<br>            <span class="hljs-number">1</span>:<span class="hljs-string">&quot;self.info[self.typein]&quot;</span>,<br>            <span class="hljs-number">2</span>:<span class="hljs-string">&quot;&#x27;无查询结果!&#x27;&quot;</span>,<br>        &#125;       <br>    <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">data_input</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-keyword">if</span> self.typein <span class="hljs-keyword">in</span> self.info:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> self.typein == <span class="hljs-string">&quot;0&quot;</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">2</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">output</span>(<span class="hljs-params">self,param</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-built_in">eval</span>(self.outputdict[param]))<br>        <span class="hljs-keyword">if</span> param == <span class="hljs-number">2</span>:<br>            self.typein = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入编号(输入0停止查询):&quot;</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">self</span>):<br>        p = <span class="hljs-number">1</span><br>        <span class="hljs-keyword">while</span> p:<br>            p = self.data_input()<br>            self.output(p)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    sec = Securities(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入编号(输入0停止查询):&quot;</span>))<br>    sec.main()<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2><span id="例-5-2">例 5-2</span></h2><blockquote>
+<p>利用format()方法格式化字符输出如图所示的“九九乘法表”。</p>
+</blockquote>
+<ol>
+<li><p>正常作业:</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#example5_2.py</span><br><span class="hljs-comment">#coding=utf-8</span><br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>):<br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, i + <span class="hljs-number">1</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#123;&#125;*&#123;&#125;=&#123;:&lt;4d&#125;&quot;</span>.<span class="hljs-built_in">format</span>(i, j, i * j), end=<span class="hljs-string">&#x27;&#x27;</span>)<br>    <span class="hljs-built_in">print</span>()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>我的:</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#5-2</span><br><span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> [[<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;i&#125;</span>x<span class="hljs-subst">&#123;j&#125;</span>=<span class="hljs-subst">&#123;i*j:&lt;4d&#125;</span>&quot;</span> <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, i+<span class="hljs-number">1</span>)] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>)]:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;  &quot;</span>.join(row))<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h1><span id="作业">作业</span></h1><h2><span id="练-9-1">练 9-1</span></h2><blockquote>
+<p>请用字典编程：输出这个班的学生姓名和成绩，并求出全班同学的人数和平均分（保留2位小时）并显示，请用字符串格式化的形式输出。程序保存为exercise9_1.py</p>
+</blockquote>
+<ol>
+<li><p>正常作业</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#exercise9_1.py</span><br><span class="hljs-comment">#coding:utf-8</span><br><br>dict1 = &#123;<br>    <span class="hljs-string">&quot;张三&quot;</span>:<span class="hljs-number">45</span>,<br>    <span class="hljs-string">&quot;李四&quot;</span>:<span class="hljs-number">78</span>,<br>    <span class="hljs-string">&quot;徐来&quot;</span>:<span class="hljs-number">40</span>,<br>    <span class="hljs-string">&quot;沙思思&quot;</span>:<span class="hljs-number">96</span>,<br>    <span class="hljs-string">&quot;如一&quot;</span>:<span class="hljs-number">65</span>,<br>    <span class="hljs-string">&quot;司音&quot;</span>:<span class="hljs-number">90</span>,<br>    <span class="hljs-string">&quot;赵敏&quot;</span>:<span class="hljs-number">78</span>,<br>    <span class="hljs-string">&quot;张旭宁&quot;</span>:<span class="hljs-number">99</span>,<br>    <span class="hljs-string">&quot;柏龙&quot;</span>:<span class="hljs-number">60</span>,<br>    <span class="hljs-string">&quot;思琪&quot;</span>:<span class="hljs-number">87</span>,<br>&#125;<br>s = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> dict1:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;key&#125;</span>\t<span class="hljs-subst">&#123;dict1[key]&#125;</span>&#x27;</span>)<br>    s += dict1[key]<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;全班共有<span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(dict1)&#125;</span>人,平均成绩为<span class="hljs-subst">&#123;s/<span class="hljs-built_in">len</span>(dict1):<span class="hljs-number">.2</span>f&#125;</span>分&#x27;</span>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>我的</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 9-1</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Students</span>():<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-literal">None</span>:<br>        <span class="hljs-string">&#x27;&#x27;&#x27;学生成绩&#x27;&#x27;&#x27;</span><br>        self.info = &#123;<br>            <span class="hljs-string">&quot;张三&quot;</span>:<span class="hljs-number">45</span>,<br>            <span class="hljs-string">&quot;李四&quot;</span>:<span class="hljs-number">78</span>,<br>            <span class="hljs-string">&quot;徐来&quot;</span>:<span class="hljs-number">40</span>,<br>            <span class="hljs-string">&quot;沙思思&quot;</span>:<span class="hljs-number">96</span>,<br>            <span class="hljs-string">&quot;如一&quot;</span>:<span class="hljs-number">65</span>,<br>            <span class="hljs-string">&quot;司音&quot;</span>:<span class="hljs-number">90</span>,<br>            <span class="hljs-string">&quot;赵敏&quot;</span>:<span class="hljs-number">78</span>,<br>            <span class="hljs-string">&quot;张旭宁&quot;</span>:<span class="hljs-number">99</span>,<br>            <span class="hljs-string">&quot;柏龙&quot;</span>:<span class="hljs-number">60</span>,<br>            <span class="hljs-string">&quot;思琪&quot;</span>:<span class="hljs-number">87</span>,<br>        &#125;<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">output</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;姓名和成绩分别为:&#x27;</span>)<br>        s = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> self.info:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;key&#125;</span>\t<span class="hljs-subst">&#123;self.info[key]&#125;</span>&#x27;</span>)<br>            s += self.info[key]<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;全班共有<span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(self.info)&#125;</span>人,平均成绩为<span class="hljs-subst">&#123;s/<span class="hljs-built_in">len</span>(self.info):<span class="hljs-number">.2</span>f&#125;</span>分&#x27;</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-string">&#x27;&#x27;&#x27;入口函数&#x27;&#x27;&#x27;</span><br>        self.output()<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    students = Students()<br>    students.main()<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2><span id="练-9-2">练 9-2</span></h2><blockquote>
+<p>某家商店根据客户消费总额的不同将客户分为不同的类型。</p>
+<p>如果消费总额&gt;&#x3D;10万元，为铂金卡客户（platinum）；</p>
+<p>如果消费总额&gt;&#x3D;5万元且&lt;10万元，为金卡客户（gold） ；</p>
+<p>如果消费总额&gt;&#x3D;3万且&lt;5万元，为银卡客户（silver）；</p>
+<p>如果消费总额&lt;3万元，为普卡客户（ ordinary ）。</p>
+<p>现有一批顾客的消费金额（单位：万元）分别为：2.3、4.5、24、17、1、7.8、39、21、0.5、1.2、4、1、0.3，将消费金额存储在列表list1中，输出一个字典，分别以platinum、 gold、 silver、 ordinary为键，以各客户类型人数为值。程序保存为exercise9_2.py。</p>
+</blockquote>
+<ol>
+<li><p>正常作业</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#exercise8_2.py</span><br><span class="hljs-comment">#coding=utf-8</span><br><br>list1 = [<span class="hljs-number">100</span>, <span class="hljs-number">90</span>, <span class="hljs-number">145</span>, <span class="hljs-number">200</span>, <span class="hljs-number">67</span>, <span class="hljs-number">82</span>, <span class="hljs-number">91</span>, <span class="hljs-number">39</span>, <span class="hljs-number">78</span>, <span class="hljs-number">34</span>, -<span class="hljs-number">49</span>, <span class="hljs-number">20</span>, <span class="hljs-number">99</span>, <span class="hljs-number">88</span>, <span class="hljs-number">79</span>, <span class="hljs-number">59</span>, <span class="hljs-number">43</span>, <span class="hljs-number">23</span>, <span class="hljs-number">90</span>, <span class="hljs-number">44</span>, <span class="hljs-number">89</span>, <span class="hljs-number">20</span>, <span class="hljs-number">199</span>, <span class="hljs-number">88</span>, <span class="hljs-number">79</span>, <span class="hljs-number">59</span>, <span class="hljs-number">43</span>, <span class="hljs-number">23</span>, <span class="hljs-number">90</span>, <span class="hljs-number">44</span>, <span class="hljs-number">89</span>, <span class="hljs-number">25</span>, <span class="hljs-number">91</span>, <span class="hljs-number">82</span>, <span class="hljs-number">272</span>, -<span class="hljs-number">51</span>, <span class="hljs-number">46</span>, <span class="hljs-number">28</span>, <span class="hljs-number">98</span>, <span class="hljs-number">42</span>, <span class="hljs-number">87</span>]<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> list1:<br>    <span class="hljs-keyword">if</span> i % <span class="hljs-number">7</span> == <span class="hljs-number">0</span>:<br>        list1.remove(i)<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;删除第一个能被7整除的数字后的列表为：&quot;</span>, list1)<br>        <span class="hljs-keyword">break</span><br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;没有能被7整除的数字！&quot;</span>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>我的</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 9-2</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Customers</span>():<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,customerList:<span class="hljs-built_in">list</span></span>) -&gt; <span class="hljs-literal">None</span>:<br>        <span class="hljs-string">&#x27;&#x27;&#x27;客户&#x27;&#x27;&#x27;</span><br>        self.type2count = &#123;<br>            <span class="hljs-string">&#x27;paltinum&#x27;</span>:<span class="hljs-number">0</span>,<br>            <span class="hljs-string">&#x27;gold&#x27;</span>:<span class="hljs-number">0</span>,<br>            <span class="hljs-string">&#x27;silver&#x27;</span>:<span class="hljs-number">0</span>,<br>            <span class="hljs-string">&#x27;ordinary&#x27;</span>:<span class="hljs-number">0</span>,<br>        &#125;<br>        self.customers= customerList<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">ifErr</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">type</span>(self.customers) == <span class="hljs-built_in">list</span>:<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> self.customers:<br>                <span class="hljs-keyword">if</span> <span class="hljs-built_in">type</span>(i) != <span class="hljs-built_in">int</span> <span class="hljs-keyword">and</span> <span class="hljs-built_in">type</span>(i) != <span class="hljs-built_in">float</span>:<br>                    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;ERROR!列表的值应当全是数字!&#x27;</span>)<br>                    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;ERROR!输入的类型应应当是一个列表!&#x27;</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">count</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-literal">None</span>:<br>        <span class="hljs-string">&#x27;&#x27;&#x27;按照类型统计客户人数&#x27;&#x27;&#x27;</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> self.customers:<br>            <span class="hljs-keyword">if</span> i &gt;= <span class="hljs-number">10</span>:<br>                self.type2count[<span class="hljs-string">&#x27;paltinum&#x27;</span>] += <span class="hljs-number">1</span><br>            <span class="hljs-keyword">elif</span> i &gt;= <span class="hljs-number">5</span>:<br>                self.type2count[<span class="hljs-string">&#x27;gold&#x27;</span>] += <span class="hljs-number">1</span><br>            <span class="hljs-keyword">elif</span> i &gt;= <span class="hljs-number">3</span>:<br>                self.type2count[<span class="hljs-string">&#x27;silver&#x27;</span>] += <span class="hljs-number">1</span><br>            <span class="hljs-keyword">else</span>:<br>                self.type2count[<span class="hljs-string">&#x27;ordinary&#x27;</span>] += <span class="hljs-number">1</span><br>        <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">output</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-string">&#x27;&#x27;&#x27;输出&#x27;&#x27;&#x27;</span><br>        <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> self.type2count:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;&lt;<span class="hljs-subst">&#123;key&#125;</span>&gt; 类用户数量:\t<span class="hljs-subst">&#123;self.type2count[key]&#125;</span>人&#x27;</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-string">&#x27;&#x27;&#x27;入口函数&#x27;&#x27;&#x27;</span><br>        <span class="hljs-keyword">if</span> self.ifErr:        <br>            self.count()<br>            self.output()<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    customerList = [<span class="hljs-number">2.3</span>, <span class="hljs-number">4.5</span>, <span class="hljs-number">24</span>, <span class="hljs-number">17</span>, <span class="hljs-number">1</span>, <span class="hljs-number">7.8</span>, <span class="hljs-number">39</span>, <span class="hljs-number">21</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0.3</span>]<br>    cus = Customers(customerList)<br>    cus.main()<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2><span id="提交作业">提交作业</span></h2><ol>
+<li><p>正常作业:(打包文件在文章开头处<code>setup</code>)<br> <a href="/file/school-py/9/example4_6.py" download="example4_6.py">Download example4_6py</a><br> <a href="/file/school-py/9/example5_2.py" download="example5_2.py">Download example5_2py</a><br> <a href="/file/school-py/9/exercise9_1.py" download="exercise9_1.py">Download exercise9_1.py</a><br> <a href="/file/school-py/9/exercise9_2.py" download="exercise9_2.py">Download exercise9_2.py</a></p>
+</li>
+<li><p>我的:</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#-- codeing=utf-8 --</span><br><span class="hljs-comment">#@Time:2024-4-29</span><br><span class="hljs-comment">#@Author:zzy</span><br><span class="hljs-comment">#@File:9.py</span><br><span class="hljs-comment">#@Software:vscode</span><br><br><span class="hljs-comment"># 4-6</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Securities</span>():<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,typein=<span class="hljs-number">0</span></span>) -&gt; <span class="hljs-literal">None</span>:<br>        self.typein = typein<br>        self.info = &#123;  <br>            <span class="hljs-string">&#x27;601398&#x27;</span>: [<span class="hljs-string">&#x27;工商银行&#x27;</span>, <span class="hljs-number">5.51</span>],<br>            <span class="hljs-string">&#x27;000001&#x27;</span>: [<span class="hljs-string">&#x27;平安银行&#x27;</span>, <span class="hljs-number">8.94</span>],<br>            <span class="hljs-string">&#x27;601939&#x27;</span>: [<span class="hljs-string">&#x27;建设银行&#x27;</span>, <span class="hljs-number">6.89</span>],<br>            <span class="hljs-string">&#x27;601328&#x27;</span>: [<span class="hljs-string">&#x27;交通银行&#x27;</span>, <span class="hljs-number">5.61</span>],<br>        &#125;<br>        self.outputdict = &#123;<br>            <span class="hljs-number">0</span>:<span class="hljs-string">&quot;&#x27;查询结束&#x27;&quot;</span>,<br>            <span class="hljs-number">1</span>:<span class="hljs-string">&quot;self.info[self.typein]&quot;</span>,<br>            <span class="hljs-number">2</span>:<span class="hljs-string">&quot;&#x27;无查询结果!&#x27;&quot;</span>,<br>        &#125;       <br>    <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">data_input</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-keyword">if</span> self.typein <span class="hljs-keyword">in</span> self.info:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">elif</span> self.typein == <span class="hljs-string">&quot;0&quot;</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">2</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">output</span>(<span class="hljs-params">self,param</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-built_in">eval</span>(self.outputdict[param]))<br>        <span class="hljs-keyword">if</span> param == <span class="hljs-number">2</span>:<br>            self.typein = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入编号(输入0停止查询):&quot;</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">self</span>):<br>        p = <span class="hljs-number">1</span><br>        <span class="hljs-keyword">while</span> p:<br>            p = self.data_input()<br>            self.output(p)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    sec = Securities(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入编号(输入0停止查询):&quot;</span>))<br>    sec.main()<br><br><span class="hljs-comment"># 5-2</span><br><span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> [[<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;i&#125;</span>x<span class="hljs-subst">&#123;j&#125;</span>=<span class="hljs-subst">&#123;i*j:&lt;4d&#125;</span>&quot;</span> <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, i+<span class="hljs-number">1</span>)] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>)]:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&quot;</span>.join(row))<br><br><span class="hljs-comment"># 9-1</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Students</span>():<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-literal">None</span>:<br>        <span class="hljs-string">&#x27;&#x27;&#x27;学生成绩&#x27;&#x27;&#x27;</span><br>        self.info = &#123;<br>            <span class="hljs-string">&quot;张三&quot;</span>:<span class="hljs-number">45</span>,<br>            <span class="hljs-string">&quot;李四&quot;</span>:<span class="hljs-number">78</span>,<br>            <span class="hljs-string">&quot;徐来&quot;</span>:<span class="hljs-number">40</span>,<br>            <span class="hljs-string">&quot;沙思思&quot;</span>:<span class="hljs-number">96</span>,<br>            <span class="hljs-string">&quot;如一&quot;</span>:<span class="hljs-number">65</span>,<br>            <span class="hljs-string">&quot;司音&quot;</span>:<span class="hljs-number">90</span>,<br>            <span class="hljs-string">&quot;赵敏&quot;</span>:<span class="hljs-number">78</span>,<br>            <span class="hljs-string">&quot;张旭宁&quot;</span>:<span class="hljs-number">99</span>,<br>            <span class="hljs-string">&quot;柏龙&quot;</span>:<span class="hljs-number">60</span>,<br>            <span class="hljs-string">&quot;思琪&quot;</span>:<span class="hljs-number">87</span>,<br>        &#125;<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">output</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;姓名和成绩分别为:&#x27;</span>)<br>        s = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> self.info:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;key&#125;</span>\t<span class="hljs-subst">&#123;self.info[key]&#125;</span>&#x27;</span>)<br>            s += self.info[key]<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;全班共有<span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(self.info)&#125;</span>人,平均成绩为<span class="hljs-subst">&#123;s/<span class="hljs-built_in">len</span>(self.info):<span class="hljs-number">.2</span>f&#125;</span>分&#x27;</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-string">&#x27;&#x27;&#x27;入口函数&#x27;&#x27;&#x27;</span><br>        self.output()<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    students = Students()<br>    students.main()<br><br><span class="hljs-comment"># 9-2</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Customers</span>():<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,customerList:<span class="hljs-built_in">list</span></span>) -&gt; <span class="hljs-literal">None</span>:<br>        <span class="hljs-string">&#x27;&#x27;&#x27;客户&#x27;&#x27;&#x27;</span><br>        self.type2count = &#123;<br>            <span class="hljs-string">&#x27;paltinum&#x27;</span>:<span class="hljs-number">0</span>,<br>            <span class="hljs-string">&#x27;gold&#x27;</span>:<span class="hljs-number">0</span>,<br>            <span class="hljs-string">&#x27;silver&#x27;</span>:<span class="hljs-number">0</span>,<br>            <span class="hljs-string">&#x27;ordinary&#x27;</span>:<span class="hljs-number">0</span>,<br>        &#125;<br>        self.customers= customerList<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">ifErr</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">type</span>(self.customers) == <span class="hljs-built_in">list</span>:<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> self.customers:<br>                <span class="hljs-keyword">if</span> <span class="hljs-built_in">type</span>(i) != <span class="hljs-built_in">int</span> <span class="hljs-keyword">and</span> <span class="hljs-built_in">type</span>(i) != <span class="hljs-built_in">float</span>:<br>                    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;ERROR!列表的值应当全是数字!&#x27;</span>)<br>                    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;ERROR!输入的类型应应当是一个列表!&#x27;</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">count</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-literal">None</span>:<br>        <span class="hljs-string">&#x27;&#x27;&#x27;按照类型统计客户人数&#x27;&#x27;&#x27;</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> self.customers:<br>            <span class="hljs-keyword">if</span> i &gt;= <span class="hljs-number">10</span>:<br>                self.type2count[<span class="hljs-string">&#x27;paltinum&#x27;</span>] += <span class="hljs-number">1</span><br>            <span class="hljs-keyword">elif</span> i &gt;= <span class="hljs-number">5</span>:<br>                self.type2count[<span class="hljs-string">&#x27;gold&#x27;</span>] += <span class="hljs-number">1</span><br>            <span class="hljs-keyword">elif</span> i &gt;= <span class="hljs-number">3</span>:<br>                self.type2count[<span class="hljs-string">&#x27;silver&#x27;</span>] += <span class="hljs-number">1</span><br>            <span class="hljs-keyword">else</span>:<br>                self.type2count[<span class="hljs-string">&#x27;ordinary&#x27;</span>] += <span class="hljs-number">1</span><br>        <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">output</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-string">&#x27;&#x27;&#x27;输出&#x27;&#x27;&#x27;</span><br>        <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> self.type2count:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;&lt;<span class="hljs-subst">&#123;key&#125;</span>&gt; 类用户数量:\t<span class="hljs-subst">&#123;self.type2count[key]&#125;</span>人&#x27;</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-string">&#x27;&#x27;&#x27;入口函数&#x27;&#x27;&#x27;</span><br>        <span class="hljs-keyword">if</span> self.ifErr:        <br>            self.count()<br>            self.output()<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    customerList = [<span class="hljs-number">2.3</span>, <span class="hljs-number">4.5</span>, <span class="hljs-number">24</span>, <span class="hljs-number">17</span>, <span class="hljs-number">1</span>, <span class="hljs-number">7.8</span>, <span class="hljs-number">39</span>, <span class="hljs-number">21</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0.3</span>]<br>    cus = Customers(customerList)<br>    cus.main()<br><br><span class="hljs-comment"># 选择</span><br><span class="hljs-comment"># 1. C</span><br><span class="hljs-comment"># 2. C</span><br><span class="hljs-comment"># 3. D</span><br><span class="hljs-comment"># 4. A</span><br><br><br><span class="hljs-comment"># 判断</span><br><span class="hljs-comment"># 1. F</span><br><span class="hljs-comment"># 2. F</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>zzy<br>
+        <strong>本文链接：</strong><a href="http://周梓煜.com/2024/05/01/%E5%AD%A6%E6%A0%A1python/school-hhw-9-python/" title="http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;05&#x2F;01&#x2F;学校python&#x2F;school-hhw-9-python&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;周梓煜.com&#x2F;2024&#x2F;05&#x2F;01&#x2F;学校python&#x2F;school-hhw-9-python&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			                                  
+			<!-- 先找到与当前文字相同的目录 -->
+			                           
+			<!-- 在找到当前文章所在的 index -->
+			                                
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2024/04/25/%E5%AD%A6%E6%A0%A1python/school-hhw-8-python/"> 8-python作业--极简主义</a>
+			</div>
+			       
+			<!-- 下一篇文章 -->
+			<div class="new">
+				<span>下一章</span>
+				<a href="/2024/05/06/%E5%AD%A6%E6%A0%A1python/school-hhw-10-python/"> 10-python作业</a>
+			</div>
+			                                   
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/Python%E4%BD%9C%E4%B8%9A-%E5%A4%A7%E4%B8%80/">Python作业-大一</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/Python/" rel="tag">Python</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>
