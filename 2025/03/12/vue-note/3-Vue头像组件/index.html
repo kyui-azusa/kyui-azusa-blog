@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html 
+	lang="zh">
+	<head>
+		<script>
+			MathJax = {
+			  tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			  },
+			  svg: {
+				fontCache: 'global'
+			  }
+			};
+		</script>
+		<script type="text/javascript" id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+		</script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+<link rel="stylesheet" href="/css/layout.css">
+
+		
+		<title> 3-Vue头像组件 -  zzy</title>
+		<!-- <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" /> -->
+		<!-- <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script> -->
+		
+<link rel="stylesheet" href="/lib/mdui/mdui.min.css">
+
+		
+<script src="/lib/mdui/mdui.min.js"></script>
+
+		<!-- lazyload -->
+		
+<script src="/lib/lazysizes.js"></script>
+
+		<!-- smooth-scrolling -->
+		
+<script src="/lib/smooth-scrolling.js"></script>
+
+		<!-- highlight -->
+		
+<link rel="stylesheet" href="/lib/highlight/atom-one-dark.min.css">
+
+		
+<script src="/lib/highlight/highlight.min.js"></script>
+
+		<!-- 预置 kiraicon -->
+		
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+
+		
+		<link
+			rel="shortcut icon"
+			href="/image/favicon.png"
+			type="image/png"
+		/>
+		
+<link rel="stylesheet" href="/deps/css/APlayer.min.css">
+
+		
+			
+				
+<link rel="stylesheet" href="/style.css">
+
+			
+				
+<link rel="stylesheet" href="/custom.css">
+
+			
+		
+		
+<script src="/deps/js/APlayer.min.js"></script>
+<script src="/deps/js/Meting.min.js"></script>
+
+		
+	<meta name="generator" content="Hexo 7.0.0"></head>
+
+	<body>
+		<div
+			class="kira-background"
+			style="background-image: url('/image/blog-bg.jpeg')"
+		></div>
+		<div class="kira-header">
+    <a
+        class="kira-drawer-button mdui-ripple"
+        title="导航栏"
+        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
+    >
+        <i class="kirafont icon-menu"></i>
+    </a>
+    <a href="/" title="zzy">
+        <img
+			src="/image/blog-avatar.jpg"
+			alt="zzy"
+		/>
+    </a>
+</div>
+		<div class="kira-body">
+			<div class="kira-sidebar" id="sidebar">
+	<div class="kira-avatar mdui-ripple">
+		<a href="/image/blog-avatar.jpg" title="zzy">
+			<img
+				src="/image/blog-avatar.jpg"
+				alt="zzy"
+			/>
+		</a>
+	</div>
+	<div class="kira-count">
+		<div><span>文章</span>74</div>
+		<div><span>标签</span>17</div>
+		<div><span>分类</span>11</div>
+	</div>
+	<div class="kira-list">
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/"
+			title="回到首页"
+		>
+			<i
+				class="kirafont
+					
+						icon-home
+					"
+			></i>
+			<div class="kira-list-item-content">
+				回到首页
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/archive.html"
+			title="文章归档"
+		>
+			<i
+				class="kirafont
+					
+						icon-container
+					"
+			></i>
+			<div class="kira-list-item-content">
+				文章归档
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			href="/about.html"
+			title="关于本人"
+		>
+			<i
+				class="kirafont
+					
+						icon-user
+					"
+			></i>
+			<div class="kira-list-item-content">
+				关于本人
+			</div>
+		</a>
+		
+		<a
+			class="kira-list-item mdui-ripple false"
+			target="_blank" rel="noopener" href="https://space.bilibili.com/510707180"
+			title="我的朋友"
+		>
+			<i
+				class="kirafont
+					
+						icon-team
+					"
+			></i>
+			<div class="kira-list-item-content">
+				我的朋友
+			</div>
+		</a>
+		
+	</div>
+	<aside id="kira-sidebar">
+		
+			<div class="kira-widget-wrap">
+	<div class="kira-widget kira-social">
+		
+			<a
+				class="mdui-ripple"
+				href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1817054005&website=www.oicqzone.com"
+				target="_blank"
+				mdui-tooltip="{content: 'QQ'}"
+				style="color: rgb(49, 174, 255); background-color: rgba(49, 174, 255, .1);"
+			>
+				<i
+					class="kirafont
+					
+						icon-QQ
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://space.bilibili.com/457014708"
+				target="_blank"
+				mdui-tooltip="{content: '哔哩哔哩'}"
+				style="color: rgb(231, 106, 141); background-color: rgba(231, 106, 141, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-bilibili
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="https://github.com/kyui-azusa/"
+				target="_blank"
+				mdui-tooltip="{content: 'GitHub'}"
+				style="color: rgb(25, 23, 23); background-color: rgba(25, 23, 23, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-github
+					"
+				></i>
+			</a>
+		
+			<a
+				class="mdui-ripple"
+				href="/null"
+				target="_blank"
+				mdui-tooltip="{content: 'Gitee'}"
+				style="color: rgb(165, 15, 15); background-color: rgba(165, 15, 15, .15);"
+			>
+				<i
+					class="kirafont
+					
+						icon-gitee
+					"
+				></i>
+			</a>
+		
+	</div>
+</div>
+
+		
+			
+  <div class="kira-widget-wrap">
+    <h3 class="kira-widget-title">分类</h3>
+    <div class="kira-widget">
+      <ul class="category-list">
+        
+        
+
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/HTML-Js作业-大二/">
+              HTML+Js作业-大二
+            </a>
+            <span class="category-list-count">4</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/Python作业-大一/">
+              Python作业-大一
+            </a>
+            <span class="category-list-count">13</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/Python入门/">
+              Python入门
+            </a>
+            <span class="category-list-count">8</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/Re-从零开始的md/">
+              Re:从零开始的md
+            </a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/Vue入门/">
+              Vue入门
+            </a>
+            <span class="category-list-count">7</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/js入门/">
+              js入门
+            </a>
+            <span class="category-list-count">4</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/工具记录/">
+              工具记录
+            </a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/开发技巧/">
+              开发技巧
+            </a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/数学分析/">
+              数学分析
+            </a>
+            <span class="category-list-count">8</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/练手成果/">
+              练手成果
+            </a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li class="category-list-item">
+            <a class="category-list-link" href="/categories/编程/">
+              编程
+            </a>
+            <span class="category-list-count">15</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+		
+			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/ABOUT/" style="font-size: 10px;">ABOUT</a> <a href="/tags/Js/" style="font-size: 13.75px;">Js</a> <a href="/tags/Math/" style="font-size: 18.75px;">Math</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/Scrapy/" style="font-size: 10px;">Scrapy</a> <a href="/tags/Vue/" style="font-size: 16.25px;">Vue</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html/" style="font-size: 11.25px;">html</a> <a href="/tags/html-css/" style="font-size: 12.5px;">html+css</a> <a href="/tags/js/" style="font-size: 17.5px;">js</a> <a href="/tags/vscode/" style="font-size: 11.25px;">vscode</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/web%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 13.75px;">web工程化</a> <a href="/tags/%E6%91%A9%E5%B0%94%E5%8B%87%E5%A3%AB/" style="font-size: 10px;">摩尔勇士</a> <a href="/tags/%E7%A0%94%E7%A9%B6/" style="font-size: 13.75px;">研究</a>
+		</div>
+		
+	</div>
+
+
+		
+	</aside>
+	<div class="kira-copyright">
+		&copy; 2025
+		<a href="/">zzy</a>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
+		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
+		<br />
+		
+			<a
+				href="https://beian.miit.gov.cn/"
+				target="_blank"
+			>
+				沪ICP备******号
+			</a>
+		
+		
+	</div>
+</div>
+<div
+	class="kira-sidebar-modal"
+	id="sidebar-modal"
+	onclick="(function(self) {
+		self.classList.remove('show');
+		document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
+	})(this)"
+></div>
+			<div class="kira-content">
+				<div id="kira-top-header"></div>
+				<div class="kira-main-content">
+					
+<link rel="stylesheet" href="/css/kira-image.css">
+
+
+<script src="/js/kira-image.js"></script>
+
+<div class="kira-image">
+    <div class="kira-image-modal">
+        <div class="kira-image-header">
+            <div class="kira-image-counter"></div>
+            <div class="kira-image-title"></div>
+            <div class="kira-image-operation">
+                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
+                    <i class="kirafont icon-zoom-in"></i>
+                </div>
+                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
+                    <i class="kirafont icon-close"></i>
+                </div>
+            </div>
+        </div>
+        <div class="kira-image-container">
+            <div class="kira-image-prev-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-left"></i>
+                </div>
+            </div>
+            <div class="kira-image-list">
+                <div class="kira-image-prev">
+                    <img />
+                </div>
+                <div class="kira-image-now">
+                    <img />
+                </div>
+                <div class="kira-image-next">
+                    <img />
+                </div>
+            </div>
+            <div class="kira-image-next-button-panel">
+                <div class="kira-image-exchange-button">
+                    <i class="kirafont icon-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<link rel="stylesheet" href="/css/kira-code-copy.css">
+
+	
+<script src="/js/kira-code-copy.js"></script>
+
+
+<div class="kira-post">
+	<article>
+		
+		<div class="kira-post-cover">
+			<img
+				data-src="/image/bg-1.png"
+				data-sizes="auto"
+				alt="3-Vue头像组件"
+				class="lazyload kira-post-cover-image disabled-kira-image"
+			/>
+			<h1>3-Vue头像组件</h1>
+		</div>
+		
+		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
+			<a><i class="kirafont icon-calendar-fill"></i>2025年03月12日</a>
+			<a><i class="kirafont icon-edit-fill"></i>607 字</a>
+			<a><i class="kirafont icon-time-circle-fill"></i>大概 3 分钟</a>
+		</div>
+		<h2><span id="组件">组件</span></h2><h3><span id="建立文件">建立文件</span></h3><ol>
+<li><p>文件目录</p>
+<ul>
+<li>components<ul>
+<li>Avatar.vue</li>
+<li>其他组件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>文件结构</p>
+<p> 可下载 <code>vscode</code> 组件: <code>vetur</code></p>
+<ol>
+<li><p>可识别 <code>vue</code> 代码</p>
+</li>
+<li><p>提供了常用的代码片段</p>
+<p> <code>default.vue</code>: 生成 <code>vue</code> 结构</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript"></span><br><span class="language-javascript">&#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h3><span id="配置组件">配置组件</span></h3><ol>
+<li><p>填写组件</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;url&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">    <span class="hljs-attr">props</span>: [<span class="hljs-string">&quot;url&quot;</span>],</span><br><span class="language-javascript">&#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在 <code>App.vue</code> 中使用组件</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;template&gt;<br>  &lt;div&gt;<br>  	&lt;h1&gt;App组件&lt;/h1&gt;<br>  	&lt;Avatar url=&quot;https://xn--zsr428b1mg.com/image/blog-avatar.jpg&quot;/&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script&gt;<br>import Avatar from &quot;./component/Avatar&quot; // .vue后缀可以省略<br>export default &#123;<br>	components: &#123;<br>		Avatar<br>	&#125;<br>&#125;<br>&lt;/script&gt;<br><br>&lt;style&gt;<br><br>&lt;/style&gt;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="组件传参">组件传参</span></h3><ol>
+<li><p>传参:</p>
+<ul>
+<li>传递字符串  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">Avatar</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;1&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li>非字符串在传参前添加 <code>:</code>, 此时 <code>&quot;&quot;</code> 内不再是字符串, 而是 <code>Js</code> 表达式, 如果以这种形式仍想传入字符串则可使用单引号包裹  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">Avatar</span> <span class="hljs-attr">:url</span>=<span class="hljs-string">&quot;1&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">Avatar</span> <span class="hljs-attr">:url</span>=<span class="hljs-string">&quot;&#x27;1&#x27;&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>声明属性</p>
+<blockquote>
+<p>v-bind缩写: <code>:</code></p>
+</blockquote>
+<ol>
+<li><p>数组<br>数组的每一项都是一个属性</p>
+</li>
+<li><p>对象<br><code>属性名: 属性类型</code> 的形式, 为属性添加约束</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html">props: &#123;<br>	url: String,<br>&#125;,<br></code></pre></td></tr></table></figure>
+
+<p>还可以进一步限定是否必须传递</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html">props: &#123;<br>	url: &#123;<br>        type: String,<br>        required: true,<br>    &#125;,<br>&#125;,<br></code></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>参数的默认值</p>
+<blockquote>
+<p>这里仅为示例, 代码不采用, 后续style采用默认值.</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html">props: &#123;<br>	url: &#123;<br>        type: String,<br>        required: false,<br>        default: &#x27;example.jpg&#x27;<br>    &#125;,<br>&#125;,<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3><span id="组件样式">组件样式</span></h3><ol>
+<li><p>增加属性的通用性</p>
+<p> <strong>特例</strong>: <code>style</code> 属性在使用 <code>v-bind</code> 绑定数据时需要绑定一个对象</p>
+<ol>
+<li><p>传递样式参数</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;&#123;width: size+&#x27;px&#x27;, height: size+&#x27;px&#x27;&#125;&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>组件样式</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">img</span></span><br><span class="hljs-tag">    <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;avatar-img&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;url&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;&#123; width: size + &#x27;px&#x27;, height: size + &#x27;px&#x27; &#125;&quot;</span></span><br><span class="hljs-tag">  /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-attr">props</span>: &#123;</span><br><span class="language-javascript">    <span class="hljs-attr">url</span>: &#123;</span><br><span class="language-javascript">      <span class="hljs-attr">type</span>: <span class="hljs-title class_">String</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>,</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">    <span class="hljs-attr">size</span>: &#123;</span><br><span class="language-javascript">      <span class="hljs-attr">type</span>: <span class="hljs-title class_">Number</span>,</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.avatar-img</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;</span><br><span class="language-css">  <span class="hljs-attribute">object-fit</span>: cover;</span><br><span class="language-css">  <span class="hljs-attribute">display</span>: block;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>避免冲突样式 (隔绝组件)</p>
+<blockquote>
+<p>使用 <code>scoped</code> 创建带有作用域的样式</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><br>    ...<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><code>vue-cli</code> 会在类样式选择器及选择选择器加上属性选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.avatar-img</span><span class="hljs-selector-attr">[添加的自定义属性]</span> &#123;<br>    ...<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+
+	</article>
+
+	 
+    <div class="kira-post-copyright">
+        <strong>本文作者：</strong>zzy<br>
+        <strong>本文链接：</strong><a href="http://周梓煜.com/2025/03/12/vue-note/3-Vue%E5%A4%B4%E5%83%8F%E7%BB%84%E4%BB%B6/" title="http:&#x2F;&#x2F;周梓煜.com&#x2F;2025&#x2F;03&#x2F;12&#x2F;vue-note&#x2F;3-Vue头像组件&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;周梓煜.com&#x2F;2025&#x2F;03&#x2F;12&#x2F;vue-note&#x2F;3-Vue头像组件&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+  
+	<div class="kira-post-nav">
+		<nav class="post-nav">
+			                                          
+			<!-- 先找到与当前文字相同的目录 -->
+			            
+			<!-- 在找到当前文章所在的 index -->
+			            
+			<!-- 上一篇文章 -->
+			<div class="old">
+				<span>上一章</span>
+				<a href="/2025/03/03/vue-note/2-Vue%E7%BB%84%E4%BB%B6%E5%BC%80%E5%8F%91/"> 2-Vue组件开发</a>
+			</div>
+			       
+			<!-- 下一篇文章 -->
+			<div class="new">
+				<span>下一章</span>
+				<a href="/2025/03/12/vue-note/4-Vue%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/"> 4-Vue计算属性</a>
+			</div>
+			                        
+		</nav>
+	</div>
+	
+	<div class="kira-post-meta kira-rainbow">
+		
+			<a class="kirafont icon-container-fill -link" href="/categories/Vue%E5%85%A5%E9%97%A8/">Vue入门</a>
+		
+		
+			<a class="kirafont icon-tag-fill -none-link" href="/tags/Vue/" rel="tag">Vue</a>
+		
+	</div>
+	
+	<div class="kira-post-footer">
+		
+
+		
+	</div>
+	
+</div>
+
+				</div>
+			</div>
+			<div class="kira-right-column">
+	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
+		<button class="mdui-fab mdui-ripple">
+			<i class="kirafont icon-caret-up"></i>
+		</button>
+	</a>
+</div>
+
+		</div>
+	</body>
+</html>
